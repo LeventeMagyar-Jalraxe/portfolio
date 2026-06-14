@@ -1,0 +1,313 @@
+HTML
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magyar Levente (Jalraxe) | Portfólió</title>
+    <style>
+        /* Modern, minimalista sötét dizájn */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #e5e5e5;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        header {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .artist-alias {
+            font-size: 1.1rem;
+            color: #888;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        nav {
+            margin-top: 30px;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        /* Hero szekció a nyitóképpel */
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            max-height: 600px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .intro {
+            max-width: 700px;
+            margin: 40px auto 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        /* Szekciók stílusa */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .section-desc {
+            color: #888;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        /* Galéria Grid (Rács) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            background-color: #141414;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .item-info {
+            padding: 15px;
+        }
+
+        .item-info h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .item-info p {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Kapcsolat & Rólam */
+        .about-content {
+            max-width: 800px;
+        }
+
+        .contact-links a {
+            color: #fff;
+            margin-right: 20px;
+            text-decoration: none;
+            border-bottom: 1px dashed #555;
+            transition: border-color 0.3s;
+        }
+
+        .contact-links a:hover {
+            border-bottom-color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #444;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Magyar Levente</h1>
+        <div class="artist-alias">(Jalraxe)</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#feny-orzoi">Fény Őrzői</a>
+            <a href="#luminous-visions">Luminous Visions</a>
+            <a href="#egyedi-alkotasok">Egyedi alkotások</a>
+            <a href="#rolam">Rólam</a>
+            <a href="#kapcsolat">Kapcsolat</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <img src="https://via.placeholder.com/1100x600/1a1a1a/ffffff?text=Legerősebb+Munkád+Helye" alt="Magyar Levente - Kiemelt alkotás">
+            <p class="intro">
+                Munkáimban a természet, a szimbolizmus, az emberi lét és a technológiai jövőkép témái találkoznak. Hagyományos rajztechnikákat és digitális utómunkát ötvözve készítek részletgazdag, narratív alkotásokat.
+            </p>
+        </section>
+
+        <section id="feny-orzoi">
+            <h2>Fény Őrzői</h2>
+            <p class="section-desc">A veszélyeztetett fajok fényből szőtt portréi – kiemelt projekt.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Lajhár" alt="Törpe háromujjú lajhár">
+                    <div class="item-info">
+                        <h3>Törpe háromujjú lajhár</h3>
+                        <p>Kritikusan veszélyeztetett</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Hegyimacska" alt="Andesi hegyimacska">
+                    <div class="item-info">
+                        <h3>Andesi hegyimacska</h3>
+                        <p>Veszélyeztetett</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Orángután" alt="Tapanuli orángután">
+                    <div class="item-info">
+                        <h3>Tapanuli orángután</h3>
+                        <p>Kritikusan veszélyeztetett</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Tobzoska" alt="Kínai tobzoska">
+                    <div class="item-info">
+                        <h3>Kínai tobzoska</h3>
+                        <p>Kritikusan veszélyeztetett</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="luminous-visions">
+            <h2>Luminous Visions</h2>
+            <p class="section-desc">A kísérleti sorozat, amelyből a Fény Őrzői megszületett. A fény érzelmi, spirituális és szimbolikus szerepének kutatása.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Gyertyás+Portré" alt="Gyertyás portré">
+                    <div class="item-info">
+                        <h3>Gyertyás portré</h3>
+                        <p>A sorozat origója</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Joker" alt="Joker">
+                    <div class="item-info">
+                        <h3>Joker</h3>
+                        <p>Karaktertorzulás fénnyel kifejezve</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Apáca" alt="Neon glóriás apáca">
+                    <div class="item-info">
+                        <h3>Neon glóriás apáca</h3>
+                        <p>Szakrális és profán szimbolizmus</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="egyedi-alkotasok">
+            <h2>Egyedi alkotások</h2>
+            <p class="section-desc">Színes ceruzával és vegyes technikával készült önálló művek, a társadalomkritikától a filozófiai kérdésekig.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Lélekben+fiatal" alt="Lélekben fiatal">
+                    <div class="item-info">
+                        <h3>Lélekben fiatal</h3>
+                        <p>Színes ceruza, vegyes technika</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=A+holnap+árnyéka" alt="A holnap árnyéka">
+                    <div class="item-info">
+                        <h3>A holnap árnyéka</h3>
+                        <p>Társadalomkritika / Vegyes technika</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rolam" class="about-content">
+            <h2>Rólam</h2>
+            <br>
+            <p>Hagyományos rajzeszközökkel készülő alkotásaimat gyakran digitális utómunkával egészítem ki. A két technika ötvözésével olyan képi világ kialakítására törekszem, amely egyszerre őrzi a kézzel készített rajz karakterét és használja ki a digitális eszközök nyújtotta lehetőségeket.</p>
+            <br>
+            <p>Inspirációimat a természet törékenységéből, a mély szimbolizmusból és az emberi pszichéből merítem. A <em>Luminous Visions</em> és a <em>Fény Őrzői</em> projektek ezen kutatások és technikai kísérletek kiforrott eredményei.</p>
+        </section>
+
+        <section id="kapcsolat" style="border-bottom: none;">
+            <h2>Kapcsolat</h2>
+            <p class="section-desc">Együttműködésért, kiállításokért vagy képrendelésért keress az alábbi elérhetőségeken:</p>
+            <div class="contact-links">
+                <a href="mailto:levente.emailcimed@gmail.com">E-mail küldése</a>
+                <a href="https://facebook.com/profilod" target="_blank">Facebook</a>
+                <a href="https://instagram.com/profilod" target="_blank">Instagram</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Magyar Levente (Jalraxe). Minden jog fenntartva.</p>
+    </footer>
+
+</body>
+</html>
