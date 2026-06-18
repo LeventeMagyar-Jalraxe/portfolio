@@ -1,4 +1,5 @@
-html>
+HTML
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -79,7 +80,7 @@ html>
             max-height: 600px;
             object-fit: cover;
             border-radius: 4px;
-            filter: grayscale(20%);
+            filter: grayscale(10%);
         }
 
         .intro {
@@ -106,9 +107,10 @@ html>
 
         .section-desc, .section-subtitle {
             font-size: 1rem;
-            color: #666;
+            color: #888888;
             margin-bottom: 40px;
             font-weight: 300;
+            max-width: 900px;
         }
 
         .gallery-grid {
@@ -134,7 +136,6 @@ html>
             height: 450px;
             object-fit: cover;
             display: block;
-            transition: filter 0.3s ease;
         }
 
         .item-info {
@@ -245,7 +246,7 @@ html>
 
 <main>
     <section id="home" class="hero">
-        <img src="images/Lélekben%20fiatall.jpg" alt="Lélekben fiatal">" alt="Magyar Levente - Featured Artwork">
+        <img src="images/Lélekben%20fiatal.jpg" alt="Magyar Levente - Young at Heart">
         <p class="intro">
             My works explore the intersection of nature, symbolism, human existence, and technological futures. Combining traditional drawing techniques with digital post-processing, I create highly detailed, narrative artworks.
         </p>
@@ -253,21 +254,39 @@ html>
 
     <section id="guardians-of-light" class="gallery-section">
         <h2>Guardians of Light</h2>
-        <p class="section-desc">Portraits of endangered species woven from light – featured project.</p>
+        <div class="section-desc">
+            <p>This series showcases critically endangered species through unique portraits woven from threads of light. My goal is to raise awareness for wildlife conservation and contribute to the protection of these magnificent species.</p>
+            <br>
+            <p style="font-size: 0.9rem; color: #555;">The portraits are originally drawn on 30×40 cm Clairefontaine Pastelmat paper using Faber-Castell Polychromos pencils. After digitization, they receive their final, brilliant luminescence using Autodesk Sketchbook.</p>
+        </div>
         
         <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="images/andesihegyimacska.png" alt="Andean Mountain Cat">
                 <div class="item-info">
                     <h3>Andean Mountain Cat</h3>
-                    <p>Colored pencil / Digital post-processing</p>
+                    <p>Faber-Castell Polychromos & Autodesk Sketchbook</p>
                 </div>
             </div>
             <div class="gallery-item">
                 <img src="images/Fohasz.jpg" alt="The Prayer">
                 <div class="item-info">
                     <h3>The Prayer</h3>
-                    <p>Colored pencil / Mixed media</p>
+                    <p>Faber-Castell Polychromos & Autodesk Sketchbook</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/lajhar.jpg" alt="Pygmy Three-Toed Sloth">
+                <div class="item-info">
+                    <h3>Pygmy Three-Toed Sloth</h3>
+                    <p>Faber-Castell Polychromos & Autodesk Sketchbook</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/tobzoska.jpg" alt="Chinese Pangolin">
+                <div class="item-info">
+                    <h3>Chinese Pangolin</h3>
+                    <p>Faber-Castell Polychromos & Autodesk Sketchbook</p>
                 </div>
             </div>
         </div>
