@@ -1,12 +1,11 @@
-
-<!DOCTYPE html>
-<html lang="hu">
+html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magyar Levente (Jalraxe) | Portfólió</title>
+    <title>Magyar Levente (Jalraxe) | Portfolio</title>
     <style>
-        /* Modern, minimalista sötét dizájn */
+        /* Modern, minimalist dark design */
         * {
             margin: 0;
             padding: 0;
@@ -22,150 +21,191 @@
         }
 
         header {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 0;
+            max-width: 1200px;
+            margin: 60px auto 40px auto;
             text-align: center;
-            border-bottom: 1px solid #222;
         }
 
         h1 {
             font-size: 2.5rem;
-            letter-spacing: 2px;
-            color: #fff;
             font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 5px;
         }
 
         .artist-alias {
-            font-size: 1.1rem;
-            color: #888;
-            letter-spacing: 4px;
+            font-size: 1rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-top: 5px;
+            color: #888888;
+            margin-bottom: 30px;
         }
 
         nav {
-            margin-top: 30px;
+            margin-top: 20px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            padding: 15px 0;
         }
 
         nav a {
-            color: #aaa;
+            color: #999;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
             text-transform: uppercase;
-            transition: color 0.3s;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin: 0 15px;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #fff;
+            color: #ffffff;
         }
 
         main {
-            max-width: 1100px;
-            margin: 40px auto;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* Hero szekció a nyitóképpel */
         .hero {
+            margin: 40px auto 80px auto;
             text-align: center;
-            margin-bottom: 60px;
         }
 
         .hero img {
-            max-width: 100%;
-            height: auto;
+            width: 100%;
             max-height: 600px;
+            object-fit: cover;
             border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            filter: grayscale(20%);
         }
 
         .intro {
-            max-width: 700px;
-            margin: 40px auto 0 auto;
-            text-align: center;
+            max-width: 800px;
+            margin: 30px auto 0 auto;
             font-size: 1.1rem;
-            color: #ccc;
-        }
-
-        /* Szekciók stílusa */
-        section {
-            padding: 60px 0;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        section h2 {
-            font-size: 1.8rem;
+            color: #aaaaaa;
             font-weight: 300;
-            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .gallery-section {
+            margin-bottom: 100px;
+        }
+
+        .gallery-section h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
             margin-bottom: 10px;
-            color: #fff;
         }
 
-        .section-desc {
-            color: #888;
-            margin-bottom: 30px;
-            font-style: italic;
+        .section-desc, .section-subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
 
-        /* Galéria Grid (Rács) */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
 
         .gallery-item {
-            background-color: #141414;
+            background-color: #121212;
             border-radius: 4px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 300px;
+            height: 450px;
             object-fit: cover;
             display: block;
+            transition: filter 0.3s ease;
         }
 
         .item-info {
-            padding: 15px;
+            padding: 25px;
+            border-top: 1px solid #1a1a1a;
         }
 
         .item-info h3 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 400;
-            color: #fff;
+            color: #ffffff;
             margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
         .item-info p {
-            font-size: 0.85rem;
-            color: #777;
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 300;
         }
 
-        /* Kapcsolat & Rólam */
-        .about-content {
+        .about-section {
             max-width: 800px;
+            margin: 0 auto 100px auto;
+            text-align: center;
         }
 
-        .contact-links a {
-            color: #fff;
-            margin-right: 20px;
+        .about-content {
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            font-weight: 300;
+            text-align: left;
+            background: #121212;
+            padding: 40px;
+            border-radius: 4px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-section {
+            text-align: center;
+            margin-bottom: 100px;
+            padding: 60px 20px;
+            background: #121212;
+            border-radius: 4px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 15px 40px;
             text-decoration: none;
-            border-bottom: 1px dashed #555;
-            transition: border-color 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border-radius: 4px;
         }
 
-        .contact-links a:hover {
-            border-bottom-color: #fff;
+        .contact-btn:hover {
+            background: #ffffff;
+            color: #0d0d0d;
         }
 
         footer {
@@ -173,148 +213,143 @@
             padding: 40px 0;
             color: #444;
             font-size: 0.8rem;
+            border-top: 1px solid #1a1a1a;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
+<header>
     <h1>Magyar Levente</h1>
     <div class="artist-alias">(Jalraxe)</div>
     <nav>
         <a href="#home">Home</a>
-        <a href="#feny-orzoi">Guardians of Light</a>
+        <a href="#guardians-of-light">Guardians of Light</a>
         <a href="#luminous-visions">Luminous Visions</a>
-        <a href="#egyedi-alkotasok">Personal Artworks</a>
-        <a href="#rolam">About Me</a>
-        <a href="#kapcsolat">Contact</a>
+        <a href="#personal-artworks">Personal Artworks</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <main>
     <section id="home" class="hero">
-        <img src="https://via.placeholder.com/1100x600/1a1a1a/ffffff?text=Featured+Artwork+Coming+Soon" alt="Magyar Levente - Featured Artwork">
+        <img src="images/Zendaya.jpg" alt="Magyar Levente - Featured Artwork">
         <p class="intro">
             My works explore the intersection of nature, symbolism, human existence, and technological futures. Combining traditional drawing techniques with digital post-processing, I create highly detailed, narrative artworks.
         </p>
     </section>
 
-    <section id="feny-orzoi">
+    <section id="guardians-of-light" class="gallery-section">
         <h2>Guardians of Light</h2>
         <p class="section-desc">Portraits of endangered species woven from light – featured project.</p>
         
         <div class="gallery-grid">
             <div class="gallery-item">
-
-        <section id="feny-orzoi">
-            <h2>Fény Őrzői</h2>
-            <p class="section-desc">A veszélyeztetett fajok fényből szőtt portréi – kiemelt projekt.</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    
-                    <div class="item-info">
-                        <h3>Törpe háromujjú lajhár</h3>
-                        <p>Kritikusan veszélyeztetett</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/andesihegyimacska.png" alt="Andesi hegyimacska">
-                    <div class="item-info">
-                        <h3>Andesi hegyimacska</h3>
-                        <p>Veszélyeztetett</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Orángután" alt="Tapanuli orángután">
-                    <div class="item-info">
-                        <h3>Tapanuli orángután</h3>
-                        <p>Kritikusan veszélyeztetett</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Tobzoska" alt="Kínai tobzoska">
-                    <div class="item-info">
-                        <h3>Kínai tobzoska</h3>
-                        <p>Kritikusan veszélyeztetett</p>
-                    </div>
+                <img src="images/andesihegyimacska.png" alt="Andean Mountain Cat">
+                <div class="item-info">
+                    <h3>Andean Mountain Cat</h3>
+                    <p>Colored pencil / Digital post-processing</p>
                 </div>
             </div>
-        </section>
-
-        <section id="luminous-visions">
-            <h2>Luminous Visions</h2>
-            <p class="section-desc">A kísérleti sorozat, amelyből a Fény Őrzői megszületett. A fény érzelmi, spirituális és szimbolikus szerepének kutatása.</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Gyertyás+Portré" alt="Gyertyás portré">
-                    <div class="item-info">
-                        <h3>Gyertyás portré</h3>
-                        <p>A sorozat origója</p>
-                    </div>
+            <div class="gallery-item">
+                <img src="images/Fohasz.jpg" alt="The Prayer">
+                <div class="item-info">
+                    <h3>The Prayer</h3>
+                    <p>Colored pencil / Mixed media</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Joker" alt="Joker">
-                    <div class="item-info">
-                        <h3>Joker</h3>
-                        <p>Karaktertorzulás fénnyel kifejezve</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/400x500/1a1a1a/ffffff?text=Apáca" alt="Neon glóriás apáca">
-                    <div class="item-info">
-                        <h3>Neon glóriás apáca</h3>
-                        <p>Szakrális és profán szimbolizmus</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-       <section id="personal-artworks" class="gallery-section">
-    <h2>Personal Artworks</h2>
-    <p class="section-subtitle">Standalone pieces created with colored pencils and mixed media, ranging from social criticism to philosophical questions.</p>
-    
-    <div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="images/fiatal.jpg" alt="Young at Heart">
-            <div class="item-info">
-                <h3>Young at Heart</h3>
-                <p>Colored pencil, mixed media</p>
             </div>
         </div>
+    </section>
+
+    <section id="luminous-visions" class="gallery-section">
+        <h2>Luminous Visions</h2>
+        <p class="section-subtitle">A series exploring vibrant neon highlights and deep pop-culture contrasts.</p>
         
-        <div class="gallery-item">
-            <img src="images/holnap.jpg" alt="Shadow of Tomorrow">
-            <div class="item-info">
-                <h3>Shadow of Tomorrow</h3>
-                <p>Social criticism / Mixed media</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/Joker.jpg" alt="Joker">
+                <div class="item-info">
+                    <h3>Joker</h3>
+                    <p>Colored pencil / Neon highlights</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Homelander.jpg" alt="Homelander">
+                <div class="item-info">
+                    <h3>Homelander</h3>
+                    <p>Mixed media / Pop culture series</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Tesla.jpg" alt="Tesla">
+                <div class="item-info">
+                    <h3>Tesla</h3>
+                    <p>Conceptual drawing / Mixed media</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-        <section id="rolam" class="about-content">
-            <h2>Rólam</h2>
-            <br>
-            <p>Hagyományos rajzeszközökkel készülő alkotásaimat gyakran digitális utómunkával egészítem ki. A két technika ötvözésével olyan képi világ kialakítására törekszem, amely egyszerre őrzi a kézzel készített rajz karakterét és használja ki a digitális eszközök nyújtotta lehetőségeket.</p>
-            <br>
-            <p>Inspirációimat a természet törékenységéből, a mély szimbolizmusból és az emberi pszichéből merítem. A <em>Luminous Visions</em> és a <em>Fény Őrzői</em> projektek ezen kutatások és technikai kísérletek kiforrott eredményei.</p>
-        </section>
+    </section>
 
-        <section id="kapcsolat" style="border-bottom: none;">
-            <h2>Kapcsolat</h2>
-            <p class="section-desc">Együttműködésért, kiállításokért vagy képrendelésért keress az alábbi elérhetőségeken:</p>
-            <div class="contact-links">
-                <a href="mailto:levente.emailcimed@gmail.com">E-mail küldése</a>
-                <a href="https://facebook.com/profilod" target="_blank">Facebook</a>
-                <a href="https://instagram.com/profilod" target="_blank">Instagram</a>
+    <section id="personal-artworks" class="gallery-section">
+        <h2>Personal Artworks</h2>
+        <p class="section-subtitle">Standalone pieces ranging from social criticism to philosophical questions.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/A%20mester%20es%20a%20muzsa.jpg" alt="The Master and the Muse">
+                <div class="item-info">
+                    <h3>The Master and the Muse</h3>
+                    <p>Colored pencil / Narrative art</p>
+                </div>
             </div>
-        </section>
-    </main>
+            <div class="gallery-item">
+                <img src="images/A%20holnap%20arnyeka.jpg" alt="Shadow of Tomorrow">
+                <div class="item-info">
+                    <h3>Shadow of Tomorrow</h3>
+                    <p>Social criticism / Mixed media</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Az%20utolso%20szelfi.jpg" alt="The Last Selfie">
+                <div class="item-info">
+                    <h3>The Last Selfie</h3>
+                    <p>Conceptual piece / Colored pencil</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Magyar Levente (Jalraxe). Minden jog fenntartva.</p>
-    </footer>
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <p class="section-desc">The artist behind the pseudonym Jalraxe.</p>
+        <div class="about-content">
+            <p>Welcome to my portfolio. I am Magyar Levente (Jalraxe), a visual artist specializing in combining traditional hand-drawn techniques with modern digital tools.</p>
+            <p>My artistic journey focuses on capturing deep human emotions, environmental issues, and striking contrasts using rich details and unique light effects. Every piece tells a unique story waiting to be discovered.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Get in Touch</h2>
+        <p class="section-desc">Would you like to collaborate or purchase a piece? Feel free to reach out via email.</p>
+        <a href="mailto:your.email@example.com" class="contact-btn">Send an Email</a>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Magyar Levente (Jalraxe). All rights reserved.</p>
+</footer>
 
 </body>
 </html>
