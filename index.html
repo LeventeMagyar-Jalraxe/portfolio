@@ -222,6 +222,14 @@ HTML
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Pont 8: Új CSS osztály hozzáadása */
+        .art-meta {
+            color: #666;
+            font-size: 0.82rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 <body>
@@ -233,7 +241,7 @@ HTML
         <a href="#home">Home</a>
         <a href="#guardians-of-light">Guardians of Light</a>
         <a href="#luminous-visions">Luminous Visions</a>
-        <a href="#personal-artworks">Personal Artworks</a>
+        <a href="#selected-works">Selected Works</a>
         <a href="#about">About Me</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -242,17 +250,32 @@ HTML
 <main>
     <section id="home" class="hero">
         <img src="images/L%C3%A9lekben%20fiatal.jpg" alt="Magyar Levente - Young at Heart">
+        
         <p class="intro">
-            My works explore the intersection of nature, symbolism, human existence, and technological futures. Combining traditional drawing techniques with digital post-processing, I create highly detailed, narrative artworks.
+            Through traditional drawing and digital illumination, I explore the relationship between nature, symbolism and transformation. My work seeks moments where light becomes more than a visual effect—it becomes meaning.
         </p>
+
+        <div style="max-width:700px;margin:40px auto 0 auto;text-align:center;color:#888;font-style:italic;">
+            Drawing with light. Through traditional drawing and digital illumination, I explore the connection between nature, symbolism and transformation.
+        </div>
+
+        <div style="margin-top:50px;padding:20px;border:1px solid #222;background:#121212;border-radius:4px;">
+            <strong>Lélekben fiatal</strong><br>
+            2nd Prize – Zsilip Art Association National Competition (2025)
+        </div>
     </section>
 
     <section id="guardians-of-light" class="gallery-section">
         <h2>Guardians of Light</h2>
+        
         <div class="section-desc">
-            <p>This series showcases critically endangered species through unique portraits woven from threads of light. My goal is to raise awareness for wildlife conservation and contribute to the protection of these magnificent species.</p>
-            <br>
-            <p style="font-size: 0.9rem; color: #555;">The portraits are originally drawn on 30×40 cm Clairefontaine Pastelmat paper using Faber-Castell Polychromos pencils. After digitization, they receive their final, brilliant luminescence using Autodesk Sketchbook.</p>
+            <p>
+                Guardians of Light presents critically endangered species through luminous portraits that blend traditional drawing with digital lightwork. Each artwork aims to highlight the beauty, uniqueness and fragility of Earth's most threatened wildlife.
+            </p>
+
+            <p style="font-size:0.9rem;color:#666;margin-top:20px;">
+                Colored pencil on Clairefontaine Pastelmat paper, enhanced with digital illumination.
+            </p>
         </div>
         
         <div class="gallery-grid">
@@ -260,6 +283,7 @@ HTML
                 <img src="images/t%C3%B6rpelajh%C3%A1r.jpg" alt="Pygmy Three-Toed Sloth">
                 <div class="item-info">
                     <h3>Pygmy Three-Toed Sloth (Bradypus pygmaeus)</h3>
+                    <div class="art-meta">2025 · Colored pencil and digital lightwork · 30 × 40 cm</div>
                     <p>The first featured species: This charming, cat-sized little creature is one of the rarest mammals on Earth — only about 100 individuals remain, living exclusively on a tiny island.</p>
                 </div>
             </div>
@@ -268,6 +292,7 @@ HTML
                 <img src="images/tapanuior%C3%A1ngut%C3%A1n.jpg" alt="Tapanuli Orangutan">
                 <div class="item-info">
                     <h3>Tapanuli Orangutan (Pongo tapanuliensis)</h3>
+                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
                     <p>The rarest great ape species on Earth, with fewer than 800 individuals remaining in the wild.</p>
                 </div>
             </div>
@@ -276,6 +301,7 @@ HTML
                 <img src="images/andesihegyimacska.png" alt="Andean Mountain Cat">
                 <div class="item-info">
                     <h3>Andean mountain cat (Leopardus jacobita)</h3>
+                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
                     <p>The Andean mountain cat is one of the rarest and least known wild cat species in the world. It is estimated that fewer than 1,500 individuals remain in the wild, living in isolated populations across the high-altitude regions of the Andes.</p>
                 </div>
             </div>
@@ -284,6 +310,7 @@ HTML
                 <img src="images/k%C3%ADnai%20tobzoska.jpg" alt="Chinese Pangolin">
                 <div class="item-info">
                     <h3>Chinese Pangolin (Manis pentadactyla)</h3>
+                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
                     <p>Meet the next Guardian of Light: the Chinese pangolin (Manis pentadactyla). The only mammal wrapped in hard, protective scales — once nature’s perfect armor. Today, it can’t protect them from humans. Poaching and illegal trade make them one of the most endangered and trafficked mammals on Earth.</p>
                 </div>
             </div>
@@ -292,13 +319,17 @@ HTML
 
     <section id="luminous-visions" class="gallery-section">
         <h2>Luminous Visions</h2>
-        <p class="section-subtitle">These are experimental projects where I combine glow art elements with traditional graphite, pastel, and colored pencil techniques. The Guardians of Light series evolved from this foundation.</p>
+        
+        <p class="section-subtitle">
+            A collection of experimental portraits and figurative works exploring the visual language of light. The Guardians of Light series evolved from the techniques and ideas developed within this project.
+        </p>
         
         <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="images/Joker.jpg" alt="Joker">
                 <div class="item-info">
                     <h3>Joker</h3>
+                    <div class="art-meta">Colored pencil & neon digital highlights</div>
                     <p>Colored pencil / Neon highlights</p>
                 </div>
             </div>
@@ -306,6 +337,7 @@ HTML
                 <img src="images/Homelander.jpg" alt="Homelander">
                 <div class="item-info">
                     <h3>Homelander</h3>
+                    <div class="art-meta">Mixed media & digital luminescence</div>
                     <p>Mixed media / Pop culture series</p>
                 </div>
             </div>
@@ -313,6 +345,7 @@ HTML
                 <img src="images/Tesla.jpg" alt="Tesla">
                 <div class="item-info">
                     <h3>Tesla</h3>
+                    <div class="art-meta">Conceptual drawing & digital post-processing</div>
                     <p>Conceptual drawing / Mixed media</p>
                 </div>
             </div>
@@ -320,6 +353,7 @@ HTML
                 <img src="images/k%C3%ADs%C3%A9rletiportr%C3%A9.jpg" alt="Experimental Portrait">
                 <div class="item-info">
                     <h3>Experimental Portrait</h3>
+                    <div class="art-meta">2024 · Graphite & Glow Art elements</div>
                     <p>Graphite & Glow Art</p>
                 </div>
             </div>
@@ -327,6 +361,7 @@ HTML
                 <img src="images/Zorya.jpg" alt="Zorya">
                 <div class="item-info">
                     <h3>Zorya</h3>
+                    <div class="art-meta">2025 · Pastel & Digital Luminescence</div>
                     <p>Pastel & Digital Luminescence</p>
                 </div>
             </div>
@@ -334,6 +369,7 @@ HTML
                 <img src="images/z%C3%B6ld%20f%C3%BClbeval%C3%B3.jpg" alt="Green Earring">
                 <div class="item-info">
                     <h3>Green Earring</h3>
+                    <div class="art-meta">2026 · Traditional drawing & luminescent contrast</div>
                     <p>Traditional drawing / Luminescent contrast</p>
                 </div>
             </div>
@@ -341,6 +377,7 @@ HTML
                 <img src="images/cigisz%C3%BCnet.jpg" alt="Cigarette Break">
                 <div class="item-info">
                     <h3>Cigarette Break</h3>
+                    <div class="art-meta">2025 · Mixed media & neon contrast</div>
                     <p>Mixed media / Neon contrast</p>
                 </div>
             </div>
@@ -348,21 +385,26 @@ HTML
                 <img src="images/purpleglow.jpg" alt="Purple Glow">
                 <div class="item-info">
                     <h3>Purple Glow</h3>
+                    <div class="art-meta">2023 · Chalk pastel & digital effects</div>
                     <p>Chalk pastel & Digital effects</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="personal-artworks" class="gallery-section">
-        <h2>Personal Artworks</h2>
-        <p class="section-subtitle">Standalone pieces ranging from social criticism to philosophical questions.</p>
+    <section id="selected-works" class="gallery-section">
+        <h2>Selected Works</h2>
+        
+        <p class="section-subtitle">
+            A selection of independent works exploring social criticism, symbolism, philosophy and the human condition.
+        </p>
         
         <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="images/A%20mester%20es%20a%20muzsa.jpg" alt="The Master and the Muse">
                 <div class="item-info">
                     <h3>The Master and the Muse</h3>
+                    <div class="art-meta">Colored pencil & narrative mixed media</div>
                     <p>Colored pencil / Narrative art</p>
                 </div>
             </div>
@@ -370,6 +412,7 @@ HTML
                 <img src="images/A%20holnap%20arnyeka.jpg" alt="Shadow of Tomorrow">
                 <div class="item-info">
                     <h3>Shadow of Tomorrow</h3>
+                    <div class="art-meta">Social criticism & mixed media</div>
                     <p>Social criticism / Mixed media</p>
                 </div>
             </div>
@@ -377,6 +420,7 @@ HTML
                 <img src="images/Az%20utolso%20szelfi.jpg" alt="The Last Selfie">
                 <div class="item-info">
                     <h3>The Last Selfie</h3>
+                    <div class="art-meta">Conceptual piece & colored pencil</div>
                     <p>Conceptual piece / Colored pencil</p>
                 </div>
             </div>
@@ -387,14 +431,21 @@ HTML
         <h2>About Me</h2>
         <p class="section-desc">The artist behind the pseudonym Jalraxe.</p>
         <div class="about-content">
-            <p>Welcome to my portfolio. I am Magyar Levente (Jalraxe), a visual artist specializing in combining traditional hand-drawn techniques with modern digital tools.</p>
-            <p>My artistic journey focuses on capturing deep human emotions, environmental issues, and striking contrasts using rich details and unique light effects. Every piece tells a unique story waiting to be discovered.</p>
+            <p>
+                I am Magyar Levente, working under the artistic name Jalraxe. My work combines traditional drawing techniques with digital enhancement to create images that balance realism, symbolism and atmosphere.
+            </p>
+            <p>
+                Light plays a central role throughout my portfolio—not merely as illumination, but as a narrative and emotional element. Whether portraying endangered wildlife, imagined characters or reflections on contemporary society, I seek to create images that invite viewers to look beyond the surface.
+            </p>
         </div>
     </section>
 
     <section id="contact" class="contact-section">
         <h2>Get in Touch</h2>
-        <p class="section-desc">Would you like to collaborate or purchase a piece? Feel free to reach out via email.</p>
+        
+        <p class="section-desc">
+            For commissions, exhibitions, collaborations or general inquiries, feel free to get in touch.
+        </p>
         <a href="mailto:your.email@example.com" class="contact-btn">Send an Email</a>
     </section>
 </main>
