@@ -18,70 +18,44 @@ HTML
             color: #e5e5e5;
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            padding: 0;
+            padding: 0 20px;
         }
 
-        /* --- FIX BORÍTÓKÉP (HERO BANNER) STÍLUSOK --- */
-        .hero-section {
-            position: relative;
-            width: 100%;
-            min-height: 80vh; /* A képernyő 80%-át tölti ki */
-            background: url('images/borito.jpg') dashed center center;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        header {
+            max-width: 1200px;
+            margin: 60px auto 40px auto;
             text-align: center;
-            padding: 40px 20px;
-        }
-
-        /* Sötét réteg a montázs felett, hogy a feliratok olvashatóak legyenek */
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(13, 13, 13, 0.65); 
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2; /* A sötét réteg fölé helyezi a szöveget */
-            max-width: 800px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 300;
-            letter-spacing: 6px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             color: #ffffff;
             margin-bottom: 5px;
         }
 
         .artist-alias {
-            font-size: 1.2rem;
-            letter-spacing: 4px;
+            font-size: 1rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: #ffaa00; /* Finom arany kiemelés */
+            color: #888888;
             margin-bottom: 30px;
         }
 
         nav {
-            margin: 30px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-top: 20px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
             padding: 15px 0;
         }
 
         nav a {
-            color: #ccc;
+            color: #999;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             margin: 0 15px;
             transition: color 0.3s ease;
@@ -91,25 +65,30 @@ HTML
             color: #ffffff;
         }
 
-        .intro {
-            font-size: 1.1rem;
-            color: #e5e5e5;
-            font-weight: 300;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .statement-text {
-            color: #aaaaaa;
-            font-style: italic;
-            font-size: 0.95rem;
-        }
-        /* --- BORÍTÓKÉP STÍLUSOK VÉGE --- */
-
         main {
             max-width: 1200px;
-            margin: 60px auto 0 auto;
-            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            margin: 40px auto 80px auto;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: 30px auto 0 auto;
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            font-weight: 300;
+            text-align: center;
         }
 
         .gallery-section {
@@ -177,23 +156,6 @@ HTML
             font-weight: 300;
         }
 
-        .art-meta {
-            color: #666;
-            font-size: 0.82rem;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
-
-        .award-banner {
-            margin: 40px 0 80px 0;
-            padding: 25px;
-            border: 1px solid #222;
-            background: #121212;
-            border-radius: 4px;
-            text-align: center;
-            border-left: 4px solid #ffaa00;
-        }
-
         .about-section {
             max-width: 800px;
             margin: 0 auto 100px auto;
@@ -251,58 +213,68 @@ HTML
             letter-spacing: 1px;
         }
 
-        /* RESZPONZÍVITÁS */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
             nav a {
-                display: inline-block;
-                margin: 5px 10px;
+                display: block;
+                margin: 10px 0;
             }
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
         }
+
+        .art-meta {
+            color: #666;
+            font-size: 0.82rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 <body>
 
-<header id="home" class="hero-section">
-    <div class="hero-overlay"></div>
-    
-    <div class="hero-content">
-        <h1>Magyar Levente</h1>
-        <div class="artist-alias">— Jalraxe —</div>
+<header>
+    <h1>Magyar Levente</h1>
+    <div class="artist-alias">(Jalraxe)</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#guardians-of-light">Guardians of Light</a>
+        <a href="#luminous-visions">Luminous Visions</a>
+        <a href="#selected-works">Selected Works</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <img src="images/borito.jpg" alt="Magyar Levente - Portfolio Artwork Showcase">
         
         <p class="intro">
             Through traditional drawing and digital illumination, I explore the relationship between nature, symbolism and transformation. My work seeks moments where light becomes more than a visual effect—it becomes meaning.
         </p>
 
-        <div class="statement-text">
-            "Drawing with light. Through traditional drawing and digital illumination, I explore the connection between nature, symbolism and transformation."
+        <div style="max-width:700px;margin:40px auto 0 auto;text-align:center;color:#888;font-style:italic;">
+            Drawing with light. Through traditional drawing and digital illumination, I explore the connection between nature, symbolism and transformation.
         </div>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#guardians-of-light">Guardians of Light</a>
-            <a href="#luminous-visions">Luminous Visions</a>
-            <a href="#selected-works">Selected Works</a>
-            <a href="#about">About Me</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </div>
-</header>
-
-<main>
-    <div class="award-banner">
-        <strong>Lélekben fiatal</strong><br>
-        2nd Prize – Zsilip Art Association National Competition (2025)
-    </div>
+        <div style="margin-top:50px;padding:20px;border:1px solid #222;background:#121212;border-radius:4px;">
+            <strong>Lélekben fiatal</strong><br>
+            2nd Prize – Zsilip Art Association National Competition (2025)
+        </div>
+    </section>
 
     <section id="guardians-of-light" class="gallery-section">
         <h2>Guardians of Light</h2>
+        
         <div class="section-desc">
-            <p>Guardians of Light presents critically endangered species through luminous portraits that blend traditional drawing with digital lightwork. Each artwork aims to highlight the beauty, uniqueness and fragility of Earth's most threatened wildlife.</p>
-            <p style="font-size:0.9rem;color:#666;margin-top:20px;">Colored pencil on Clairefontaine Pastelmat paper, enhanced with digital illumination.</p>
+            <p>
+                Guardians of Light presents critically endangered species through luminous portraits that blend traditional drawing with digital lightwork. Each artwork aims to highlight the beauty, uniqueness and fragility of Earth's most threatened wildlife.
+            </p>
+
+            <p style="font-size:0.9rem;color:#666;margin-top:20px;">
+                Colored pencil on Clairefontaine Pastelmat paper, enhanced with digital illumination.
+            </p>
         </div>
         
         <div class="gallery-grid">
@@ -314,6 +286,7 @@ HTML
                     <p>The first featured species: This charming, cat-sized little creature is one of the rarest mammals on Earth — only about 100 individuals remain, living exclusively on a tiny island.</p>
                 </div>
             </div>
+            
             <div class="gallery-item">
                 <img src="images/tapanuior%C3%A1ngut%C3%A1n.jpg" alt="Tapanuli Orangutan">
                 <div class="item-info">
@@ -322,20 +295,22 @@ HTML
                     <p>The rarest great ape species on Earth, with fewer than 800 individuals remaining in the wild.</p>
                 </div>
             </div>
+            
             <div class="gallery-item">
                 <img src="images/andesihegyimacska.png" alt="Andean Mountain Cat">
                 <div class="item-info">
                     <h3>Andean mountain cat (Leopardus jacobita)</h3>
                     <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
-                    <p>The Andean mountain cat is one of the rarest and least known wild cat species in the world. It is estimated that fewer than 1,500 individuals remain in the wild.</p>
+                    <p>The Andean mountain cat is one of the rarest and least known wild cat species in the world. It is estimated that fewer than 1,500 individuals remain in the wild, living in isolated populations across the high-altitude regions of the Andes.</p>
                 </div>
             </div>
+            
             <div class="gallery-item">
                 <img src="images/k%C3%ADnai%20tobzoska.jpg" alt="Chinese Pangolin">
                 <div class="item-info">
                     <h3>Chinese Pangolin (Manis pentadactyla)</h3>
                     <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
-                    <p>Meet the next Guardian of Light: the Chinese pangolin. Poaching and illegal trade make them one of the most endangered and trafficked mammals on Earth.</p>
+                    <p>Meet the next Guardian of Light: the Chinese pangolin (Manis pentadactyla). The only mammal wrapped in hard, protective scales — once nature’s perfect armor. Today, it can’t protect them from humans. Poaching and illegal trade make them one of the most endangered and trafficked mammals on Earth.</p>
                 </div>
             </div>
         </div>
@@ -343,7 +318,10 @@ HTML
 
     <section id="luminous-visions" class="gallery-section">
         <h2>Luminous Visions</h2>
-        <p class="section-subtitle">A collection of experimental portraits and figurative works exploring the visual language of light.</p>
+        
+        <p class="section-subtitle">
+            A collection of experimental portraits and figurative works exploring the visual language of light. The Guardians of Light series evolved from the techniques and ideas developed within this project.
+        </p>
         
         <div class="gallery-grid">
             <div class="gallery-item">
@@ -371,7 +349,7 @@ HTML
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="images/k%C3%A1s%C3%A9rletiportr%C3%A9.jpg" alt="Experimental Portrait">
+                <img src="images/k%C3%ADs%C3%A9rletiportr%C3%A9.jpg" alt="Experimental Portrait">
                 <div class="item-info">
                     <h3>Experimental Portrait</h3>
                     <div class="art-meta">2024 · Graphite & Glow Art elements</div>
@@ -415,7 +393,10 @@ HTML
 
     <section id="selected-works" class="gallery-section">
         <h2>Selected Works</h2>
-        <p class="section-subtitle">A selection of independent works exploring social criticism, symbolism, philosophy and the human condition.</p>
+        
+        <p class="section-subtitle">
+            A selection of independent works exploring social criticism, symbolism, philosophy and the human condition.
+        </p>
         
         <div class="gallery-grid">
             <div class="gallery-item">
@@ -449,14 +430,21 @@ HTML
         <h2>About Me</h2>
         <p class="section-desc">The artist behind the pseudonym Jalraxe.</p>
         <div class="about-content">
-            <p>I am Magyar Levente, working under the artistic name Jalraxe. My work combines traditional drawing techniques with digital enhancement to create images that balance realism, symbolism and atmosphere.</p>
-            <p>Light plays a central role throughout my portfolio—not merely as illumination, but as a narrative and emotional element.</p>
+            <p>
+                I am Magyar Levente, working under the artistic name Jalraxe. My work combines traditional drawing techniques with digital enhancement to create images that balance realism, symbolism and atmosphere.
+            </p>
+            <p>
+                Light plays a central role throughout my portfolio—not merely as illumination, but as a narrative and emotional element. Whether portraying endangered wildlife, imagined characters or reflections on contemporary society, I seek to create images that invite viewers to look beyond the surface.
+            </p>
         </div>
     </section>
 
     <section id="contact" class="contact-section">
         <h2>Get in Touch</h2>
-        <p class="section-desc">For commissions, exhibitions, collaborations or general inquiries, feel free to get in touch.</p>
+        
+        <p class="section-desc">
+            For commissions, exhibitions, collaborations or general inquiries, feel free to get in touch.
+        </p>
         <a href="mailto:your.email@example.com" class="contact-btn">Send an Email</a>
     </section>
 </main>
