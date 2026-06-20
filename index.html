@@ -70,26 +70,80 @@ HTML
             margin: 0 auto;
         }
 
-        .hero {
+        /* --- ÚJ: Dinamikus Hero Tabló (CSS Grid) --- */
+        .hero-collage {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
             margin: 40px auto 80px auto;
-            text-align: center;
+            align-items: center;
         }
 
-        .hero img {
+        .collage-item {
             width: 100%;
-            max-height: 600px;
+            height: 320px;
             object-fit: cover;
             border-radius: 4px;
+            filter: brightness(0.9);
+            transition: filter 0.3s ease;
+        }
+
+        .collage-item:hover {
+            filter: brightness(1);
+        }
+
+        /* A középső szöveges blokk pozicionálása a rácsban */
+        .hero-center-text {
+            grid-column: span 2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-center-text h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .hero-center-text .alias {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 25px;
         }
 
         .intro {
-            max-width: 800px;
-            margin: 30px auto 0 auto;
-            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            font-size: 1rem;
             color: #aaaaaa;
             font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .statement-text {
+            max-width: 500px;
+            margin: 25px auto 0 auto;
+            color: #ffaa00; /* Finom arany/neon kiemelés az "illumination" hangulathoz */
+            font-style: italic;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        .award-banner {
+            grid-column: span 4;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #222;
+            background: #121212;
+            border-radius: 4px;
             text-align: center;
         }
+        /* --- Tabló stílusok vége --- */
 
         .gallery-section {
             margin-bottom: 100px;
@@ -213,6 +267,30 @@ HTML
             letter-spacing: 1px;
         }
 
+        .art-meta {
+            color: #666;
+            font-size: 0.82rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* RESZPONZÍV NÉZET: Mobilon a tabló elemei szépen egymás alá folynak */
+        @media (max-width: 900px) {
+            .hero-collage {
+                grid-template-columns: 1fr;
+            }
+            .hero-center-text {
+                grid-column: span 1;
+                order: -1; /* A szöveg kerüljön legfelülre mobilon */
+            }
+            .award-banner {
+                grid-column: span 1;
+            }
+            .collage-item {
+                height: 400px;
+            }
+        }
+
         @media (max-width: 768px) {
             nav a {
                 display: block;
@@ -221,13 +299,6 @@ HTML
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
-        }
-
-        .art-meta {
-            color: #666;
-            font-size: 0.82rem;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -247,20 +318,32 @@ HTML
 </header>
 
 <main>
-    <section id="home" class="hero">
-        <img src="images/borito.jpg" alt="Magyar Levente - Portfolio Artwork Showcase">
-        
-        <p class="intro">
-            Through traditional drawing and digital illumination, I explore the relationship between nature, symbolism and transformation. My work seeks moments where light becomes more than a visual effect—it becomes meaning.
-        </p>
+    <section id="home">
+        <div class="hero-collage">
+            
+            <img class="collage-item" src="images/k%C3%ADnai%20tobzoska.jpg" alt="Chinese Pangolin">
+            <img class="collage-item" src="images/t%C3%B6rpelajh%C3%A1r.jpg" alt="Pygmy Three-Toed Sloth">
+            
+            <div class="hero-center-text">
+                <h2>Magyar Levente</h2>
+                <div class="alias">— Jalraxe —</div>
+                
+                <p class="intro">
+                    Through traditional drawing and digital illumination, I explore the relationship between nature, symbolism and transformation. My work seeks moments where light becomes more than a visual effect—it becomes meaning.
+                </p>
 
-        <div style="max-width:700px;margin:40px auto 0 auto;text-align:center;color:#888;font-style:italic;">
-            Drawing with light. Through traditional drawing and digital illumination, I explore the connection between nature, symbolism and transformation.
-        </div>
-
-        <div style="margin-top:50px;padding:20px;border:1px solid #222;background:#121212;border-radius:4px;">
-            <strong>Lélekben fiatal</strong><br>
-            2nd Prize – Zsilip Art Association National Competition (2025)
+                <div class="statement-text">
+                    Drawing with light. Through traditional drawing and digital illumination, I explore the connection between nature, symbolism and transformation.
+                </div>
+            </div>
+            
+            <img class="collage-item" src="images/tapanuior%C3%A1ngut%C3%A1n.jpg" alt="Tapanuli Orangutan">
+            <img class="collage-item" src="images/k%C3%ADs%C3%A9rletiportr%C3%A9.jpg" alt="Experimental Portrait">
+            
+            <div class="award-banner">
+                <strong>Lélekben fiatal</strong><br>
+                2nd Prize – Zsilip Art Association National Competition (2025)
+            </div>
         </div>
     </section>
 
@@ -441,7 +524,6 @@ HTML
 
     <section id="contact" class="contact-section">
         <h2>Get in Touch</h2>
-        
         <p class="section-desc">
             For commissions, exhibitions, collaborations or general inquiries, feel free to get in touch.
         </p>
