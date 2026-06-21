@@ -18,27 +18,59 @@ HTML
             color: #e5e5e5;
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            padding: 0 20px;
         }
 
-        header {
+        /* --- STYLISH HERO BANNER HÁTTÉRKÉPPEL --- */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            min-height: 75vh; /* A képernyő magasságának 75%-a */
+            background: url('images/borito.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+        }
+
+        /* Finom sötét maszk a képen, hogy a szövegek és linkek tökéletesen látszódjanak */
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 13, 13, 0.6);
+            z-index: 1;
+        }
+
+        /* Minden tartalom a sötétítő réteg fölé kerül */
+        .hero-banner-content {
+            position: relative;
+            z-index: 2;
             max-width: 1200px;
-            margin: 60px auto 40px auto;
+            width: 100%;
             text-align: center;
         }
 
+        header {
+            margin-bottom: 40px;
+        }
+
         h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 300;
-            letter-spacing: 4px;
+            letter-spacing: 6px;
             text-transform: uppercase;
             color: #ffffff;
             margin-bottom: 5px;
         }
 
         .artist-alias {
-            font-size: 1rem;
-            letter-spacing: 2px;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: #888888;
             margin-bottom: 30px;
@@ -46,16 +78,16 @@ HTML
 
         nav {
             margin-top: 20px;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding: 15px 0;
         }
 
         nav a {
-            color: #999;
+            color: #bbb;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 2px;
             margin: 0 15px;
             transition: color 0.3s ease;
@@ -65,30 +97,21 @@ HTML
             color: #ffffff;
         }
 
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero {
-            margin: 40px auto 80px auto;
-            text-align: center;
-        }
-
-        .hero img {
-            width: 100%;
-            max-height: 600px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-
         .intro {
             max-width: 800px;
-            margin: 30px auto 0 auto;
-            font-size: 1.1rem;
-            color: #aaaaaa;
+            margin: 40px auto 0 auto;
+            font-size: 1.15rem;
+            color: #dddddd;
             font-weight: 300;
             text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        /* --- BANNER STÍLUSOK VÉGE --- */
+
+        main {
+            max-width: 1200px;
+            margin: 80px auto 0 auto;
+            padding: 0 20px;
         }
 
         .gallery-section {
@@ -214,6 +237,7 @@ HTML
         }
 
         @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
             nav a {
                 display: block;
                 margin: 10px 0;
@@ -233,45 +257,33 @@ HTML
 </head>
 <body>
 
-<header>
-    <h1>Magyar Levente</h1>
-    <div class="artist-alias">(Jalraxe)</div>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#guardians-of-light">Guardians of Light</a>
-        <a href="#luminous-visions">Luminous Visions</a>
-        <a href="#selected-works">Selected Works</a>
-        <a href="#about">About Me</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+<section id="home" class="hero-banner">
+    <div class="hero-banner-content">
+        <header>
+            <h1>Magyar Levente</h1>
+            <div class="artist-alias">(Jalraxe)</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#guardians-of-light">Guardians of Light</a>
+                <a href="#luminous-visions">Luminous Visions</a>
+                <a href="#unique-inspirations">Unique Inspirations</a>
+                <a href="#about">About Me</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
 
-<main>
-    <section id="home" class="hero">
-        <img src="images/borito.jpg" alt="Magyar Levente - Portfolio Artwork Showcase">
-        
         <p class="intro">
             Through traditional drawing and digital illumination, I explore the relationship between nature, symbolism and transformation. My work seeks moments where light becomes more than a visual effect—it becomes meaning.
         </p>
+    </div>
+</section>
 
-       
-        </div>
-
-        
-        </div>
-    </section>
-
+<main>
     <section id="guardians-of-light" class="gallery-section">
         <h2>Guardians of Light</h2>
-        
         <div class="section-desc">
-            <p>
-                Guardians of Light presents critically endangered species through luminous portraits that blend traditional drawing with digital lightwork. Each artwork aims to highlight the beauty, uniqueness and fragility of Earth's most threatened wildlife.
-            </p>
-
-            <p style="font-size:0.9rem;color:#666;margin-top:20px;">
-                Colored pencil on Clairefontaine Pastelmat paper, enhanced with digital illumination.
-            </p>
+            <p>Guardians of Light presents critically endangered species through luminous portraits that blend traditional drawing with digital lightwork. Each artwork aims to highlight the beauty, uniqueness and fragility of Earth's most threatened wildlife.</p>
+            <p style="font-size:0.9rem;color:#666;margin-top:20px;">Colored pencil on Clairefontaine Pastelmat paper, enhanced with digital illumination.</p>
         </div>
         
         <div class="gallery-grid">
@@ -283,7 +295,6 @@ HTML
                     <p>The first featured species: This charming, cat-sized little creature is one of the rarest mammals on Earth — only about 100 individuals remain, living exclusively on a tiny island.</p>
                 </div>
             </div>
-            
             <div class="gallery-item">
                 <img src="images/tapanuior%C3%A1ngut%C3%A1n.jpg" alt="Tapanuli Orangutan">
                 <div class="item-info">
@@ -292,7 +303,6 @@ HTML
                     <p>The rarest great ape species on Earth, with fewer than 800 individuals remaining in the wild.</p>
                 </div>
             </div>
-            
             <div class="gallery-item">
                 <img src="images/andesihegyimacska.png" alt="Andean Mountain Cat">
                 <div class="item-info">
@@ -301,7 +311,6 @@ HTML
                     <p>The Andean mountain cat is one of the rarest and least known wild cat species in the world. It is estimated that fewer than 1,500 individuals remain in the wild, living in isolated populations across the high-altitude regions of the Andes.</p>
                 </div>
             </div>
-            
             <div class="gallery-item">
                 <img src="images/k%C3%ADnai%20tobzoska.jpg" alt="Chinese Pangolin">
                 <div class="item-info">
@@ -315,10 +324,7 @@ HTML
 
     <section id="luminous-visions" class="gallery-section">
         <h2>Luminous Visions</h2>
-        
-        <p class="section-subtitle">
-            A collection of experimental portraits and figurative works exploring the visual language of light. The Guardians of Light series evolved from the techniques and ideas developed within this project.
-        </p>
+        <p class="section-subtitle">A collection of experimental portraits and figurative works exploring the visual language of light. The Guardians of Light series evolved from the techniques and ideas developed within this project.</p>
         
         <div class="gallery-grid">
             <div class="gallery-item">
@@ -346,7 +352,7 @@ HTML
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="images/k%C3%ADs%C3%A9rletiportr%C3%A9.jpg" alt="Experimental Portrait">
+                <img src="images/k%C3%A1s%C3%A9rletiportr%C3%A9.jpg" alt="Experimental Portrait">
                 <div class="item-info">
                     <h3>Experimental Portrait</h3>
                     <div class="art-meta">2024 · Graphite & Glow Art elements</div>
@@ -388,36 +394,82 @@ HTML
         </div>
     </section>
 
-    <section id="selected-works" class="gallery-section">
-        <h2>Selected Works</h2>
-        
+    <section id="unique-inspirations" class="gallery-section">
+        <h2>Unique Inspirations</h2>
         <p class="section-subtitle">
-            A selection of independent works exploring social criticism, symbolism, philosophy and the human condition.
+            These drawings are made based on unique inspirations or thematic competitions in a magical realist style.
         </p>
         
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="images/A%20mester%20es%20a%20muzsa.jpg" alt="The Master and the Muse">
+                <img src="images/Lelekben%20fiatal.jpg" alt="Lélekben fiatal">
                 <div class="item-info">
-                    <h3>The Master and the Muse</h3>
-                    <div class="art-meta">Colored pencil & narrative mixed media</div>
-                    <p>Colored pencil / Narrative art</p>
+                    <h3>Lélekben fiatal</h3>
+                    <div class="art-meta">2025 · Grafit és színes ceruza, papír · 30 × 42 cm</div>
+                    <p>A Zsilip Művészeti Egyesület pályázatán „Múlt és jövő határán” témában meghirdetett pályázaton 2. helyezést elért képem.</p>
                 </div>
             </div>
+
             <div class="gallery-item">
-                <img src="images/A%20holnap%20arnyeka.jpg" alt="Shadow of Tomorrow">
+                <img src="images/Az%20utolso%20szelfi.jpg" alt="Az utolsó szelfi">
                 <div class="item-info">
-                    <h3>Shadow of Tomorrow</h3>
-                    <div class="art-meta">Social criticism & mixed media</div>
-                    <p>Social criticism / Mixed media</p>
+                    <h3>Az utolsó szelfi</h3>
+                    <div class="art-meta">2025 · Színes ceruza, pasztelmat papír · 30 × 40 cm</div>
+                    <p>A Zsilip Művészeti Egyesület tematikus pályázatán kiállítási helyezést elért képem.</p>
                 </div>
             </div>
+
             <div class="gallery-item">
-                <img src="images/Az%20utolso%20szelfi.jpg" alt="The Last Selfie">
+                <img src="images/A%20fohasz.jpg" alt="A fohász">
                 <div class="item-info">
-                    <h3>The Last Selfie</h3>
-                    <div class="art-meta">Conceptual piece & colored pencil</div>
-                    <p>Conceptual piece / Colored pencil</p>
+                    <h3>A fohász</h3>
+                    <div class="art-meta">2024 · Színes ceruza, pasztelmat papír · 30 × 40 cm</div>
+                    <p>Ez volt az első teljesen eredeti rajzom.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Utolso%20kivansag.jpg" alt="Utolsó kívánság">
+                <div class="item-info">
+                    <h3>Utolsó kívánság</h3>
+                    <div class="art-meta">2022 · Színes ceruza, pasztelmat papír · 30 × 40 cm</div>
+                    <p>Tematikailag a kedvenc képem.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Mindorokke.jpg" alt="Mindörökké">
+                <div class="item-info">
+                    <h3>Mindörökké</h3>
+                    <div class="art-meta">2024 · Színes ceruza, pasztelmat papír · 40 × 30 cm</div>
+                    <p>Színes ceruza, pasztelmat papír.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/A%20mester%20es%20a%20muzsa.jpg" alt="Mester és Múzsa">
+                <div class="item-info">
+                    <h3>Mester és Múzsa</h3>
+                    <div class="art-meta">2026 · Színes ceruza, pasztelmat papír · 40 × 30 cm</div>
+                    <p>Színes ceruza, pasztelmat papír.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Zaroakkord.jpg" alt="Záróakkord">
+                <div class="item-info">
+                    <h3>Záróakkord</h3>
+                    <div class="art-meta">2025 · Színes ceruza, pasztelmat papír · 30 × 40 cm</div>
+                    <p>Színes ceruza, pasztelmat papír.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/A%20holnap%20arnyeka.jpg" alt="A holnap árnyéka">
+                <div class="item-info">
+                    <h3>A holnap árnyéka</h3>
+                    <div class="art-meta">2026 · Színes ceruza, pasztelmat papír · 40 × 30 cm</div>
+                    <p>Színes ceruza, pasztelmat papír.</p>
                 </div>
             </div>
         </div>
@@ -427,21 +479,14 @@ HTML
         <h2>About Me</h2>
         <p class="section-desc">The artist behind the pseudonym Jalraxe.</p>
         <div class="about-content">
-            <p>
-                I am Magyar Levente, working under the artistic name Jalraxe. My work combines traditional drawing techniques with digital enhancement to create images that balance realism, symbolism and atmosphere.
-            </p>
-            <p>
-                Light plays a central role throughout my portfolio—not merely as illumination, but as a narrative and emotional element. Whether portraying endangered wildlife, imagined characters or reflections on contemporary society, I seek to create images that invite viewers to look beyond the surface.
-            </p>
+            <p>I am Magyar Levente, working under the artistic name Jalraxe. My work combines traditional drawing techniques with digital enhancement to create images that balance realism, symbolism and atmosphere.</p>
+            <p>Light plays a central role throughout my portfolio—not merely as illumination, but as a narrative and emotional element. Whether portraying endangered wildlife, imagined characters or reflections on contemporary society, I seek to create images that invite viewers to look beyond the surface.</p>
         </div>
     </section>
 
     <section id="contact" class="contact-section">
         <h2>Get in Touch</h2>
-        
-        <p class="section-desc">
-            For commissions, exhibitions, collaborations or general inquiries, feel free to get in touch.
-        </p>
+        <p class="section-desc">For commissions, exhibitions, collaborations or general inquiries, feel free to get in touch.</p>
         <a href="mailto:your.email@example.com" class="contact-btn">Send an Email</a>
     </section>
 </main>
