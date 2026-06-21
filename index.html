@@ -1,4 +1,3 @@
-HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,74 +19,43 @@ HTML
             line-height: 1.6;
         }
 
-        /* --- STYLISH HERO BANNER HÁTTÉRKÉPPEL --- */
-        .hero-banner {
-            position: relative;
-            width: 100%;
-            min-height: 75vh; /* A képernyő magasságának 75%-a */
-            background: url('images/borito.jpg') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 60px 20px;
-        }
-
-        /* Finom sötét maszk a képen, hogy a szövegek és linkek tökéletesen látszódjanak */
-        .hero-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(13, 13, 13, 0.6);
-            z-index: 1;
-        }
-
-        /* Minden tartalom a sötétítő réteg fölé kerül */
-        .hero-banner-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            width: 100%;
-            text-align: center;
-        }
-
+        /* --- TISZTA, RENDELKEZÉSRE ÁLLÓ FEJLÉC --- */
         header {
-            margin-bottom: 40px;
+            max-width: 1200px;
+            margin: 40px auto 20px auto;
+            text-align: center;
+            padding: 0 20px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 300;
-            letter-spacing: 6px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             color: #ffffff;
             margin-bottom: 5px;
         }
 
         .artist-alias {
-            font-size: 1.1rem;
-            letter-spacing: 3px;
+            font-size: 1rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: #888888;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         nav {
             margin-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
             padding: 15px 0;
         }
 
         nav a {
-            color: #bbb;
+            color: #999;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             margin: 0 15px;
             transition: color 0.3s ease;
@@ -97,20 +65,44 @@ HTML
             color: #ffffff;
         }
 
+        /* --- HERO SZEKCIÓ (NINCS ÖSSZECSÚSZÁS) --- */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        .hero img {
+            width: 100%;
+            height: auto;
+            max-height: 650px;
+            object-fit: cover;
+            display: block;
+        }
+
         .intro {
             max-width: 800px;
             margin: 40px auto 0 auto;
             font-size: 1.15rem;
-            color: #dddddd;
+            color: #aaaaaa;
             font-weight: 300;
             text-align: center;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.7;
         }
-        /* --- BANNER STÍLUSOK VÉGE --- */
 
+        /* --- GALÉRIA ÉS TARTALOM --- */
         main {
             max-width: 1200px;
-            margin: 80px auto 0 auto;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
@@ -179,6 +171,13 @@ HTML
             font-weight: 300;
         }
 
+        .art-meta {
+            color: #666;
+            font-size: 0.82rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
         .about-section {
             max-width: 800px;
             margin: 0 auto 100px auto;
@@ -237,7 +236,6 @@ HTML
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
             nav a {
                 display: block;
                 margin: 10px 0;
@@ -246,36 +244,30 @@ HTML
                 grid-template-columns: 1fr;
             }
         }
-
-        .art-meta {
-            color: #666;
-            font-size: 0.82rem;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
     </style>
 </head>
 <body>
 
-<section id="home" class="hero-banner">
-    <div class="hero-banner-content">
-        <header>
-            <h1>Magyar Levente</h1>
-            <div class="artist-alias">(Jalraxe)</div>
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#guardians-of-light">Guardians of Light</a>
-                <a href="#luminous-visions">Luminous Visions</a>
-                <a href="#unique-inspirations">Unique Inspirations</a>
-                <a href="#about">About Me</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </header>
+<header>
+    <h1>Magyar Levente</h1>
+    <div class="artist-alias">(Jalraxe)</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#guardians-of-light">Guardians of Light</a>
+        <a href="#luminous-visions">Luminous Visions</a>
+        <a href="#unique-inspirations">Unique Inspirations</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-        <p class="intro">
-            Through traditional drawing and digital illumination, I explore the relationship between nature, symbolism and transformation. My work seeks moments where light becomes more than a visual effect—it becomes meaning.
-        </p>
+<section id="home" class="hero">
+    <div class="hero-image-container">
+        <img src="images/borito.jpg" alt="Magyar Levente - Portfolio Artwork Showcase">
     </div>
+    <p class="intro">
+        Through traditional drawing and digital illumination, I explore the relationship between nature, symbolism and transformation. My work seeks moments where light becomes more than a visual effect—it becomes meaning.
+    </p>
 </section>
 
 <main>
@@ -352,7 +344,7 @@ HTML
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="images/k%C3%A1s%C3%A9rletiportr%C3%A9.jpg" alt="Experimental Portrait">
+                <img src="images/k%C3%ADs%C3%A9rletiportr%C3%A9.jpg" alt="Experimental Portrait">
                 <div class="item-info">
                     <h3>Experimental Portrait</h3>
                     <div class="art-meta">2024 · Graphite & Glow Art elements</div>
