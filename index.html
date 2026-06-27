@@ -145,11 +145,18 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
+        /* Kurzor módosítása, hogy látszódjon, hogy kattintható */
         .gallery-item img {
             width: 100%;
             height: 450px;
             object-fit: cover;
             display: block;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            opacity: 0.85;
         }
 
         .item-info {
@@ -235,6 +242,69 @@
             letter-spacing: 1px;
         }
 
+        /* --- LIGHTBOX (FELUGRÓ ABLAK) STÍLUS --- */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            transform: scale(0.95);
+            transition: transform 0.4s ease;
+        }
+
+        .lightbox-overlay.active .lightbox-image {
+            transform: scale(1);
+        }
+
+        .lightbox-caption {
+            margin-top: 20px;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-align: center;
+            max-width: 80%;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #888;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            user-select: none;
+        }
+
+        .lightbox-close:hover {
+            color: #ffffff;
+        }
+
         @media (max-width: 768px) {
             nav a {
                 display: block;
@@ -242,6 +312,11 @@
             }
             .gallery-grid {
                 grid-template-columns: 1fr;
+            }
+            .lightbox-close {
+                top: 15px;
+                right: 20px;
+                font-size: 2rem;
             }
         }
     </style>
@@ -503,6 +578,51 @@
 <footer>
     <p>&copy; 2026 Magyar Levente (Jalraxe). All rights reserved.</p>
 </footer>
+
+<div class="lightbox-overlay" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img class="lightbox-image" id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const galleryImages = document.querySelectorAll('.gallery-grid .gallery-item img');
+
+    galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+            // Megkeressük a képhez tartozó címet a kártyán belül
+            const title = img.parentElement.querySelector('.item-info h3').innerText;
+            
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.innerText = title;
+            lightbox.classList.add('active');
+        });
+    });
+
+    // Bezárás a kis X gombbal
+    lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+
+    // Bezárás ha a sötét háttérre kattintunk
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+
+    // Bezárás az ESC billentyűvel
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+        }
+    });
+</script>
 
 </body>
 </html>
