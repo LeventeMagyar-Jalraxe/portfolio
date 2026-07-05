@@ -127,12 +127,12 @@
             max-width: 900px;
         }
 
-      .gallery-grid {
+        .gallery-grid {
             display: grid;
-            /* auto-fit helyett auto-fill, hogy a végén lévő képek ne nyúljanak el */
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
         }
+
         .gallery-item {
             background-color: #121212;
             border-radius: 4px;
@@ -147,13 +147,14 @@
 
         .gallery-item img {
             width: 100%;
-            height: 350px; /* Vagy amilyen magas kártyákat szeretnél */
+            height: 380px;
             object-fit: contain;
-            background-color: #080808; 
+            background-color: #080808;
             display: block;
             cursor: pointer;
             transition: opacity 0.3s ease;
         }
+
         .gallery-item img:hover {
             opacity: 0.85;
         }
@@ -524,22 +525,21 @@
                 </div>
             </div>
             <div class="gallery-item">
-    <img src="./images/mindorokke.jpg" alt="Forever">
-    <div class="item-info">
-        <h3>Forever</h3>
-        <div class="art-meta">2024 · Colored pencil on Pastelmat paper · 40 × 30 cm</div>
-        <p>Detailed figurative study focusing on texture and depth using professional colored pencils.</p>
-    </div>
+                <img src="./images/mindorokke.jpg" alt="Forever">
+                <div class="item-info">
+                    <h3>Forever</h3>
+                    <div class="art-meta">2024 · Colored pencil on Pastelmat paper · 40 × 30 cm</div>
+                    <p>Detailed figurative study focusing on texture and depth using professional colored pencils.</p>
                 </div>
             </div>
             <div class="gallery-item">
-    <img src="./images/mesteresmuzsa.jpg" alt="Master and Muse">
-    <div class="item-info">
-        <h3>Master and Muse</h3>
-        <div class="art-meta">2026 · Colored pencil on Pastelmat paper · 40 × 30 cm</div>
-        <p>An exploration of creative energy and artistic synergy captured on premium surface.</p>
-    </div>
-</div>
+                <img src="./images/mesteresmuzsa.jpg" alt="Master and Muse">
+                <div class="item-info">
+                    <h3>Master and Muse</h3>
+                    <div class="art-meta">2026 · Colored pencil on Pastelmat paper · 40 × 30 cm</div>
+                    <p>An exploration of creative energy and artistic synergy captured on premium surface.</p>
+                </div>
+            </div>
             <div class="gallery-item">
                 <img src="images/Zaroakkord.jpg" alt="Final Chord">
                 <div class="item-info">
@@ -556,6 +556,7 @@
                     <p>A conceptual piece exploring time, anticipation, and atmosphere in a magical realist style.</p>
                 </div>
             </div>
+        </div>
     </section>
 
     <section id="about" class="about-section">
