@@ -576,6 +576,7 @@
         </div> <!-- EZ ZÁRJA BE A RÁCSOT -->
     </section> <!-- EZ ZÁRJA BE A SZEKCIÓT -->
 
+    <!-- About Section -->
     <section id="about" class="about-section">
         <h2>About Me</h2>
         <p class="section-desc">The artist behind the pseudonym Jalraxe.</p>
@@ -585,23 +586,34 @@
         </div>
     </section>
 
+    <!-- Contact Section (Valós email beállítva) -->
     <section id="contact" class="contact-section">
         <h2>Get in Touch</h2>
         <p class="section-desc">For commissions, exhibitions, collaborations or general inquiries, feel free to get in touch.</p>
-        <a href="mailto:your.email@example.com" class="contact-btn">Send an Email</a>
+        <a href="mailto:levente.magyar@gmail.com" class="contact-btn">Send an Email</a>
     </section>
 </main>
 
+<!-- JAVÍTOTT FOOTER: Facebook, Instagram linkekkel és email kiírással -->
 <footer>
+    <div class="social-links">
+        <a href="https://www.facebook.com/levente.magyar.9699/" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/jalraxe/" target="_blank">Instagram</a>
+    </div>
+    <div class="footer-email">
+        Email: <a href="mailto:levente.magyar@gmail.com">levente.magyar@gmail.com</a>
+    </div>
     <p>&copy; 2026 Magyar Levente (Jalraxe). All rights reserved.</p>
 </footer>
 
+<!-- LIGHTBOX ELEMENT -->
 <div class="lightbox-overlay" id="lightbox">
     <span class="lightbox-close" id="lightbox-close">&times;</span>
     <img class="lightbox-image" id="lightbox-img" src="" alt="">
     <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>
 
+<!-- JAVASCRIPT FOR LIGHTBOX -->
 <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
