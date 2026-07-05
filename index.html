@@ -127,12 +127,12 @@
             max-width: 900px;
         }
 
-        .gallery-grid {
+      .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            /* auto-fit helyett auto-fill, hogy a végén lévő képek ne nyúljanak el */
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
         }
-
         .gallery-item {
             background-color: #121212;
             border-radius: 4px;
@@ -145,13 +145,15 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
-      .gallery-item img {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    display: block;
-}
-
+        .gallery-item img {
+            width: 100%;
+            height: 350px; /* Vagy amilyen magas kártyákat szeretnél */
+            object-fit: contain;
+            background-color: #080808; 
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
         .gallery-item img:hover {
             opacity: 0.85;
         }
