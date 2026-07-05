@@ -147,8 +147,9 @@
 
         .gallery-item img {
             width: 100%;
-            height: auto;
-            object-fit: contain;
+            height: 400px; /* Egységes, elegáns magasság minden kártyának */
+            object-fit: contain; /* Nem vágja le, nem torzítja a képet */
+            background-color: #080808; /* Sötét háttér a fekvő képek alatti/feletti üres térnek */
             display: block;
             cursor: pointer;
             transition: opacity 0.3s ease;
