@@ -127,16 +127,20 @@
             max-width: 900px;
         }
 
+        /* JAVÍTOTT STABIL RÁCS SZERKEZET */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
+            width: 100%;
         }
 
         .gallery-item {
             background-color: #121212;
             border-radius: 4px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -162,6 +166,9 @@
         .item-info {
             padding: 25px;
             border-top: 1px solid #1a1a1a;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .item-info h3 {
@@ -383,6 +390,7 @@
 </section>
 
 <main>
+    <!-- Guardians of Light Section -->
     <section id="guardians-of-light" class="gallery-section">
         <h2>Guardians of Light</h2>
         <div class="section-desc">
@@ -434,6 +442,7 @@
         </div>
     </section>
 
+    <!-- Luminous Visions Section -->
     <section id="luminous-visions" class="gallery-section">
         <h2>Luminous Visions</h2>
         <p class="section-subtitle">A collection of experimental portraits and figurative works exploring the visual language of light. The Guardians of Light series evolved from the techniques and ideas developed within this project.</p>
@@ -514,6 +523,7 @@
         </div>
     </section>
 
+    <!-- Unique Inspirations Section -->
     <section id="unique-inspirations" class="gallery-section">
         <h2>Unique Inspirations</h2>
         <p class="section-subtitle">
@@ -521,7 +531,7 @@
         </p>
         
         <div class="gallery-grid">
-            <!-- 1. Cupido Online (Új mű a szekció elején!) -->
+            <!-- 1. Cupido Online -->
             <div class="gallery-item">
                 <img src="images/cupidoonline.jpg" alt="Cupido Online">
                 <div class="item-info">
