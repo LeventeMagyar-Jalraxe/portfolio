@@ -753,5 +753,31 @@
     });
 </script>
 
+    <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.draco-slide');
+    
+    function nextSlide() {
+        slides[currentSlide].style.opacity = 0; // Előző elhalványul
+        currentSlide = (currentSlide + 1) % slides.length; // Következőre ugrik
+        slides[currentSlide].style.opacity = 1; // Következő felerősödik
+    }
+    
+    // 3000 ezredmásodperc = 3 másodpercenként vált kényelmesen
+    setInterval(nextSlide, 3000);
+
+    // Lightbox integráció az animált képekhez is:
+    slides.forEach(slide => {
+        slide.addEventListener('click', () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            lightboxImg.src = slide.src;
+            lightboxImg.alt = slide.alt;
+            lightboxCaption.innerText = "Evolution of the Dragon (Phase " + (Array.from(slides).indexOf(slide) + 1) + "/4)";
+            lightbox.classList.add('active');
+        });
+    });
+</script>
 </body>
 </html>
