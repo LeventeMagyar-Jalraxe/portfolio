@@ -185,6 +185,32 @@
             transition: opacity 1s ease-in-out !important;
         }
 
+        /* TOBZOSKA SPECIÁLIS CSS REVEAL EFFEKT */
+        .tobzoska-wrapper {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            min-height: 380px;
+            background-color: #050505; /* Nagyon sötét háttér, hogy a hatás még jobb legyen */
+            overflow: hidden;
+        }
+
+        .tobzoska-reveal {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            cursor: pointer;
+            /* Kezdetben sötét, kontrasztos, telítetlen állapot */
+            filter: brightness(0.05) contrast(3) saturate(0.3);
+            transition: filter 3.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+        }
+
+        /* Amikor az egér a kártya FÖLÉ megy, a kép lassan kivilágosodik */
+        .gallery-item:hover .tobzoska-reveal {
+            filter: brightness(1) contrast(1) saturate(1);
+        }
+
         .item-info {
             padding: 25px;
             border-top: 1px solid #1a1a1a;
@@ -468,8 +494,12 @@
                     <div class="art-partner">Proposed Partner: <strong>Andean Cat Alliance</strong></div>
                 </div>
             </div>
+            
+            <!-- Kínai tobzoska (Lassan előbukkanó CSS effekttel) -->
             <div class="gallery-item">
-                <img src="images/kínai tobzoska.jpg" alt="Chinese Pangolin">
+                <div class="tobzoska-wrapper">
+                    <img src="images/kínai tobzoska.jpg" class="tobzoska-reveal" alt="Chinese Pangolin">
+                </div>
                 <div class="item-info">
                     <h3>Chinese Pangolin (Manis pentadactyla)</h3>
                     <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
@@ -477,6 +507,7 @@
                     <div class="art-partner">Proposed Partner: <strong>Save Pangolins</strong></div>
                 </div>
             </div>
+            
             <div class="gallery-item">
                 <img src="images/kektorkuara.jpg" alt="Blue-throated Macaw">
                 <div class="item-info">
@@ -754,14 +785,14 @@
     const lightboxCaption = document.getElementById('lightbox-caption');
     const lightboxClose = document.getElementById('lightbox-close');
     
-    // Minden sima kép kiválasztása, kivéve a sárkány csúszkáit
+    // Minden sima kép kiválasztása, beleértve a tobzoska-reveal-t, kivéve a sárkány csúszkáit
     const galleryImages = document.querySelectorAll('.gallery-grid .gallery-item img:not(.draco-slide)');
     const dracoSlides = document.querySelectorAll('.draco-slide');
 
     // Sima képek lightbox eseménye
     galleryImages.forEach(img => {
         img.addEventListener('click', () => {
-            const title = img.parentElement.querySelector('.item-info h3').innerText;
+            const title = img.closest('.gallery-item').querySelector('.item-info h3').innerText;
             lightboxImg.src = img.src;
             lightboxImg.alt = img.alt;
             lightboxCaption.innerText = title;
