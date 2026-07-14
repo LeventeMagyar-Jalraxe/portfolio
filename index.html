@@ -30,7 +30,7 @@
             display: grid; 
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
             gap: 30px; 
-            align-items: start; 
+            align-items: start; /* Megakadályozza, hogy a kártyák megnyúljanak a hosszú szövegek miatt! */
         }
         
         .gallery-item { background-color: #121212; border-radius: 4px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
@@ -42,7 +42,7 @@
         .art-partner { margin-top: 15px; font-size: 0.9rem; color: #888; border-top: 1px dashed #222; padding-top: 10px; }
         .art-partner strong { color: #a3e635; }
 
-        /* Tobzoska speciális előbukkanó effektje */
+        /* Tobzoska speciális sötétből előbukkanó effektje */
         .tobzoska-wrapper {
             background-color: #080808;
             overflow: hidden;
@@ -149,7 +149,7 @@
                 </div>
             </div>
             
-            <!-- Kínai tobzoska -->
+            <!-- Kínai tobzoska (Eredeti kép alapú reveal effekt!) -->
             <div class="gallery-item">
                 <div class="tobzoska-wrapper">
                     <img src="images/kinai-tobzoska.jpg" class="tobzoska-reveal" alt="Chinese Pangolin">
@@ -157,7 +157,7 @@
                 <div class="item-info">
                     <h3>Chinese Pangolin (Manis pentadactyla)</h3>
                     <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
-                    <p>Meet the next Guardian of Light: the Chinese pangolin (Manis pentadactyla). The only mammal wrapped in hard, protective scales — once nature's perfect armor. Today, it can't protect them from humans. Poaching and illegal trade make them one of the most endangered and trafficked mammals on Earth.</p>
+                    <p>Meet the next Guardian of Light: the Chinese pangolin (Manis pentadactyla). The only mammal wrapped in hard, protective scales — once nature's perfect armor. Today, it can't protect them from humans. Poaching and illegal trade make them one of the most endangered and trafficking mammals on Earth.</p>
                     <div class="art-partner">Proposed Partner: <strong>Save Pangolins</strong></div>
                 </div>
             </div>
@@ -298,7 +298,6 @@
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.getElementById('lightbox-close');
     document.querySelectorAll('img').forEach(img => {
-        // Csak a galéria elemekre nyíljon meg a lightbox, a borítóképre ne
         if(!img.closest('.hero-image-container')) {
             img.addEventListener('click', () => {
                 lightboxImg.src = img.src;
