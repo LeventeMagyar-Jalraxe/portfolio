@@ -385,6 +385,30 @@
                 margin: 5px 15px;
             }
         }
+        /* Tobzoska speciális előbukkanó effektje */
+.tobzoska-wrapper {
+    background-color: #080808;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 380px; /* Pontosan akkora, mint a többi galéria kép magassága */
+}
+
+.tobzoska-reveal {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    cursor: pointer;
+    /* Alaphelyzetben szinte teljesen sötét, csak a legvilágosabb neon/fehér vonalak látszódnak minimálisan */
+    filter: brightness(0.08) contrast(2.5) saturate(0.5);
+    transition: filter 3.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Amikor ráviszed az egeret (desktopon), fokozatosan kirajzolódik teljes pompájában */
+.tobzoska-wrapper:hover .tobzoska-reveal {
+    filter: brightness(1) contrast(1) saturate(1);
+}
     </style>
 </head>
 <body>
@@ -448,8 +472,15 @@
                     <div class="art-partner">Proposed Partner: <strong>Andean Cat Alliance</strong></div>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img src="images/kínai tobzoska.jpg" alt="Chinese Pangolin">
+           <div class="gallery-item">
+    <div class="tobzoska-wrapper">
+        <img src="images/kinai-tobzoska.jpg" class="tobzoska-reveal" alt="Chinese Pangolin">
+    </div>
+    <div class="item-info">
+        <h3>Chinese Pangolin</h3>
+        <div class="art-meta">2026 · 30 × 40 cm</div>
+    </div>
+</div>
                 <div class="item-info">
                     <h3>Chinese Pangolin (Manis pentadactyla)</h3>
                     <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
