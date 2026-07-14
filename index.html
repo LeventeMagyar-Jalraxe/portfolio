@@ -474,7 +474,53 @@
         <h2>Luminous Visions</h2>
         <p class="section-subtitle">A collection of experimental portraits and figurative works exploring the visual language of light. The Guardians of Light series evolved from the techniques and ideas developed within this project.</p>
         
-        <div class="gallery-grid">
+        <div class="gallery-item" id="draco-card">
+    <!-- Javított méretezésű animált konténer -->
+    <div class="slideshow-container" style="position: relative; width: 100%; height: 380px; background-color: #050505; overflow: hidden;">
+        <img src="images/draco-1.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 1; transition: opacity 0.8s ease-in-out; cursor: pointer;">
+        <img src="images/draco-2.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 2" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.8s ease-in-out; cursor: pointer;">
+        <img src="images/draco-3.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.8s ease-in-out; cursor: pointer;">
+        <img src="images/draco-4.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.8s ease-in-out; cursor: pointer;">
+    </div>
+    <div class="item-info">
+        <h3>Evolution of the Dragon</h3>
+        <div class="art-meta">2022 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
+        <p>An animated digital frame showcasing the birth of a masterpiece: watch the seamless transition from the initial graphite linework to the final luminescent digital phase.</p>
+    </div>
+
+    <!-- Elmozdíthatatlan belső vezérlés, ami nem akad össze semmi mással -->
+    <script>
+        (function() {
+            let currentIdx = 0;
+            const container = document.getElementById('draco-card');
+            const mySlides = container.querySelectorAll('.draco-slide');
+            
+            // Automatikus váltás 2.5 másodpercenként
+            setInterval(function() {
+                mySlides[currentIdx].style.opacity = 0;
+                currentIdx = (currentIdx + 1) % mySlides.length;
+                mySlides[currentIdx].style.opacity = 1;
+            }, 2500);
+
+            // Kattintásos Lightbox integráció
+            mySlides.forEach(slide => {
+                slide.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const lightbox = document.getElementById('lightbox');
+                    const lightboxImg = document.getElementById('lightbox-img');
+                    const lightboxCaption = document.getElementById('lightbox-caption');
+                    if(lightbox && lightboxImg) {
+                        lightboxImg.src = slide.src;
+                        lightboxImg.alt = slide.alt;
+                        lightboxCaption.innerText = "Evolution of the Dragon (Phase " + (Array.from(mySlides).indexOf(slide) + 1) + "/4)";
+                        lightbox.classList.add('active');
+                    }
+                });
+            });
+        })();
+    </script>
+</div>
+            </div>
             <div class="gallery-item">
                 <img src="images/fenyhatas.jpg" alt="Sunkissed">
                 <div class="item-info">
@@ -545,6 +591,14 @@
                     <h3>Witching Hour</h3>
                     <div class="art-meta">2023 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
                     <p>Chalk pastel & Digital effects</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/jaguarglow.jpg" alt="Apex Glow">
+                <div class="item-info">
+                    <h3>Apex Glow</h3>
+                    <div class="art-meta">2021 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
+                    <p>A pivotal piece in my portfolio: the very first experimental transition of the luminescent "glow" technique from human portraits to wildlife, which ultimately laid the conceptual foundation for the Guardians of Light series.</p>
                 </div>
             </div>
         </div>
