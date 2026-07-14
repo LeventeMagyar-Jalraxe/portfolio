@@ -5,64 +5,545 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magyar Levente (Jalraxe) | Portfolio</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #0d0d0d; color: #e5e5e5; font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
-
-        header { max-width: 1200px; margin: 40px auto 20px auto; text-align: center; padding: 0 20px; }
-        h1 { font-size: 2.5rem; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; color: #ffffff; margin-bottom: 5px; }
-        .artist-alias { font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; color: #888888; margin-bottom: 25px; }
-        
-        nav { margin-top: 20px; border-top: 1px solid #222; border-bottom: 1px solid #222; padding: 15px 0; }
-        nav a { color: #999; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin: 0 15px; transition: color 0.3s ease; }
-        nav a:hover { color: #ffffff; }
-
-        .hero { max-width: 1200px; margin: 0 auto 80px auto; padding: 0 20px; text-align: center; }
-        .hero-image-container { width: 100%; overflow: hidden; border-radius: 4px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.7); }
-        .hero img { width: 100%; height: auto; max-height: 650px; object-fit: cover; display: block; }
-        .intro { max-width: 800px; margin: 40px auto 0 auto; font-size: 1.15rem; color: #aaaaaa; font-weight: 300; text-align: center; line-height: 1.7; }
-
-        main { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .gallery-section { margin-bottom: 100px; }
-        .gallery-section h2 { font-size: 1.8rem; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: #ffffff; margin-bottom: 10px; }
-        .section-desc, .section-subtitle { font-size: 1rem; color: #888888; margin-bottom: 40px; font-weight: 300; max-width: 900px; }
-        
-        .gallery-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
-            gap: 30px; 
-            align-items: start; /* Ez tartja egyenesen és stabilan a rácsot */
+        /* Modern, minimalist dark design */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        .gallery-item { background-color: #121212; border-radius: 4px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-        .gallery-item img { width: 100%; height: 380px; object-fit: contain; background-color: #080808; display: block; cursor: pointer; }
-        .item-info { padding: 25px; border-top: 1px solid #1a1a1a; }
-        .item-info h3 { font-size: 1.2rem; font-weight: 400; color: #ffffff; margin-bottom: 5px; letter-spacing: 1px; }
-        .art-meta { color: #666; font-size: 0.82rem; margin-bottom: 12px; }
-        .art-partner { margin-top: 15px; font-size: 0.9rem; color: #888; border-top: 1px dashed #222; padding-top: 10px; }
-        .art-partner strong { color: #a3e635; }
 
-        .about-section { max-width: 800px; margin: 0 auto 100px auto; text-align: center; }
-        .about-content { font-size: 1.1rem; color: #aaaaaa; font-weight: 300; text-align: left; background: #121212; padding: 40px; border-radius: 4px; }
-        
-        .contact-section { text-align: center; margin-bottom: 100px; padding: 60px 20px; background: #121212; border-radius: 4px; }
-        .contact-btn { display: inline-block; background: transparent; color: #ffffff; border: 1px solid #ffffff; padding: 15px 40px; text-decoration: none; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; margin-top: 20px; border-radius: 4px; transition: all 0.3s ease; }
-        .contact-btn:hover { background: #ffffff; color: #0d0d0d; }
+        body {
+            background-color: #0d0d0d;
+            color: #e5e5e5;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+        }
 
-        footer { text-align: center; padding: 40px 0; color: #444; font-size: 0.8rem; border-top: 1px solid #1a1a1a; letter-spacing: 1px; }
-        footer a { color: #888; text-decoration: none; margin: 0 10px; transition: color 0.3s ease; }
-        footer a:hover { color: #ffffff; }
-        .social-links { margin-bottom: 15px; }
-        .footer-email { margin-bottom: 20px; }
+        /* --- CLEAN HEADER --- */
+        header {
+            max-width: 1200px;
+            margin: 40px auto 20px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
 
-        .lightbox-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(5, 5, 5, 0.95); backdrop-filter: blur(8px); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
-        .lightbox-overlay.active { opacity: 1; pointer-events: auto; }
-        .lightbox-image { max-width: 90%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
-        .lightbox-close { position: absolute; top: 20px; right: 30px; color: #888; font-size: 2.5rem; cursor: pointer; }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .artist-alias {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888888;
+            margin-bottom: 25px;
+        }
+
+        nav {
+            margin-top: 20px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: #999;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        .hero img {
+            width: 100%;
+            height: auto;
+            max-height: 650px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: 40px auto 0 auto;
+            font-size: 1.15rem;
+            color: #aaaaaa;
+            font-weight: 300;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        /* --- GALLERY AND CONTENT --- */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .gallery-section {
+            margin-bottom: 100px;
+        }
+
+        .gallery-section h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .section-desc, .section-subtitle {
+            font-size: 1rem;
+            color: #888888;
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 900px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            background-color: #121212;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 380px;
+            object-fit: contain;
+            background-color: #080808;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            opacity: 0.85;
+        }
+
+        .item-info {
+            padding: 25px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .item-info h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #ffffff;
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magyar Levente (Jalraxe) | Portfolio</title>
+    <style>
+        /* Modern, minimalist dark design */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #e5e5e5;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* --- CLEAN HEADER --- */
+        header {
+            max-width: 1200px;
+            margin: 40px auto 20px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .artist-alias {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888888;
+            margin-bottom: 25px;
+        }
+
+        nav {
+            margin-top: 20px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: #999;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        .hero img {
+            width: 100%;
+            height: auto;
+            max-height: 650px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: 40px auto 0 auto;
+            font-size: 1.15rem;
+            color: #aaaaaa;
+            font-weight: 300;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        /* --- GALLERY AND CONTENT --- */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .gallery-section {
+            margin-bottom: 100px;
+        }
+
+        .gallery-section h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .section-desc, .section-subtitle {
+            font-size: 1rem;
+            color: #888888;
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 900px;
+        }
+
+        /* FIXÁLT, ELMOZDÍTHATATLAN RÁCS */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+        }
+
+        .gallery-item {
+            background-color: #121212;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 550px; /* Garantálja, hogy a kártya nem ugrik össze 0 pixelre */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 380px;
+            min-height: 380px; /* Erőszakolt minimum magasság a képnek */
+            object-fit: contain;
+            background-color: #080808;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            opacity: 0.85;
+        }
+
+        .item-info {
+            padding: 25px;
+            border-top: 1px solid #1a1a1a;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-info h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #ffffff;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .item-info p {
+            color: #aaaaaa;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .art-meta {
+            color: #666;
+            font-size: 0.82rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .about-section {
+            max-width: 800px;
+            margin: 0 auto 100px auto;
+            text-align: center;
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            font-weight: 300;
+            text-align: left;
+            background: #121212;
+            padding: 40px;
+            border-radius: 4px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        .contact-section {
+            text-align: center;
+            margin-bottom: 100px;
+            padding: 60px 20px;
+            background: #121212;
+            border-radius: 4px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 15px 40px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .contact-btn:hover {
+            background: #ffffff;
+            color: #0d0d0d;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #444;
+            font-size: 0.8rem;
+            border-top: 1px solid #1a1a1a;
+            letter-spacing: 1px;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #aaaaaa;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer-email {
+            margin-bottom: 15px;
+            color: #888;
+        }
+
+        .footer-email a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-email a:hover {
+            color: #ffffff;
+        }
+
+        /* --- LIGHTBOX STYLE --- */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            transform: scale(0.95);
+            transition: transform 0.4s ease;
+        }
+
+        .lightbox-overlay.active .lightbox-image {
+            transform: scale(1);
+        }
+
+        .lightbox-caption {
+            margin-top: 20px;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-align: center;
+            max-width: 80%;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #888;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            user-select: none;
+        }
+
+        .lightbox-close:hover {
+            color: #ffffff;
+        }
+
+        /* Képernyőméret igazítások */
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
         @media (max-width: 768px) {
-            nav a { display: block; margin: 10px 0; }
-            .gallery-grid { grid-template-columns: 1fr; }
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-item {
+                min-height: auto;
+            }
+            .lightbox-close {
+                top: 15px;
+                right: 20px;
+                font-size: 2rem;
+            }
+            .social-links a {
+                display: inline-block;
+                margin: 5px 15px;
+            }
         }
     </style>
 </head>
@@ -85,173 +566,269 @@
     <div class="hero-image-container">
         <img src="images/borito.jpg" alt="Magyar Levente - Portfolio Artwork Showcase">
     </div>
-    <p class="intro">Through traditional drawing and digital illumination, I explore the relationship between nature, symbolism and transformation. My work seeks moments where light becomes more than a visual effect—it becomes meaning.</p>
+    <p class="intro">
+        Through traditional drawing and digital illumination, I explore the relationship between nature, symbolism and transformation. My work seeks moments where light becomes more than a visual effect—it becomes meaning.
+    </p>
 </section>
 
 <main>
-    <!-- 1. SZEKCIÓ: Guardians of Light -->
+    <!-- Guardians of Light Section -->
     <section id="guardians-of-light" class="gallery-section">
         <h2>Guardians of Light</h2>
         <div class="section-desc">
-            <p>Guardians of Light presents critically endangered species through luminous portraits. Each artwork highlights the beauty and fragility of Earth's most threatened wildlife.</p>
+            <p>Guardians of Light presents critically endangered species through luminous portraits that blend traditional drawing with digital lightwork. Each artwork aims to highlight the beauty, uniqueness and fragility of Earth's most threatened wildlife.</p>
+            <p style="font-size:0.9rem;color:#666;margin-top:20px;">Colored pencil on Clairefontaine Pastelmat paper, enhanced with digital illumination.</p>
         </div>
+        
         <div class="gallery-grid">
-            
-            <!-- Törpelajhár -->
             <div class="gallery-item">
-                <img src="images/lajhar.png" alt="Pygmy Three-Toed Sloth">
+                <img src="images/törpelajhár.jpg" alt="Pygmy Three-Toed Sloth">
                 <div class="item-info">
                     <h3>Pygmy Three-Toed Sloth (Bradypus pygmaeus)</h3>
                     <div class="art-meta">2025 · Colored pencil and digital lightwork · 30 × 40 cm</div>
                     <p>The first featured species: This charming, cat-sized little creature is one of the rarest mammals on Earth — only about 100 individuals remain, living exclusively on a tiny island.</p>
                 </div>
             </div>
-            
-            <!-- Orangután -->
             <div class="gallery-item">
-                <img src="images/orangutan.png" alt="Tapanuli Orangutan">
+                <img src="images/tapanuiorángután.jpg" alt="Tapanuli Orangutan">
                 <div class="item-info">
                     <h3>Tapanuli Orangutan (Pongo tapanuliensis)</h3>
                     <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
                     <p>The rarest great ape species on Earth, with fewer than 800 individuals remaining in the wild.</p>
                 </div>
             </div>
-            
-            <!-- Andesi hegyi macska -->
             <div class="gallery-item">
-                <img src="images/andesi-macska.png" alt="Andean Mountain Cat">
+                <img src="images/andesihegyimacska.png" alt="Andean Mountain Cat">
                 <div class="item-info">
                     <h3>Andean mountain cat (Leopardus jacobita)</h3>
                     <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
                     <p>The Andean mountain cat is one of the rarest and least known wild cat species in the world. It is estimated that fewer than 1,500 individuals remain in the wild, living in isolated populations across the high-altitude regions of the Andes.</p>
-                    <div class="art-partner">Proposed Partner: <strong>Andean Cat Alliance</strong></div>
                 </div>
             </div>
-            
-            <!-- Kínai tobzoska (Egyszerű, stabil kártya effekt nélkül!) -->
             <div class="gallery-item">
-                <img src="images/tobzoska.png" alt="Chinese Pangolin">
+                <img src="images/kínai tobzoska.jpg" alt="Chinese Pangolin">
                 <div class="item-info">
                     <h3>Chinese Pangolin (Manis pentadactyla)</h3>
                     <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
-                    <p>Meet the next Guardian of Light: the Chinese pangolin (Manis pentadactyla). The only mammal wrapped in hard, protective scales — once nature's perfect armor. Today, it can't protect them from humans. Poaching and illegal trade make them one of the most endangered and trafficked mammals on Earth.</p>
-                    <div class="art-partner">Proposed Partner: <strong>Save Pangolins</strong></div>
+                    <p>Meet the next Guardian of Light: the Chinese pangolin (Manis pentadactyla). The only mammal wrapped in hard, protective scales — once nature’s perfect armor. Today, it can’t protect them from humans. Poaching and illegal trade make them one of the most endangered and trafficked mammals on Earth.</p>
                 </div>
             </div>
-            
-            <!-- Kék torkú ara -->
             <div class="gallery-item">
-                <img src="images/kektorku-ara.png" alt="Blue-throated Macaw">
+                <img src="images/kektorkuara.jpg" alt="Blue-throated Macaw">
                 <div class="item-info">
                     <h3>Blue-throated Macaw (Ara glaucogularis)</h3>
                     <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
-                    <p>The Blue-throated Macaw is one of the rarest parrot species in the world, pushed to the brink of extinction by habitat loss and the exotic pet trade.</p>
-                    <div class="art-partner">Proposed Partner: <strong>Asociación Armonía</strong></div>
+                    <p>The Blue-throated Macaw is one of the rarest parrot species in the world, pushed to the brink of extinction by habitat loss and the exotic pet trade. Its wild population is currently estimated at just a few hundred individuals.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- 2. SZEKCIÓ: Luminous Visions -->
+    <!-- Luminous Visions Section -->
     <section id="luminous-visions" class="gallery-section">
         <h2>Luminous Visions</h2>
-        <div class="section-desc">
-            <p>A collection focusing on surreal concepts, dark aesthetics, and vibrant neon accents overlaid on meticulous traditional graphite bases.</p>
-        </div>
+        <p class="section-subtitle">A collection of experimental portraits and figurative works exploring the visual language of light. The Guardians of Light series evolved from the techniques and ideas developed within this project.</p>
+        
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="images/cyberpunk-koponya.jpg" alt="Neon Skull v1">
+                <img src="images/fenyhatas.jpg" alt="Light Effect">
                 <div class="item-info">
-                    <h3>Neon Skull v1</h3>
-                    <div class="art-meta">2025 · Graphite and digital neon · 30 × 40 cm</div>
+                    <h3>Light Effect</h3>
+                    <div class="art-meta">Mixed media & digital luminescence</div>
+                    <p>An experimental exploration of depth, atmosphere, and luminescent contrast.</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="images/neon-koponya-2.jpg" alt="Neon Skull v2">
+                <img src="images/Joker.jpg" alt="Joker">
                 <div class="item-info">
-                    <h3>Neon Skull v2</h3>
-                    <div class="art-meta">2025 · Graphite and digital neon · 30 × 40 cm</div>
+                    <h3>Joker</h3>
+                    <div class="art-meta">Colored pencil & neon digital highlights</div>
+                    <p>Colored pencil / Neon highlights</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="images/szarvas.jpg" alt="Luminous Stag">
+                <img src="images/Homelander.jpg" alt="Homelander">
                 <div class="item-info">
-                    <h3>Luminous Stag</h3>
-                    <div class="art-meta">2025 · Colored pencil and digital lightwork · 30 × 40 cm</div>
+                    <h3>Homelander</h3>
+                    <div class="art-meta">Mixed media & digital luminescence</div>
+                    <p>Mixed media / Pop culture series</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="images/farkas.jpg" alt="Neon Wolf">
+                <img src="images/Tesla.jpg" alt="Tesla">
                 <div class="item-info">
-                    <h3>Neon Wolf</h3>
-                    <div class="art-meta">2025 · Colored pencil and digital lightwork · 30 × 40 cm</div>
+                    <h3>Tesla</h3>
+                    <div class="art-meta">Conceptual drawing & digital post-processing</div>
+                    <p>Conceptual drawing / Mixed media</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="images/pillango.jpg" alt="Electric Butterfly">
+                <img src="images/kiserletiportre.jpg" alt="Experimental Portrait">
                 <div class="item-info">
-                    <h3>Electric Butterfly</h3>
-                    <div class="art-meta">2025 · Graphite and digital neon · 20 × 20 cm</div>
+                    <h3>Experimental Portrait</h3>
+                    <div class="art-meta">2024 · Graphite & Glow Art elements</div>
+                    <p>Graphite & Glow Art</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Zorya.jpg" alt="Zorya">
+                <div class="item-info">
+                    <h3>Zorya</h3>
+                    <div class="art-meta">2025 · Pastel & Digital Luminescence</div>
+                    <p>Pastel & Digital Luminescence</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/zöld fülbevaló.jpg" alt="Green Earring">
+                <div class="item-info">
+                    <h3>Green Earring</h3>
+                    <div class="art-meta">2026 · Traditional drawing & luminescent contrast</div>
+                    <p>Traditional drawing / Luminescent contrast</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/cigiszünet.jpg" alt="Cigarette Break">
+                <div class="item-info">
+                    <h3>Cigarette Break</h3>
+                    <div class="art-meta">2025 · Mixed media & neon contrast</div>
+                    <p>Mixed media / Neon contrast</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/purpleglow.jpg" alt="Purple Glow">
+                <div class="item-info">
+                    <h3>Purple Glow</h3>
+                    <div class="art-meta">2023 · Chalk pastel & digital effects</div>
+                    <p>Chalk pastel & Digital effects</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. SZEKCIÓ: Unique Inspirations -->
+    <!-- Unique Inspirations Section -->
     <section id="unique-inspirations" class="gallery-section">
         <h2>Unique Inspirations</h2>
-        <div class="section-desc">
-            <p>Conceptual and allegorical drawings drawing inspiration from life's ironies, human emotions, and philosophical questions.</p>
-        </div>
+        <p class="section-subtitle">
+            These drawings are made based on unique inspirations or thematic competitions in a magical realist style.
+        </p>
+        
         <div class="gallery-grid">
+            <!-- 1. Cupido Online -->
             <div class="gallery-item">
-                <img src="images/ha-az-elet-citromot-ad.jpg" alt="When Life Gives You Lemons">
+                <img src="images/cupidoonline.jpg" alt="Cupido Online">
+                <div class="item-info">
+                    <h3>Cupido Online</h3>
+                    <div class="art-meta">2026 · Colored pencil on paper & Autodesk Sketchbook · 30 × 40 cm</div>
+                    <p>A fusion of traditional medium and digital post-processing, weaving multiple layers of meaning and personal background into the composition. Look closely: there is a hidden visual nod to an iconic, old-school PC gaming meme. Huge props to anyone who manages to spot where the clue is pointing!</p>
+                </div>
+            </div>
+
+            <!-- 2. When Life Gives You Lemons -->
+            <div class="gallery-item">
+                <img src="images/Ha az élet citromot ad.jpg" alt="When Life Gives You Lemons">
                 <div class="item-info">
                     <h3>When Life Gives You Lemons</h3>
-                    <div class="art-meta">2024 · Graphite on paper · 30 × 40 cm</div>
+                    <div class="art-meta">2025 · Colored pencil on Pastelmat paper · 30 × 40 cm</div>
+                    <p>A conceptual piece exploring resilience, perspective, and transformation through symbolic representation.</p>
                 </div>
             </div>
+
+            <!-- 3. Young at Heart -->
             <div class="gallery-item">
-                <img src="images/lelekbenfiatal.jpg" alt="Young at Heart">
+                <img src="images/Lelekbenfiatal.jpg" alt="Young at Heart">
                 <div class="item-info">
                     <h3>Young at Heart</h3>
-                    <div class="art-meta">2024 · Graphite on paper · 30 × 40 cm</div>
+                    <div class="art-meta">2025 · Graphite and colored pencil on paper · 30 × 42 cm</div>
+                    <p>Awarded 2nd prize at the national art competition organized by Zsilip Art Association under the theme "On the Border of Past and Future".</p>
                 </div>
             </div>
+
+            <!-- 4. The Last Selfie -->
             <div class="gallery-item">
-                <img src="images/az-utolso-szelfi.jpg" alt="The Last Selfie">
+                <img src="images/Az utolso szelfi.jpg" alt="The Last Selfie">
                 <div class="item-info">
                     <h3>The Last Selfie</h3>
-                    <div class="art-meta">2024 · Graphite on paper · 30 × 40 cm</div>
+                    <div class="art-meta">2025 · Colored pencil on Pastelmat paper · 30 × 40 cm</div>
+                    <p>Selected for exhibition at the thematic art competition organized by Zsilip Art Association.</p>
                 </div>
             </div>
+
+            <!-- 5. The Prayer -->
             <div class="gallery-item">
-                <img src="images/a-fohasz.jpg" alt="The Prayer">
+                <img src="images/A fohasz.jpg" alt="The Prayer">
                 <div class="item-info">
                     <h3>The Prayer</h3>
-                    <div class="art-meta">2023 · Graphite on paper · 30 × 40 cm</div>
+                    <div class="art-meta">2024 · Colored pencil on Pastelmat paper · 30 × 40 cm</div>
+                    <p>This artwork marks a personal milestone as my very first completely original drawing.</p>
                 </div>
             </div>
+
+            <!-- 6. Last Wish -->
             <div class="gallery-item">
-                <img src="images/utolso-kivansag.jpg" alt="Last Wish">
+                <img src="images/Utolso kivansag.jpg" alt="Last Wish">
                 <div class="item-info">
                     <h3>Last Wish</h3>
-                    <div class="art-meta">2023 · Graphite on paper · 30 × 40 cm</div>
+                    <div class="art-meta">2022 · Colored pencil on Pastelmat paper · 30 × 40 cm</div>
+                    <p>Thematically, this remains my absolute favorite piece from my collection.</p>
+                </div>
+            </div>
+
+            <!-- 7. Forever -->
+            <div class="gallery-item">
+                <img src="images/mindorokke.jpg" alt="Forever">
+                <div class="item-info">
+                    <h3>Forever</h3>
+                    <div class="art-meta">2024 · Colored pencil on Pastelmat paper · 40 × 30 cm</div>
+                    <p>Detailed figurative study focusing on texture and depth using professional colored pencils.</p>
+                </div>
+            </div>
+
+            <!-- 8. Master and Muse -->
+            <div class="gallery-item">
+                <img src="images/mesteresmuzsa.jpg" alt="Master and Muse">
+                <div class="item-info">
+                    <h3>Master and Muse</h3>
+                    <div class="art-meta">2026 · Colored pencil on Pastelmat paper · 40 × 30 cm</div>
+                    <p>An exploration of creative energy and artistic synergy captured on premium surface.</p>
+                </div>
+            </div>
+
+            <!-- 9. Final Chord -->
+            <div class="gallery-item">
+                <img src="images/Zaroakkord.jpg" alt="Final Chord">
+                <div class="item-info">
+                    <h3>Final Chord</h3>
+                    <div class="art-meta">2025 · Colored pencil on Pastelmat paper · 30 × 40 cm</div>
+                    <p>A symbolic representation of endings and transitions portrayed through light contrasts.</p>
+                </div>
+            </div>
+
+            <!-- 10. Shadow of Tomorrow -->
+            <div class="gallery-item">
+                <img src="images/A holnap arnyeka.jpg" alt="Shadow of Tomorrow">
+                <div class="item-info">
+                    <h3>Shadow of Tomorrow</h3>
+                    <div class="art-meta">2026 · Colored pencil on Pastelmat paper · 40 × 30 cm</div>
+                    <p>A conceptual piece exploring time, anticipation, and atmosphere in a magical realist style.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about-section">
         <h2>About Me</h2>
+        <p class="section-desc">The artist behind the pseudonym Jalraxe.</p>
         <div class="about-content">
-            <p>I am Magyar Levente, working under the artistic name Jalraxe. My work combines traditional drawing techniques with digital enhancement, creating a unique interplay between physical texture and luminescent digital effects.</p>
+            <p>I am Magyar Levente, working under the artistic name Jalraxe. My work combines traditional drawing techniques with digital enhancement to create images that balance realism, symbolism and atmosphere.</p>
+            <p>Light plays a central role throughout my portfolio—not merely as illumination, but as a narrative and emotional element. Whether portraying endangered wildlife, imagined characters or reflections on contemporary society, I seek to create images that invite viewers to look beyond the surface.</p>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <h2>Get in Touch</h2>
+        <p class="section-desc">For commissions, exhibitions, collaborations or general inquiries, feel free to get in touch.</p>
         <a href="mailto:levente.magyar@gmail.com" class="contact-btn">Send an Email</a>
     </section>
 </main>
@@ -261,29 +838,52 @@
         <a href="https://www.facebook.com/levente.magyar.9699/" target="_blank">Facebook</a>
         <a href="https://www.instagram.com/jalraxe/" target="_blank">Instagram</a>
     </div>
-    <div class="footer-email">Email: <a href="mailto:levente.magyar@gmail.com">levente.magyar@gmail.com</a></div>
+    <div class="footer-email">
+        Email: <a href="mailto:levente.magyar@gmail.com">levente.magyar@gmail.com</a>
+    </div>
     <p>&copy; 2026 Magyar Levente (Jalraxe). All rights reserved.</p>
 </footer>
 
+<!-- LIGHTBOX ELEMENT -->
 <div class="lightbox-overlay" id="lightbox">
     <span class="lightbox-close" id="lightbox-close">&times;</span>
     <img class="lightbox-image" id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>
 
+<!-- JAVASCRIPT FOR LIGHTBOX -->
 <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
     const lightboxClose = document.getElementById('lightbox-close');
-    document.querySelectorAll('img').forEach(img => {
-        if(!img.closest('.hero-image-container')) {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightbox.classList.add('active');
-            });
+    const galleryImages = document.querySelectorAll('.gallery-grid .gallery-item img');
+
+    galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+            const title = img.parentElement.querySelector('.item-info h3').innerText;
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.innerText = title;
+            lightbox.classList.add('active');
+        });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
         }
     });
-    lightboxClose.addEventListener('click', () => lightbox.classList.remove('active'));
-    lightbox.addEventListener('click', (e) => { if(e.target === lightbox) lightbox.classList.remove('active'); });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+        }
+    });
 </script>
 
 </body>
