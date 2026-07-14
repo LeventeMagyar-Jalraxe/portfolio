@@ -141,7 +141,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            min-height: 580px; /* Kicsit növelve a plusz sor miatt */
+            min-height: 580px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -163,6 +163,26 @@
 
         .gallery-item img:hover {
             opacity: 0.85;
+        }
+
+        /* SÁRKÁNY SLIDESHOW SPECIÁLIS CSS UTÁNRENDELÉSEK */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            min-height: 380px;
+            background-color: #080808;
+            overflow: hidden;
+        }
+
+        .draco-slide {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: opacity 1s ease-in-out !important;
         }
 
         .item-info {
@@ -197,10 +217,10 @@
 
         .art-partner {
             font-size: 0.82rem;
-            color: #abd1b5; /* Halvány zöldes árnyalat a természetvédelem jegyében */
+            color: #abd1b5;
             border-top: 1px dashed #222;
             padding-top: 10px;
-            margin-top: auto; /* Mindig a kártya legaljára tolja */
+            margin-top: auto;
             letter-spacing: 0.5px;
         }
 
@@ -474,53 +494,24 @@
         <h2>Luminous Visions</h2>
         <p class="section-subtitle">A collection of experimental portraits and figurative works exploring the visual language of light. The Guardians of Light series evolved from the techniques and ideas developed within this project.</p>
         
-        <div class="gallery-item" id="draco-card">
-    <!-- Javított méretezésű animált konténer -->
-    <div class="slideshow-container" style="position: relative; width: 100%; height: 380px; background-color: #050505; overflow: hidden;">
-        <img src="images/draco-1.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 1; transition: opacity 0.8s ease-in-out; cursor: pointer;">
-        <img src="images/draco-2.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 2" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.8s ease-in-out; cursor: pointer;">
-        <img src="images/draco-3.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.8s ease-in-out; cursor: pointer;">
-        <img src="images/draco-4.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.8s ease-in-out; cursor: pointer;">
-    </div>
-    <div class="item-info">
-        <h3>Evolution of the Dragon</h3>
-        <div class="art-meta">2022 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
-        <p>An animated digital frame showcasing the birth of a masterpiece: watch the seamless transition from the initial graphite linework to the final luminescent digital phase.</p>
-    </div>
-
-    <!-- Elmozdíthatatlan belső vezérlés, ami nem akad össze semmi mással -->
-    <script>
-        (function() {
-            let currentIdx = 0;
-            const container = document.getElementById('draco-card');
-            const mySlides = container.querySelectorAll('.draco-slide');
+        <div class="gallery-grid">
             
-            // Automatikus váltás 2.5 másodpercenként
-            setInterval(function() {
-                mySlides[currentIdx].style.opacity = 0;
-                currentIdx = (currentIdx + 1) % mySlides.length;
-                mySlides[currentIdx].style.opacity = 1;
-            }, 2500);
-
-            // Kattintásos Lightbox integráció
-            mySlides.forEach(slide => {
-                slide.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const lightbox = document.getElementById('lightbox');
-                    const lightboxImg = document.getElementById('lightbox-img');
-                    const lightboxCaption = document.getElementById('lightbox-caption');
-                    if(lightbox && lightboxImg) {
-                        lightboxImg.src = slide.src;
-                        lightboxImg.alt = slide.alt;
-                        lightboxCaption.innerText = "Evolution of the Dragon (Phase " + (Array.from(mySlides).indexOf(slide) + 1) + "/4)";
-                        lightbox.classList.add('active');
-                    }
-                });
-            });
-        })();
-    </script>
-</div>
+            <!-- 1. DRAGON EVOLUTION (ANIMÁLT) -->
+            <div class="gallery-item">
+                <div class="slideshow-container">
+                    <img src="images/draco-1.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 1" style="opacity: 1;">
+                    <img src="images/draco-2.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 2" style="opacity: 0;">
+                    <img src="images/draco-3.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 3" style="opacity: 0;">
+                    <img src="images/draco-4.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 4" style="opacity: 0;">
+                </div>
+                <div class="item-info">
+                    <h3>Evolution of the Dragon</h3>
+                    <div class="art-meta">2022 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
+                    <p>An animated digital frame showcasing the birth of a masterpiece: watch the seamless transition from the initial graphite linework to the final luminescent digital phase.</p>
+                </div>
             </div>
+
+            <!-- 2. SUNKISSED -->
             <div class="gallery-item">
                 <img src="images/fenyhatas.jpg" alt="Sunkissed">
                 <div class="item-info">
@@ -529,6 +520,28 @@
                     <p>An experimental exploration of depth, atmosphere, and luminescent contrast.</p>
                 </div>
             </div>
+            
+            <!-- 3. TESLA -->
+            <div class="gallery-item">
+                <img src="images/Tesla.jpg" alt="Tesla">
+                <div class="item-info">
+                    <h3>Tesla</h3>
+                    <div class="art-meta">2025 · 42 × 30 cm · Graphite & Autodesk Sketchbook</div>
+                    <p>Conceptual drawing / Mixed media</p>
+                </div>
+            </div>
+
+            <!-- 4. APEX GLOW (JAGUÁR - KÖZVETLENÜL TESLA UTÁN) -->
+            <div class="gallery-item">
+                <img src="images/jaguarglow.jpg" alt="Apex Glow">
+                <div class="item-info">
+                    <h3>Apex Glow</h3>
+                    <div class="art-meta">2021 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
+                    <p>A pivotal piece in my portfolio: the very first experimental transition of the luminescent "glow" technique from human portraits to wildlife, which ultimately laid the conceptual foundation for the Guardians of Light series.</p>
+                </div>
+            </div>
+
+            <!-- 5. JOKER -->
             <div class="gallery-item">
                 <img src="images/Joker.jpg" alt="Joker">
                 <div class="item-info">
@@ -543,14 +556,6 @@
                     <h3>Homelander</h3>
                     <div class="art-meta">2024 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
                     <p>Mixed media / Pop culture series</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/Tesla.jpg" alt="Tesla">
-                <div class="item-info">
-                    <h3>Tesla</h3>
-                    <div class="art-meta">2025 · 42 × 30 cm · Graphite & Autodesk Sketchbook</div>
-                    <p>Conceptual drawing / Mixed media</p>
                 </div>
             </div>
             <div class="gallery-item">
@@ -591,14 +596,6 @@
                     <h3>Witching Hour</h3>
                     <div class="art-meta">2023 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
                     <p>Chalk pastel & Digital effects</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/jaguarglow.jpg" alt="Apex Glow">
-                <div class="item-info">
-                    <h3>Apex Glow</h3>
-                    <div class="art-meta">2021 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
-                    <p>A pivotal piece in my portfolio: the very first experimental transition of the luminescent "glow" technique from human portraits to wildlife, which ultimately laid the conceptual foundation for the Guardians of Light series.</p>
                 </div>
             </div>
         </div>
@@ -750,14 +747,18 @@
     <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>
 
-<!-- JAVASCRIPT FOR LIGHTBOX -->
+<!-- JAVASCRIPT FOR LIGHTBOX AND SLIDESHOW -->
 <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
     const lightboxClose = document.getElementById('lightbox-close');
-    const galleryImages = document.querySelectorAll('.gallery-grid .gallery-item img');
+    
+    // Minden sima kép kiválasztása, kivéve a sárkány csúszkáit
+    const galleryImages = document.querySelectorAll('.gallery-grid .gallery-item img:not(.draco-slide)');
+    const dracoSlides = document.querySelectorAll('.draco-slide');
 
+    // Sima képek lightbox eseménye
     galleryImages.forEach(img => {
         img.addEventListener('click', () => {
             const title = img.parentElement.querySelector('.item-info h3').innerText;
@@ -768,6 +769,31 @@
         });
     });
 
+    // Sárkány diák lightbox eseménye külön kezelve
+    dracoSlides.forEach(slide => {
+        slide.addEventListener('click', () => {
+            const container = slide.closest('.gallery-item');
+            const title = container.querySelector('.item-info h3').innerText;
+            const phaseNum = Array.from(dracoSlides).indexOf(slide) + 1;
+            
+            lightboxImg.src = slide.src;
+            lightboxImg.alt = slide.alt;
+            lightboxCaption.innerText = `${title} (Phase ${phaseNum}/4)`;
+            lightbox.classList.add('active');
+        });
+    });
+
+    // Sárkány képek léptetése (áttűnés)
+    let currentSlide = 0;
+    if(dracoSlides.length > 0) {
+        setInterval(() => {
+            dracoSlides[currentSlide].style.opacity = 0;
+            currentSlide = (currentSlide + 1) % dracoSlides.length;
+            dracoSlides[currentSlide].style.opacity = 1;
+        }, 2500);
+    }
+
+    // Lightbox bezárások
     lightboxClose.addEventListener('click', () => {
         lightbox.classList.remove('active');
     });
