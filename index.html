@@ -150,7 +150,8 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
-        .gallery-item img {
+        /* Sima képek szabályai a kártyákon belül */
+        .gallery-item img:not(.draco-slide) {
             width: 100%;
             height: 380px;
             min-height: 380px;
@@ -161,11 +162,11 @@
             transition: opacity 0.3s ease;
         }
 
-        .gallery-item img:hover {
+        .gallery-item img:not(.draco-slide):hover {
             opacity: 0.85;
         }
 
-        /* SÁRKÁNY SLIDESHOW SPECIÁLIS CSS UTÁNRENDELÉSEK */
+        /* --- SÁRKÁNY SLIDESHOW SPECIÁLIS FIXEK --- */
         .slideshow-container {
             position: relative;
             width: 100%;
@@ -173,42 +174,20 @@
             min-height: 380px;
             background-color: #080808;
             overflow: hidden;
+            display: block;
         }
 
         .draco-slide {
             position: absolute !important;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: opacity 1s ease-in-out !important;
-        }
-
-        /* TOBZOSKA SPECIÁLIS CSS REVEAL EFFEKT */
-        .tobzoska-wrapper {
-            position: relative;
-            width: 100%;
-            height: 380px;
-            min-height: 380px;
-            background-color: #050505; /* Nagyon sötét háttér, hogy a hatás még jobb legyen */
-            overflow: hidden;
-        }
-
-        .tobzoska-reveal {
-            width: 100%;
-            height: 100%;
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 100% !important;
             object-fit: contain;
             display: block;
             cursor: pointer;
-            /* Kezdetben sötét, kontrasztos, telítetlen állapot */
-            filter: brightness(0.05) contrast(3) saturate(0.3);
-            transition: filter 3.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
-        }
-
-        /* Amikor az egér a kártya FÖLÉ megy, a kép lassan kivilágosodik */
-        .gallery-item:hover .tobzoska-reveal {
-            filter: brightness(1) contrast(1) saturate(1);
+            transition: opacity 1s ease-in-out !important;
         }
 
         .item-info {
@@ -462,8 +441,8 @@
     <section id="guardians-of-light" class="gallery-section">
         <h2>Guardians of Light</h2>
         <div class="section-desc">
-            <p>Guardians of Light presents critically endangered species through luminous portraits that blend traditional drawing with digital lightwork. Each artwork aims to highlight the beauty, uniqueness and fragility of Earth's most threatened wildlife. My ultimate dream is to contribute to the preservation of these species through my art. To achieve this, my vision is to partner with wildlife conservation organizations, featuring these drawings on official merchandise to raise funds and directly support their cause.</p>
-            <p style="font-size:0.9rem;color:#666;margin-top:20px;">Colored pencil on Clairefontaine Pastelmat paper, enhanced with digital illumination.</p>
+            <p>Guardians of Light presents critically endangered species through luminous portraits that blend traditional drawing with digital lightwork[cite: 1]. Each artwork aims to highlight the beauty, uniqueness and fragility of Earth's most threatened wildlife[cite: 1]. My ultimate dream is to contribute to the preservation of these species through my art[cite: 1]. To achieve this, my vision is to partner with wildlife conservation organizations, featuring these drawings on official merchandise to raise funds and directly support their cause[cite: 1].</p>
+            <p style="font-size:0.9rem;color:#666;margin-top:20px;">Colored pencil on Clairefontaine Pastelmat paper, enhanced with digital illumination[cite: 1].</p>
         </div>
         
         <div class="gallery-grid">
@@ -471,56 +450,49 @@
                 <img src="images/törpelajhár.jpg" alt="Pygmy Three-Toed Sloth">
                 <div class="item-info">
                     <h3>Pygmy Three-Toed Sloth (Bradypus pygmaeus)</h3>
-                    <div class="art-meta">2025 · Colored pencil and digital lightwork · 30 × 40 cm</div>
-                    <p>The first featured species: This charming, cat-sized little creature is one of the rarest mammals on Earth — only about 100 individuals remain, living exclusively on a tiny island.</p>
-                    <div class="art-partner">Proposed Partner: <strong>The Sloth Conservation Foundation</strong></div>
+                    <div class="art-meta">2025 · Colored pencil and digital lightwork · 30 × 40 cm[cite: 1]</div>
+                    <p>The first featured species: This charming, cat-sized little creature is one of the rarest mammals on Earth — only about 100 individuals remain, living exclusively on a tiny island[cite: 1].</p>
+                    <div class="art-partner">Proposed Partner: <strong>The Sloth Conservation Foundation</strong>[cite: 1]</div>
                 </div>
             </div>
             <div class="gallery-item">
                 <img src="images/tapanuiorángután.jpg" alt="Tapanuli Orangutan">
                 <div class="item-info">
                     <h3>Tapanuli Orangutan (Pongo tapanuliensis)</h3>
-                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
-                    <p>The rarest great ape species on Earth, with fewer than 800 individuals remaining in the wild.</p>
-                    <div class="art-partner">Proposed Partner: <strong>Sumatran Orangutan Conservation Programme</strong></div>
+                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm[cite: 1]</div>
+                    <p>The rarest great ape species on Earth, with fewer than 800 individuals remaining in the wild[cite: 1].</p>
+                    <div class="art-partner">Proposed Partner: <strong>Sumatran Orangutan Conservation Programme</strong>[cite: 1]</div>
                 </div>
             </div>
             <div class="gallery-item">
                 <img src="images/andesihegyimacska.png" alt="Andean Mountain Cat">
                 <div class="item-info">
                     <h3>Andean mountain cat (Leopardus jacobita)</h3>
-                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
-                    <p>The Andean mountain cat is one of the rarest and least known wild cat species in the world. It is estimated that fewer than 1,500 individuals remain in the wild, living in isolated populations across the high-altitude regions of the Andes.</p>
-                    <div class="art-partner">Proposed Partner: <strong>Andean Cat Alliance</strong></div>
+                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm[cite: 1]</div>
+                    <p>The Andean mountain cat is one of the rarest and least known wild cat species in the world[cite: 1]. It is estimated that fewer than 1,500 individuals remain in the wild, living in isolated populations across the high-altitude regions of the Andes[cite: 1].</p>
+                    <div class="art-partner">Proposed Partner: <strong>Andean Cat Alliance</strong>[cite: 1]</div>
                 </div>
             </div>
-            
-            <!-- Kínai tobzoska (Lassan előbukkanó CSS effekttel) -->
             <div class="gallery-item">
-                <div class="tobzoska-wrapper">
-                    <img src="images/kínai tobzoska.jpg" class="tobzoska-reveal" alt="Chinese Pangolin">
-                </div>
+                <img src="images/kínai tobzoska.jpg" alt="Chinese Pangolin">
                 <div class="item-info">
                     <h3>Chinese Pangolin (Manis pentadactyla)</h3>
-                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
-                    <p>Meet the next Guardian of Light: the Chinese pangolin (Manis pentadactyla). The only mammal wrapped in hard, protective scales — once nature’s perfect armor. Today, it can’t protect them from humans. Poaching and illegal trade make them one of the most endangered and trafficked mammals on Earth.</p>
-                    <div class="art-partner">Proposed Partner: <strong>Save Pangolins</strong></div>
+                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm[cite: 1]</div>
+                    <p>Meet the next Guardian of Light: the Chinese pangolin (Manis pentadactyla)[cite: 1]. The only mammal wrapped in hard, protective scales — once nature’s perfect armor[cite: 1]. Today, it can’t protect them from humans[cite: 1]. Poaching and illegal trade make them one of the most endangered and trafficked mammals on Earth[cite: 1].</p>
+                    <div class="art-partner">Proposed Partner: <strong>Save Pangolins</strong>[cite: 1]</div>
                 </div>
             </div>
-            
             <div class="gallery-item">
                 <img src="images/kektorkuara.jpg" alt="Blue-throated Macaw">
                 <div class="item-info">
                     <h3>Blue-throated Macaw (Ara glaucogularis)</h3>
-                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
-                    <p>The Blue-throated Macaw is one of the rarest parrot species in the world, pushed to the brink of extinction by habitat loss and the exotic pet trade. Its wild population is currently estimated at just a few hundred individuals.</p>
-                    <div class="art-partner">Proposed Partner: <strong>Asociación Armonía</strong></div>
+                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm[cite: 1]</div>
+                    <p>The Blue-throated Macaw is one of the rarest parrot species in the world, pushed to the brink of extinction by habitat loss and the exotic pet trade[cite: 1]. Its wild population is currently estimated at just a few hundred individuals[cite: 1].</p>
+                    <div class="art-partner">Proposed Partner: <strong>Asociación Armonía</strong>[cite: 1]</div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <div class="gallery-item">
+            <!-- 6. AXOLOTL (ÚJ ELEM) -->
+            <div class="gallery-item">
                 <img src="images/axolotl.jpg" alt="Axolotl">
                 <div class="item-info">
                     <h3>Axolotl (Ambystoma mexicanum)</h3>
@@ -529,10 +501,13 @@
                     <div class="art-partner">Proposed Partner: <strong>Chinampa-Refugio Project (UNAM)</strong></div>
                 </div>
             </div>
+        </div>
+    </section>
+
     <!-- Luminous Visions Section -->
     <section id="luminous-visions" class="gallery-section">
         <h2>Luminous Visions</h2>
-        <p class="section-subtitle">A collection of experimental portraits and figurative works exploring the visual language of light. The Guardians of Light series evolved from the techniques and ideas developed within this project.</p>
+        <p class="section-subtitle">A collection of experimental portraits and figurative works exploring the visual language of light[cite: 1]. The Guardians of Light series evolved from the techniques and ideas developed within this project[cite: 1].</p>
         
         <div class="gallery-grid">
             
@@ -556,8 +531,8 @@
                 <img src="images/fenyhatas.jpg" alt="Sunkissed">
                 <div class="item-info">
                     <h3>Sunkissed</h3>
-                    <div class="art-meta">2026 · 30 × 40 cm · Charcoal, pastel & Autodesk Sketchbook</div>
-                    <p>An experimental exploration of depth, atmosphere, and luminescent contrast.</p>
+                    <div class="art-meta">2026 · 30 × 40 cm · Charcoal, pastel & Autodesk Sketchbook[cite: 1]</div>
+                    <p>An experimental exploration of depth, atmosphere, and luminescent contrast[cite: 1].</p>
                 </div>
             </div>
             
@@ -566,12 +541,12 @@
                 <img src="images/Tesla.jpg" alt="Tesla">
                 <div class="item-info">
                     <h3>Tesla</h3>
-                    <div class="art-meta">2025 · 42 × 30 cm · Graphite & Autodesk Sketchbook</div>
-                    <p>Conceptual drawing / Mixed media</p>
+                    <div class="art-meta">2025 · 42 × 30 cm · Graphite & Autodesk Sketchbook[cite: 1]</div>
+                    <p>Conceptual drawing / Mixed media[cite: 1]</p>
                 </div>
             </div>
 
-            <!-- 4. APEX GLOW (JAGUÁR - KÖZVETLENÜL TESLA UTÁN) -->
+            <!-- 4. APEX GLOW -->
             <div class="gallery-item">
                 <img src="images/jaguarglow.jpg" alt="Apex Glow">
                 <div class="item-info">
@@ -586,56 +561,56 @@
                 <img src="images/Joker.jpg" alt="Joker">
                 <div class="item-info">
                     <h3>Joker</h3>
-                    <div class="art-meta">2023 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
-                    <p>Colored pencil / Neon highlights</p>
+                    <div class="art-meta">2023 · 21 × 30 cm · Graphite & Autodesk Sketchbook[cite: 1]</div>
+                    <p>Colored pencil / Neon highlights[cite: 1]</p>
                 </div>
             </div>
             <div class="gallery-item">
                 <img src="images/Homelander.jpg" alt="Homelander">
                 <div class="item-info">
                     <h3>Homelander</h3>
-                    <div class="art-meta">2024 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
-                    <p>Mixed media / Pop culture series</p>
+                    <div class="art-meta">2024 · 21 × 30 cm · Graphite & Autodesk Sketchbook[cite: 1]</div>
+                    <p>Mixed media / Pop culture series[cite: 1]</p>
                 </div>
             </div>
             <div class="gallery-item">
                 <img src="images/kiserletiportre.jpg" alt="Vigil">
                 <div class="item-info">
                     <h3>Vigil</h3>
-                    <div class="art-meta">2024 · 21 × 30 cm · Graphite, colored pencil & Autodesk Sketchbook</div>
-                    <p>Graphite & Glow Art</p>
+                    <div class="art-meta">2024 · 21 × 30 cm · Graphite, colored pencil & Autodesk Sketchbook[cite: 1]</div>
+                    <p>Graphite & Glow Art[cite: 1]</p>
                 </div>
             </div>
             <div class="gallery-item">
                 <img src="images/Zorya.jpg" alt="Zorya">
                 <div class="item-info">
                     <h3>Zorya</h3>
-                    <div class="art-meta">2025 · 30 × 40 cm · Pastel, charcoal & Autodesk Sketchbook</div>
-                    <p>Pastel & Digital Luminescence</p>
+                    <div class="art-meta">2025 · 30 × 40 cm · Pastel, charcoal & Autodesk Sketchbook[cite: 1]</div>
+                    <p>Pastel & Digital Luminescence[cite: 1]</p>
                 </div>
             </div>
             <div class="gallery-item">
                 <img src="images/zöld fülbevaló.jpg" alt="Green Earring">
                 <div class="item-info">
                     <h3>Green Earring</h3>
-                    <div class="art-meta">2026 · 30 × 42 cm · Graphite & Autodesk Sketchbook</div>
-                    <p>Traditional drawing / Luminescent contrast</p>
+                    <div class="art-meta">2026 · 30 × 42 cm · Graphite & Autodesk Sketchbook[cite: 1]</div>
+                    <p>Traditional drawing / Luminescent contrast[cite: 1]</p>
                 </div>
             </div>
             <div class="gallery-item">
                 <img src="images/cigiszünet.jpg" alt="Cigarette Break">
                 <div class="item-info">
                     <h3>Cigarette Break</h3>
-                    <div class="art-meta">2025 · 21 × 30 cm · Felt-tip markers, colored pencil & Autodesk Sketchbook</div>
-                    <p>Mixed media / Neon contrast</p>
+                    <div class="art-meta">2025 · 21 × 30 cm · Felt-tip markers, colored pencil & Autodesk Sketchbook[cite: 1]</div>
+                    <p>Mixed media / Neon contrast[cite: 1]</p>
                 </div>
             </div>
             <div class="gallery-item">
                 <img src="images/purpleglow.jpg" alt="Witching Hour">
                 <div class="item-info">
                     <h3>Witching Hour</h3>
-                    <div class="art-meta">2023 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
-                    <p>Chalk pastel & Digital effects</p>
+                    <div class="art-meta">2023 · 21 × 30 cm · Graphite & Autodesk Sketchbook[cite: 1]</div>
+                    <p>Chalk pastel & Digital effects[cite: 1]</p>
                 </div>
             </div>
         </div>
@@ -645,7 +620,7 @@
     <section id="unique-inspirations" class="gallery-section">
         <h2>Unique Inspirations</h2>
         <p class="section-subtitle">
-            These drawings are made based on unique inspirations or thematic competitions in a magical realist style.
+            These drawings are made based on unique inspirations or thematic competitions in a magical realist style[cite: 1].
         </p>
         
         <div class="gallery-grid">
@@ -654,8 +629,8 @@
                 <img src="images/cupidoonline.jpg" alt="Cupido Online">
                 <div class="item-info">
                     <h3>Cupido Online</h3>
-                    <div class="art-meta">2026 · Colored pencil on paper & Autodesk Sketchbook · 30 × 40 cm</div>
-                    <p>A fusion of traditional medium and digital post-processing, weaving multiple layers of meaning and personal background into the composition. Look closely: there is a hidden visual nod to an iconic, old-school PC gaming meme. Huge props to anyone who manages to spot where the clue is pointing!</p>
+                    <div class="art-meta">2026 · Colored pencil on paper & Autodesk Sketchbook · 30 × 40 cm[cite: 1]</div>
+                    <p>A fusion of traditional medium and digital post-processing, weaving multiple layers of meaning and personal background into the composition[cite: 1]. Look closely: there is a hidden visual nod to an iconic, old-school PC gaming meme[cite: 1]. Huge props to anyone who manages to spot where the clue is pointing[cite: 1]!</p>
                 </div>
             </div>
 
@@ -664,8 +639,8 @@
                 <img src="images/Ha az élet citromot ad.jpg" alt="When Life Gives You Lemons">
                 <div class="item-info">
                     <h3>When Life Gives You Lemons</h3>
-                    <div class="art-meta">2025 · Colored pencil on Pastelmat paper · 30 × 40 cm</div>
-                    <p>A conceptual piece exploring resilience, perspective, and transformation through symbolic representation.</p>
+                    <div class="art-meta">2025 · Colored pencil on Pastelmat paper · 30 × 40 cm[cite: 1]</div>
+                    <p>A conceptual piece exploring resilience, perspective, and transformation through symbolic representation[cite: 1].</p>
                 </div>
             </div>
 
@@ -674,8 +649,8 @@
                 <img src="images/Lelekbenfiatal.jpg" alt="Young at Heart">
                 <div class="item-info">
                     <h3>Young at Heart</h3>
-                    <div class="art-meta">2025 · Graphite and colored pencil on paper · 30 × 42 cm</div>
-                    <p>Awarded 2nd prize at the national art competition organized by Zsilip Art Association under the theme "On the Border of Past and Future".</p>
+                    <div class="art-meta">2025 · Graphite and colored pencil on paper · 30 × 42 cm[cite: 1]</div>
+                    <p>Awarded 2nd prize at the national art competition organized by Zsilip Art Association under the theme "On the Border of Past and Future"[cite: 1].</p>
                 </div>
             </div>
 
@@ -684,8 +659,8 @@
                 <img src="images/Az utolso szelfi.jpg" alt="The Last Selfie">
                 <div class="item-info">
                     <h3>The Last Selfie</h3>
-                    <div class="art-meta">2025 · Colored pencil on Pastelmat paper · 30 × 40 cm</div>
-                    <p>Selected for exhibition at the thematic art competition organized by Zsilip Art Association.</p>
+                    <div class="art-meta">2025 · Colored pencil on Pastelmat paper · 30 × 40 cm[cite: 1]</div>
+                    <p>Selected for exhibition at the thematic art competition organized by Zsilip Art Association[cite: 1].</p>
                 </div>
             </div>
 
@@ -694,8 +669,8 @@
                 <img src="images/A fohasz.jpg" alt="The Prayer">
                 <div class="item-info">
                     <h3>The Prayer</h3>
-                    <div class="art-meta">2024 · Colored pencil on Pastelmat paper · 30 × 40 cm</div>
-                    <p>This artwork marks a personal milestone as my very first completely original drawing.</p>
+                    <div class="art-meta">2024 · Colored pencil on Pastelmat paper · 30 × 40 cm[cite: 1]</div>
+                    <p>This artwork marks a personal milestone as my very first completely original drawing[cite: 1].</p>
                 </div>
             </div>
 
@@ -704,8 +679,8 @@
                 <img src="images/Utolso kivansag.jpg" alt="Last Wish">
                 <div class="item-info">
                     <h3>Last Wish</h3>
-                    <div class="art-meta">2022 · Colored pencil on Pastelmat paper · 30 × 40 cm</div>
-                    <p>Thematically, this remains my absolute favorite piece from my collection.</p>
+                    <div class="art-meta">2022 · Colored pencil on Pastelmat paper · 30 × 40 cm[cite: 1]</div>
+                    <p>Thematically, this remains my absolute favorite piece from my collection[cite: 1].</p>
                 </div>
             </div>
 
@@ -714,8 +689,8 @@
                 <img src="images/mindorokke.jpg" alt="Forever">
                 <div class="item-info">
                     <h3>Forever</h3>
-                    <div class="art-meta">2024 · Colored pencil on Pastelmat paper · 40 × 30 cm</div>
-                    <p>Detailed figurative study focusing on texture and depth using professional colored pencils.</p>
+                    <div class="art-meta">2024 · Colored pencil on Pastelmat paper · 40 × 30 cm[cite: 1]</div>
+                    <p>Detailed figurative study focusing on texture and depth using professional colored pencils[cite: 1].</p>
                 </div>
             </div>
 
@@ -724,8 +699,8 @@
                 <img src="images/mesteresmuzsa.jpg" alt="Master and Muse">
                 <div class="item-info">
                     <h3>Master and Muse</h3>
-                    <div class="art-meta">2026 · Colored pencil on Pastelmat paper · 40 × 30 cm</div>
-                    <p>An exploration of creative energy and artistic synergy captured on premium surface.</p>
+                    <div class="art-meta">2026 · Colored pencil on Pastelmat paper · 40 × 30 cm[cite: 1]</div>
+                    <p>An exploration of creative energy and artistic synergy captured on premium surface[cite: 1].</p>
                 </div>
             </div>
 
@@ -734,8 +709,8 @@
                 <img src="images/Zaroakkord.jpg" alt="Final Chord">
                 <div class="item-info">
                     <h3>Final Chord</h3>
-                    <div class="art-meta">2025 · Colored pencil on Pastelmat paper · 30 × 40 cm</div>
-                    <p>A symbolic representation of endings and transitions portrayed through light contrasts.</p>
+                    <div class="art-meta">2025 · Colored pencil on Pastelmat paper · 30 × 40 cm[cite: 1]</div>
+                    <p>A symbolic representation of endings and transitions portrayed through light contrasts[cite: 1].</p>
                 </div>
             </div>
 
@@ -744,8 +719,8 @@
                 <img src="images/A holnap arnyeka.jpg" alt="Shadow of Tomorrow">
                 <div class="item-info">
                     <h3>Shadow of Tomorrow</h3>
-                    <div class="art-meta">2026 · Colored pencil on Pastelmat paper · 40 × 30 cm</div>
-                    <p>A conceptual piece exploring time, anticipation, and atmosphere in a magical realist style.</p>
+                    <div class="art-meta">2026 · Colored pencil on Pastelmat paper · 40 × 30 cm[cite: 1]</div>
+                    <p>A conceptual piece exploring time, anticipation, and atmosphere in a magical realist style[cite: 1].</p>
                 </div>
             </div>
         </div>
@@ -754,17 +729,17 @@
     <!-- About Section -->
     <section id="about" class="about-section">
         <h2>About Me</h2>
-        <p class="section-desc">The artist behind the pseudonym Jalraxe.</p>
+        <p class="section-desc">The artist behind the pseudonym Jalraxe[cite: 1].</p>
         <div class="about-content">
-            <p>I am Magyar Levente, working under the artistic name Jalraxe. My work combines traditional drawing techniques with digital enhancement to create images that balance realism, symbolism and atmosphere.</p>
-            <p>Light plays a central role throughout my portfolio—not merely as illumination, but as a narrative and emotional element. Whether portraying endangered wildlife, imagined characters or reflections on contemporary society, I seek to create images that invite viewers to look beyond the surface.</p>
+            <p>I am Magyar Levente, working under the artistic name Jalraxe[cite: 1]. My work combines traditional drawing techniques with digital enhancement to create images that balance realism, symbolism and atmosphere[cite: 1].</p>
+            <p>Light plays a central role throughout my portfolio—not merely as illumination, but as a narrative and emotional element[cite: 1]. Whether portraying endangered wildlife, imagined characters or reflections on contemporary society, I seek to create images that invite viewers to look beyond the surface[cite: 1].</p>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <h2>Get in Touch</h2>
-        <p class="section-desc">For commissions, exhibitions, collaborations or general inquiries, feel free to get in touch.</p>
+        <p class="section-desc">For commissions, exhibitions, collaborations or general inquiries, feel free to get in touch[cite: 1].</p>
         <a href="mailto:levente.magyar@gmail.com" class="contact-btn">Send an Email</a>
     </section>
 </main>
@@ -794,14 +769,14 @@
     const lightboxCaption = document.getElementById('lightbox-caption');
     const lightboxClose = document.getElementById('lightbox-close');
     
-    // Minden sima kép kiválasztása, beleértve a tobzoska-reveal-t, kivéve a sárkány csúszkáit
+    // Minden sima kép kiválasztása, kivéve a sárkány csúszkáit
     const galleryImages = document.querySelectorAll('.gallery-grid .gallery-item img:not(.draco-slide)');
     const dracoSlides = document.querySelectorAll('.draco-slide');
 
     // Sima képek lightbox eseménye
     galleryImages.forEach(img => {
         img.addEventListener('click', () => {
-            const title = img.closest('.gallery-item').querySelector('.item-info h3').innerText;
+            const title = img.parentElement.querySelector('.item-info h3').innerText;
             lightboxImg.src = img.src;
             lightboxImg.alt = img.alt;
             lightboxCaption.innerText = title;
