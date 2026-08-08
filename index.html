@@ -1,831 +1,415 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magyar Levente (Jalraxe) | Portfolio</title>
-    <style>
-        /* Modern, minimalist dark design */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #0d0d0d;
-            color: #e5e5e5;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-        }
-
-        /* --- CLEAN HEADER --- */
-        header {
-            max-width: 1200px;
-            margin: 40px auto 20px auto;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #ffffff;
-            margin-bottom: 5px;
-        }
-
-        .artist-alias {
-            font-size: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #888888;
-            margin-bottom: 25px;
-        }
-
-        nav {
-            margin-top: 20px;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-            padding: 15px 0;
-        }
-
-        nav a {
-            color: #999;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ffffff;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            max-width: 1200px;
-            margin: 0 auto 80px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .hero-image-container {
-            width: 100%;
-            overflow: hidden;
-            border-radius: 4px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-        }
-
-        .hero img {
-            width: 100%;
-            height: auto;
-            max-height: 650px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .intro {
-            max-width: 800px;
-            margin: 40px auto 0 auto;
-            font-size: 1.15rem;
-            color: #aaaaaa;
-            font-weight: 300;
-            text-align: center;
-            line-height: 1.7;
-        }
-
-        /* --- GALLERY AND CONTENT --- */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .gallery-section {
-            margin-bottom: 100px;
-        }
-
-        .gallery-section h2 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
-        .section-desc, .section-subtitle {
-            font-size: 1rem;
-            color: #888888;
-            margin-bottom: 40px;
-            font-weight: 300;
-            max-width: 900px;
-        }
-
-        /* FIXÁLT, ELMOZDÍTHATATLAN RÁCS */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            width: 100%;
-        }
-
-        .gallery-item {
-            background-color: #121212;
-            border-radius: 4px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 580px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-
-        /* Sima képek szabályai a kártyákon belül */
-        .gallery-item img:not(.draco-slide) {
-            width: 100%;
-            height: 380px;
-            min-height: 380px;
-            object-fit: cover;
-            object-position: center;
-            background-color: #080808;
-            display: block;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item img:not(.draco-slide):hover {
-            opacity: 0.85;
-        }
-
-        /* --- SÁRKÁNY SLIDESHOW SPECIÁLIS FIXEK --- */
-        .slideshow-container {
-            position: relative;
-            width: 100%;
-            height: 380px;
-            min-height: 380px;
-            background-color: #080808;
-            overflow: hidden;
-            display: block;
-        }
-
-        .draco-slide {
-            position: absolute !important;
-            top: 0;
-            left: 0;
-            width: 100% !important;
-            height: 100% !important;
-            min-height: 100% !important;
-            object-fit: contain;
-            display: block;
-            cursor: pointer;
-            transition: opacity 1s ease-in-out !important;
-        }
-
-        .item-info {
-            padding: 25px;
-            border-top: 1px solid #1a1a1a;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .item-info h3 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: #ffffff;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
-
-        .item-info p {
-            color: #aaaaaa;
-            font-size: 0.9rem;
-            font-weight: 300;
-            margin-bottom: 15px;
-        }
-
-        .art-meta {
-            color: #666;
-            font-size: 0.82rem;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
-
-        .art-partner {
-            font-size: 0.82rem;
-            color: #abd1b5;
-            border-top: 1px dashed #222;
-            padding-top: 10px;
-            margin-top: auto;
-            letter-spacing: 0.5px;
-        }
-
-        .about-section {
-            max-width: 800px;
-            margin: 0 auto 100px auto;
-            text-align: center;
-        }
-
-        .about-content {
-            font-size: 1.1rem;
-            color: #aaaaaa;
-            font-weight: 300;
-            text-align: left;
-            background: #121212;
-            padding: 40px;
-            border-radius: 4px;
-        }
-
-        .about-content p {
-            margin-bottom: 20px;
-        }
-
-        .contact-section {
-            text-align: center;
-            margin-bottom: 100px;
-            padding: 60px 20px;
-            background: #121212;
-            border-radius: 4px;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            background: transparent;
-            color: #ffffff;
-            border: 1px solid #ffffff;
-            padding: 15px 40px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-        }
-
-        .contact-btn:hover {
-            background: #ffffff;
-            color: #0d0d0d;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: #444;
-            font-size: 0.8rem;
-            border-top: 1px solid #1a1a1a;
-            letter-spacing: 1px;
-        }
-
-        .social-links {
-            margin-bottom: 20px;
-        }
-
-        .social-links a {
-            color: #aaaaaa;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #ffffff;
-        }
-
-        .footer-email {
-            margin-bottom: 15px;
-            color: #888;
-        }
-
-        .footer-email a {
-            color: #888;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-email a:hover {
-            color: #ffffff;
-        }
-
-        /* --- LIGHTBOX STYLE --- */
-        .lightbox-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(5, 5, 5, 0.95);
-            backdrop-filter: blur(8px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-        }
-
-        .lightbox-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .lightbox-image {
-            max-width: 90%;
-            max-height: 80vh;
-            object-fit: contain;
-            border-radius: 4px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-            transform: scale(0.95);
-            transition: transform 0.4s ease;
-        }
-
-        .lightbox-overlay.active .lightbox-image {
-            transform: scale(1);
-        }
-
-        .lightbox-caption {
-            margin-top: 20px;
-            color: #ffffff;
-            font-size: 1.2rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-            text-align: center;
-            max-width: 80%;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #888;
-            font-size: 2.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            user-select: none;
-        }
-
-        .lightbox-close:hover {
-            color: #ffffff;
-        }
-
-        /* Képernyőméret igazítások */
-        @media (max-width: 1024px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            .gallery-item {
-                min-height: auto;
-            }
-            .lightbox-close {
-                top: 15px;
-                right: 20px;
-                font-size: 2rem;
-            }
-            .social-links a {
-                display: inline-block;
-                margin: 5px 15px;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Magyar Levente (Jalraxe) — Drawing with Light</title>
+<meta name="description" content="Contemporary symbolic realism, endangered species portraits and narrative drawings by Magyar Levente (Jalraxe).">
+<meta property="og:title" content="Magyar Levente — Drawing with Light">
+<meta property="og:description" content="A portfolio of symbolic realism, luminous portraiture and conservation art.">
+<meta property="og:image" content="images/featured/cupido-online/final.jpg">
+<meta name="theme-color" content="#080808">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<header>
-    <h1>Magyar Levente</h1>
-    <div class="artist-alias">(Jalraxe)</div>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#guardians-of-light">Guardians of Light</a>
-        <a href="#luminous-visions">Luminous Visions</a>
-        <a href="#unique-inspirations">Unique Inspirations</a>
-        <a href="#about">About Me</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<div class="intro-overlay" aria-label="Opening animation">
+<div class="intro-wrap">
+<img class="intro-svg intro-signature" src="assets/signature-intro.svg" alt="Jalraxe signature drawn with golden light">
+<div class="intro-name">MAGYAR LEVENTE</div>
+<div class="intro-tag" data-i18n="drawingWithLight">Drawing with Light</div>
+</div>
+<button class="intro-skip">Skip</button>
+</div>
+<a class="skip" href="#guardians">Skip to works</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html">MAGYAR LEVENTE <span style="color:#777">/ JALRAXE</span>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
+<nav class="nav" id="site-nav">
+<a href="index.html#guardians" data-i18n="navGuardians">Guardians</a>
+<a href="index.html#featured" data-i18n="navFeatured">Featured</a>
+<a href="index.html#inspirations" data-i18n="navInspirations">Inspirations</a>
+<a href="index.html#luminous" data-i18n="navLuminous">Luminous</a>
+<a href="index.html#about" data-i18n="navAbout">About</a>
+<a href="index.html#contact" data-i18n="navContact">Contact</a>
+</nav>
+<div class="lang">
+<button data-lang="hu">HU</button>
+<span>|</span>
+<button data-lang="en" class="active">EN</button>
+</div>
+</div>
 </header>
-
-<section id="home" class="hero">
-    <div class="hero-image-container">
-        <img src="images/borito.jpg" alt="Magyar Levente - Portfolio Artwork Showcase">
-    </div>
-    <p class="intro">
-        Through traditional drawing and digital illumination, I explore the relationship between nature, symbolism and transformation. My work seeks moments where light becomes more than a visual effect—it becomes meaning.
-    </p>
-</section>
-
 <main>
-    <!-- Guardians of Light Section -->
-    <section id="guardians-of-light" class="gallery-section">
-        <h2>Guardians of Light</h2>
-        <div class="section-desc">
-            <p>Guardians of Light presents critically endangered species through luminous portraits that blend traditional drawing with digital lightwork[cite: 1]. Each artwork aims to highlight the beauty, uniqueness and fragility of Earth's most threatened wildlife[cite: 1]. My ultimate dream is to contribute to the preservation of these species through my art[cite: 1]. To achieve this, my vision is to partner with wildlife conservation organizations, featuring these drawings on official merchandise to raise funds and directly support their cause[cite: 1].</p>
-            <p style="font-size:0.9rem;color:#666;margin-top:20px;">Colored pencil on Clairefontaine Pastelmat paper, enhanced with digital illumination[cite: 1].</p>
-        </div>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/törpelajhár.jpg" alt="Pygmy Three-Toed Sloth">
-                <div class="item-info">
-                    <h3>Pygmy Three-Toed Sloth (Bradypus pygmaeus)</h3>
-                    <div class="art-meta">2025 · Colored pencil and digital lightwork · 30 × 40 cm[cite: 1]</div>
-                    <p>The first featured species: This charming, cat-sized little creature is one of the rarest mammals on Earth — only about 100 individuals remain, living exclusively on a tiny island[cite: 1].</p>
-                    <div class="art-partner">Proposed Partner: <strong>The Sloth Conservation Foundation</strong>[cite: 1]</div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/tapanuiorángután.jpg" alt="Tapanuli Orangutan">
-                <div class="item-info">
-                    <h3>Tapanuli Orangutan (Pongo tapanuliensis)</h3>
-                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm[cite: 1]</div>
-                    <p>The rarest great ape species on Earth, with fewer than 800 individuals remaining in the wild[cite: 1].</p>
-                    <div class="art-partner">Proposed Partner: <strong>Sumatran Orangutan Conservation Programme</strong>[cite: 1]</div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/andesihegyimacska.png" alt="Andean Mountain Cat">
-                <div class="item-info">
-                    <h3>Andean mountain cat (Leopardus jacobita)</h3>
-                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm[cite: 1]</div>
-                    <p>The Andean mountain cat is one of the rarest and least known wild cat species in the world[cite: 1]. It is estimated that fewer than 1,500 individuals remain in the wild, living in isolated populations across the high-altitude regions of the Andes[cite: 1].</p>
-                    <div class="art-partner">Proposed Partner: <strong>Andean Cat Alliance</strong>[cite: 1]</div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/kínai tobzoska.jpg" alt="Chinese Pangolin">
-                <div class="item-info">
-                    <h3>Chinese Pangolin (Manis pentadactyla)</h3>
-                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm[cite: 1]</div>
-                    <p>Meet the next Guardian of Light: the Chinese pangolin (Manis pentadactyla)[cite: 1]. The only mammal wrapped in hard, protective scales — once nature’s perfect armor[cite: 1]. Today, it can’t protect them from humans[cite: 1]. Poaching and illegal trade make them one of the most endangered and trafficked mammals on Earth[cite: 1].</p>
-                    <div class="art-partner">Proposed Partner: <strong>Save Pangolins</strong>[cite: 1]</div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/kektorkuara.jpg" alt="Blue-throated Macaw">
-                <div class="item-info">
-                    <h3>Blue-throated Macaw (Ara glaucogularis)</h3>
-                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm[cite: 1]</div>
-                    <p>The Blue-throated Macaw is one of the rarest parrot species in the world, pushed to the brink of extinction by habitat loss and the exotic pet trade[cite: 1]. Its wild population is currently estimated at just a few hundred individuals[cite: 1].</p>
-                    <div class="art-partner">Proposed Partner: <strong>Asociación Armonía</strong>[cite: 1]</div>
-                </div>
-            </div>
-            <!-- 6. AXOLOTL (ÚJ ELEM) -->
-            <div class="gallery-item">
-                <img src="images/axolotl.jpg" alt="Axolotl">
-                <div class="item-info">
-                    <h3>Axolotl (Ambystoma mexicanum)</h3>
-                    <div class="art-meta">2026 · Colored pencil and digital lightwork · 30 × 40 cm</div>
-                    <p>Nature's eternal youth: this unique amphibian never undergoes full metamorphosis, retaining its larval form throughout life. Associated with Xolotl, the Aztec god of fire and transformation, it possesses remarkable regenerative abilities—capable of rebuilding limbs, heart, and brain tissue. Yet, while studied in labs worldwide, its wild population in Mexico City's ancient Xochimilco canals has collapsed due to pollution and habitat loss.</p>
-                    <div class="art-partner">Proposed Partner: <strong>Chinampa-Refugio Project (UNAM)</strong></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Luminous Visions Section -->
-    <section id="luminous-visions" class="gallery-section">
-        <h2>Luminous Visions</h2>
-        <p class="section-subtitle">A collection of experimental portraits and figurative works exploring the visual language of light[cite: 1]. The Guardians of Light series evolved from the techniques and ideas developed within this project[cite: 1].</p>
-        
-        <div class="gallery-grid">
-            
-            <!-- 1. DRAGON EVOLUTION (ANIMÁLT) -->
-            <div class="gallery-item">
-                <div class="slideshow-container">
-                    <img src="images/draco-1.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 1" style="opacity: 1;">
-                    <img src="images/draco-2.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 2" style="opacity: 0;">
-                    <img src="images/draco-3.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 3" style="opacity: 0;">
-                    <img src="images/draco-4.jpg" class="draco-slide" alt="Evolution of the Dragon - Step 4" style="opacity: 0;">
-                </div>
-                <div class="item-info">
-                    <h3>Evolution of the Dragon</h3>
-                    <div class="art-meta">2022 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
-                    <p>An animated digital frame showcasing the birth of a masterpiece: watch the seamless transition from the initial graphite linework to the final luminescent digital phase.</p>
-                </div>
-            </div>
-
-            <!-- 2. SUNKISSED -->
-            <div class="gallery-item">
-                <img src="images/fenyhatas.jpg" alt="Sunkissed">
-                <div class="item-info">
-                    <h3>Sunkissed</h3>
-                    <div class="art-meta">2026 · 30 × 40 cm · Charcoal, pastel & Autodesk Sketchbook[cite: 1]</div>
-                    <p>An experimental exploration of depth, atmosphere, and luminescent contrast[cite: 1].</p>
-                </div>
-            </div>
-            
-            <!-- 3. TESLA -->
-            <div class="gallery-item">
-                <img src="images/Tesla.jpg" alt="Tesla">
-                <div class="item-info">
-                    <h3>Tesla</h3>
-                    <div class="art-meta">2025 · 42 × 30 cm · Graphite & Autodesk Sketchbook[cite: 1]</div>
-                    <p>Conceptual drawing / Mixed media[cite: 1]</p>
-                </div>
-            </div>
-
-            <!-- 4. APEX GLOW -->
-            <div class="gallery-item">
-                <img src="images/jaguarglow.jpg" alt="Apex Glow">
-                <div class="item-info">
-                    <h3>Apex Glow</h3>
-                    <div class="art-meta">2021 · 21 × 30 cm · Graphite & Autodesk Sketchbook</div>
-                    <p>A pivotal piece in my portfolio: the very first experimental transition of the luminescent "glow" technique from human portraits to wildlife, which ultimately laid the conceptual foundation for the Guardians of Light series.</p>
-                </div>
-            </div>
-
-            <!-- 5. JOKER -->
-            <div class="gallery-item">
-                <img src="images/Joker.jpg" alt="Joker">
-                <div class="item-info">
-                    <h3>Joker</h3>
-                    <div class="art-meta">2023 · 21 × 30 cm · Graphite & Autodesk Sketchbook[cite: 1]</div>
-                    <p>Colored pencil / Neon highlights[cite: 1]</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/Homelander.jpg" alt="Homelander">
-                <div class="item-info">
-                    <h3>Homelander</h3>
-                    <div class="art-meta">2024 · 21 × 30 cm · Graphite & Autodesk Sketchbook[cite: 1]</div>
-                    <p>Mixed media / Pop culture series[cite: 1]</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/kiserletiportre.jpg" alt="Vigil">
-                <div class="item-info">
-                    <h3>Vigil</h3>
-                    <div class="art-meta">2024 · 21 × 30 cm · Graphite, colored pencil & Autodesk Sketchbook[cite: 1]</div>
-                    <p>Graphite & Glow Art[cite: 1]</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/Zorya.jpg" alt="Zorya">
-                <div class="item-info">
-                    <h3>Zorya</h3>
-                    <div class="art-meta">2025 · 30 × 40 cm · Pastel, charcoal & Autodesk Sketchbook[cite: 1]</div>
-                    <p>Pastel & Digital Luminescence[cite: 1]</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/zöld fülbevaló.jpg" alt="Green Earring">
-                <div class="item-info">
-                    <h3>Green Earring</h3>
-                    <div class="art-meta">2026 · 30 × 42 cm · Graphite & Autodesk Sketchbook[cite: 1]</div>
-                    <p>Traditional drawing / Luminescent contrast[cite: 1]</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/cigiszünet.jpg" alt="Cigarette Break">
-                <div class="item-info">
-                    <h3>Cigarette Break</h3>
-                    <div class="art-meta">2025 · 21 × 30 cm · Felt-tip markers, colored pencil & Autodesk Sketchbook[cite: 1]</div>
-                    <p>Mixed media / Neon contrast[cite: 1]</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/purpleglow.jpg" alt="Witching Hour">
-                <div class="item-info">
-                    <h3>Witching Hour</h3>
-                    <div class="art-meta">2023 · 21 × 30 cm · Graphite & Autodesk Sketchbook[cite: 1]</div>
-                    <p>Chalk pastel & Digital effects[cite: 1]</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Unique Inspirations Section -->
-    <section id="unique-inspirations" class="gallery-section">
-        <h2>Unique Inspirations</h2>
-        <p class="section-subtitle">
-            These drawings are made based on unique inspirations or thematic competitions in a magical realist style[cite: 1].
-        </p>
-        
-        <div class="gallery-grid">
-            <!-- 1. Cupido Online -->
-            <div class="gallery-item">
-                <img src="images/cupidoonline.jpg" alt="Cupido Online">
-                <div class="item-info">
-                    <h3>Cupido Online</h3>
-                    <div class="art-meta">2026 · Colored pencil on paper & Autodesk Sketchbook · 30 × 40 cm[cite: 1]</div>
-                    <p>A fusion of traditional medium and digital post-processing, weaving multiple layers of meaning and personal background into the composition[cite: 1]. Look closely: there is a hidden visual nod to an iconic, old-school PC gaming meme[cite: 1]. Huge props to anyone who manages to spot where the clue is pointing[cite: 1]!</p>
-                </div>
-            </div>
-
-            <!-- 2. When Life Gives You Lemons -->
-            <div class="gallery-item">
-                <img src="images/Ha az élet citromot ad.jpg" alt="When Life Gives You Lemons">
-                <div class="item-info">
-                    <h3>When Life Gives You Lemons</h3>
-                    <div class="art-meta">2025 · Colored pencil on Pastelmat paper · 30 × 40 cm[cite: 1]</div>
-                    <p>A conceptual piece exploring resilience, perspective, and transformation through symbolic representation[cite: 1].</p>
-                </div>
-            </div>
-
-            <!-- 3. Young at Heart -->
-            <div class="gallery-item">
-                <img src="images/Lelekbenfiatal.jpg" alt="Young at Heart">
-                <div class="item-info">
-                    <h3>Young at Heart</h3>
-                    <div class="art-meta">2025 · Graphite and colored pencil on paper · 30 × 42 cm[cite: 1]</div>
-                    <p>Awarded 2nd prize at the national art competition organized by Zsilip Art Association under the theme "On the Border of Past and Future"[cite: 1].</p>
-                </div>
-            </div>
-
-            <!-- 4. The Last Selfie -->
-            <div class="gallery-item">
-                <img src="images/Az utolso szelfi.jpg" alt="The Last Selfie">
-                <div class="item-info">
-                    <h3>The Last Selfie</h3>
-                    <div class="art-meta">2025 · Colored pencil on Pastelmat paper · 30 × 40 cm[cite: 1]</div>
-                    <p>Selected for exhibition at the thematic art competition organized by Zsilip Art Association[cite: 1].</p>
-                </div>
-            </div>
-
-            <!-- 5. The Prayer -->
-            <div class="gallery-item">
-                <img src="images/A fohasz.jpg" alt="The Prayer">
-                <div class="item-info">
-                    <h3>The Prayer</h3>
-                    <div class="art-meta">2024 · Colored pencil on Pastelmat paper · 30 × 40 cm[cite: 1]</div>
-                    <p>This artwork marks a personal milestone as my very first completely original drawing[cite: 1].</p>
-                </div>
-            </div>
-
-            <!-- 6. Last Wish -->
-            <div class="gallery-item">
-                <img src="images/Utolso kivansag.jpg" alt="Last Wish">
-                <div class="item-info">
-                    <h3>Last Wish</h3>
-                    <div class="art-meta">2022 · Colored pencil on Pastelmat paper · 30 × 40 cm[cite: 1]</div>
-                    <p>Thematically, this remains my absolute favorite piece from my collection[cite: 1].</p>
-                </div>
-            </div>
-
-            <!-- 7. Forever -->
-            <div class="gallery-item">
-                <img src="images/mindorokke.jpg" alt="Forever">
-                <div class="item-info">
-                    <h3>Forever</h3>
-                    <div class="art-meta">2024 · Colored pencil on Pastelmat paper · 40 × 30 cm[cite: 1]</div>
-                    <p>Detailed figurative study focusing on texture and depth using professional colored pencils[cite: 1].</p>
-                </div>
-            </div>
-
-            <!-- 8. Master and Muse -->
-            <div class="gallery-item">
-                <img src="images/mesteresmuzsa.jpg" alt="Master and Muse">
-                <div class="item-info">
-                    <h3>Master and Muse</h3>
-                    <div class="art-meta">2026 · Colored pencil on Pastelmat paper · 40 × 30 cm[cite: 1]</div>
-                    <p>An exploration of creative energy and artistic synergy captured on premium surface[cite: 1].</p>
-                </div>
-            </div>
-
-            <!-- 9. Final Chord -->
-            <div class="gallery-item">
-                <img src="images/Zaroakkord.jpg" alt="Final Chord">
-                <div class="item-info">
-                    <h3>Final Chord</h3>
-                    <div class="art-meta">2025 · Colored pencil on Pastelmat paper · 30 × 40 cm[cite: 1]</div>
-                    <p>A symbolic representation of endings and transitions portrayed through light contrasts[cite: 1].</p>
-                </div>
-            </div>
-
-            <!-- 10. Shadow of Tomorrow -->
-            <div class="gallery-item">
-                <img src="images/A holnap arnyeka.jpg" alt="Shadow of Tomorrow">
-                <div class="item-info">
-                    <h3>Shadow of Tomorrow</h3>
-                    <div class="art-meta">2026 · Colored pencil on Pastelmat paper · 40 × 30 cm[cite: 1]</div>
-                    <p>A conceptual piece exploring time, anticipation, and atmosphere in a magical realist style[cite: 1].</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <h2>About Me</h2>
-        <p class="section-desc">The artist behind the pseudonym Jalraxe[cite: 1].</p>
-        <div class="about-content">
-            <p>I am Magyar Levente, working under the artistic name Jalraxe[cite: 1]. My work combines traditional drawing techniques with digital enhancement to create images that balance realism, symbolism and atmosphere[cite: 1].</p>
-            <p>Light plays a central role throughout my portfolio—not merely as illumination, but as a narrative and emotional element[cite: 1]. Whether portraying endangered wildlife, imagined characters or reflections on contemporary society, I seek to create images that invite viewers to look beyond the surface[cite: 1].</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2>Get in Touch</h2>
-        <p class="section-desc">For commissions, exhibitions, collaborations or general inquiries, feel free to get in touch[cite: 1].</p>
-        <a href="mailto:levente.magyar@gmail.com" class="contact-btn">Send an Email</a>
-    </section>
-</main>
-
-<footer>
-    <div class="social-links">
-        <a href="https://www.facebook.com/levente.magyar.9699/" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com/jalraxe/" target="_blank">Instagram</a>
-    </div>
-    <div class="footer-email">
-        Email: <a href="mailto:levente.magyar@gmail.com">levente.magyar@gmail.com</a>
-    </div>
-    <p>&copy; 2026 Magyar Levente (Jalraxe). All rights reserved.</p>
-</footer>
-
-<!-- LIGHTBOX ELEMENT -->
-<div class="lightbox-overlay" id="lightbox">
-    <span class="lightbox-close" id="lightbox-close">&times;</span>
-    <img class="lightbox-image" id="lightbox-img" src="" alt="">
-    <div class="lightbox-caption" id="lightbox-caption"></div>
+<section class="hero">
+<div>
+<img class="hero-mark" src="assets/signature-logo.png" alt="Jalraxe signature">
+<div class="eyebrow" data-i18n="heroEyebrow">Contemporary symbolic realism</div>
+<h1 data-i18n="drawingWithLight">Drawing with Light</h1>
+<div class="manifesto">
+<span>Every drawing begins in darkness.</span>
+<span>Light is not what finishes the drawing.</span>
+<span>It is what begins it.</span>
+</div>
+<p class="lead" data-i18n="heroLead">Traditional drawing and digital illumination meet in works exploring nature, vulnerability, memory and transformation.</p>
+<a class="scroll-cue" href="#guardians">Enter the project ↓</a>
+</div>
+</section>
+<section class="section" id="featured">
+<div class="section-head">
+<h2 data-i18n="featuredTitle">Featured Works</h2>
+<p class="section-intro" data-i18n="featuredIntro">Three works that open the door to the ideas, emotions and visual language behind the portfolio.</p>
+</div>
+<div class="featured-grid">
+<a class="feature-card" href="works/cupido-online.html">
+<img src="images/featured/cupido-online/final.jpg" alt="Cupido Online">
+<div class="feature-caption">
+<h3>Cupido Online</h3>
+<p>Even the god of love can lose his purpose.</p>
+</div>
+</a>
+<a class="feature-card" href="works/young-at-heart.html">
+<img src="images/featured/young-at-heart/final.jpg" alt="Young at Heart">
+<div class="feature-caption">
+<h3>Young at Heart</h3>
+<p>Age changes the body, not the spirit.</p>
+</div>
+</a>
+<a class="feature-card" href="works/axolotl.html">
+<img src="images/featured/axolotl/final.jpg" alt="Axolotl">
+<div class="feature-caption">
+<h3>Axolotl</h3>
+<p>A fragile survivor with an impossible gift.</p>
+</div>
+</a>
+</div>
+</section>
+<section class="project-band guardians-project" id="guardians">
+<div class="section">
+<div class="section-head">
+<div>
+<div class="project-label" data-i18n="guardPrimary">Primary Project · 6 / 20 completed</div>
+<h2 data-i18n="guardTitle">Guardians of Light</h2>
+</div>
+<p class="section-intro" data-i18n="guardIntro">An ongoing conservation art project: endangered species portrayed through luminous threads, with a direct path from each artwork to the people working to protect the species.</p>
+</div>
+<div class="guardian-mission">
+<div class="guardian-mission-copy">
+<div class="eyebrow" data-i18n="guardMissionLabel">Project mission</div>
+<p data-i18n="guardMissionText">Guardians of Light combines traditional drawing with digital illumination to make threatened species harder to overlook. The goal is a 20-piece series that connects visual attention with conservation awareness and support.</p>
+<p class="guardian-method" data-i18n="guardMethod">Each portrait begins on 30 × 40 cm Clairefontaine Pastelmat with Faber-Castell Polychromos pencils, then receives its final light in Autodesk Sketchbook.</p>
+</div>
+<div class="guardian-mission-points">
+<div>
+<strong>6 / 20</strong>
+<span data-i18n="guardGoal">portraits completed</span>
+</div>
+<div>
+<strong>EN / CR</strong>
+<span data-i18n="guardStatus">endangered species</span>
+</div>
+<div>
+<strong>ART → ACTION</strong>
+<span data-i18n="guardAction">conservation links</span>
+</div>
+</div>
+</div>
+<p class="guardian-disclaimer" data-i18n="guardDisclaimer">Conservation links point to independent organizations working for the species or its habitat. Inclusion does not imply a formal partnership unless explicitly stated.</p>
+<div class="gallery guardian-gallery">
+<article class="art-card guardian-card">
+<button data-lightbox="images/guardians/pygmy-sloth.jpg">
+<img loading="lazy" src="images/guardians/pygmy-sloth.jpg" alt="Pygmy Three-Toed Sloth">
+</button>
+<div class="art-info">
+<h3>Pygmy Three-Toed Sloth</h3>
+<div class="latin">Bradypus pygmaeus</div>
+<div class="status-badge" data-i18n="iucnCR">CR · Critically Endangered</div>
+<div class="meta">2025 · Colored pencil & digital lightwork · 30 × 40 cm</div>
+<p class="guardian-summary" data-i18n="gSlothShort">One of the world's rarest mammals, restricted to a single small island in Panama.</p>
+<button class="guardian-more" data-guardian="sloth" data-i18n="guardianMore">Story & conservation</button>
+</div>
+</article>
+<article class="art-card guardian-card">
+<button data-lightbox="images/guardians/tapanuli-orangutan.jpg">
+<img loading="lazy" src="images/guardians/tapanuli-orangutan.jpg" alt="Tapanuli Orangutan">
+</button>
+<div class="art-info">
+<h3>Tapanuli Orangutan</h3>
+<div class="latin">Pongo tapanuliensis</div>
+<div class="status-badge" data-i18n="iucnCR">CR · Critically Endangered</div>
+<div class="meta">2026 · Colored pencil & digital lightwork · 30 × 40 cm</div>
+<p class="guardian-summary" data-i18n="gTapanuliShort">The rarest great ape, surviving only in the Batang Toru ecosystem of Sumatra.</p>
+<button class="guardian-more" data-guardian="tapanuli" data-i18n="guardianMore">Story & conservation</button>
+</div>
+</article>
+<article class="art-card guardian-card">
+<button data-lightbox="images/guardians/andean-mountain-cat.webp">
+<img loading="lazy" src="images/guardians/andean-mountain-cat.webp" alt="Andean Mountain Cat">
+</button>
+<div class="art-info">
+<h3>Andean Mountain Cat</h3>
+<div class="latin">Leopardus jacobita</div>
+<div class="status-badge" data-i18n="iucnEN">EN · Endangered</div>
+<div class="meta">2026 · Colored pencil & digital lightwork · 30 × 40 cm</div>
+<p class="guardian-summary" data-i18n="gCatShort">One of the world's least-known wild cats, scattered across the high Andes.</p>
+<button class="guardian-more" data-guardian="andean" data-i18n="guardianMore">Story & conservation</button>
+</div>
+</article>
+<article class="art-card guardian-card">
+<button data-lightbox="images/guardians/chinese-pangolin.jpg">
+<img loading="lazy" src="images/guardians/chinese-pangolin.jpg" alt="Chinese Pangolin">
+</button>
+<div class="art-info">
+<h3>Chinese Pangolin</h3>
+<div class="latin">Manis pentadactyla</div>
+<div class="status-badge" data-i18n="iucnCR">CR · Critically Endangered</div>
+<div class="meta">2026 · Colored pencil & digital lightwork · 30 × 40 cm</div>
+<p class="guardian-summary" data-i18n="gPangolinShort">Nature's armor offers no defense against poaching and illegal wildlife trade.</p>
+<button class="guardian-more" data-guardian="pangolin" data-i18n="guardianMore">Story & conservation</button>
+</div>
+</article>
+<article class="art-card guardian-card">
+<button data-lightbox="images/guardians/blue-throated-macaw.jpg">
+<img loading="lazy" src="images/guardians/blue-throated-macaw.jpg" alt="Blue-throated Macaw">
+</button>
+<div class="art-info">
+<h3>Blue-throated Macaw</h3>
+<div class="latin">Ara glaucogularis</div>
+<div class="status-badge" data-i18n="iucnCR">CR · Critically Endangered</div>
+<div class="meta">2026 · Colored pencil & digital lightwork · 30 × 40 cm</div>
+<p class="guardian-summary" data-i18n="gMacawShort">A Bolivian endemic pushed close to extinction by habitat loss and the wild-bird trade.</p>
+<button class="guardian-more" data-guardian="macaw" data-i18n="guardianMore">Story & conservation</button>
+</div>
+</article>
+<article class="art-card guardian-card">
+<button data-lightbox="images/guardians/axolotl.jpg">
+<img loading="lazy" src="images/guardians/axolotl.jpg" alt="Axolotl">
+</button>
+<div class="art-info">
+<h3>Axolotl</h3>
+<div class="latin">Ambystoma mexicanum</div>
+<div class="status-badge" data-i18n="iucnCR">CR · Critically Endangered</div>
+<div class="meta">2026 · Colored pencil & digital lightwork · 30 × 40 cm</div>
+<p class="guardian-summary" data-i18n="gAxolotlShort">A master of regeneration whose wild future depends on restoring Xochimilco.</p>
+<button class="guardian-more" data-guardian="axolotl" data-i18n="guardianMore">Story & conservation</button>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="about">
+<div class="about-grid">
+<img class="about-photo" src="assets/artist-portrait.webp" alt="Magyar Levente (Jalraxe) drawing in his studio" loading="lazy">
+<div>
+<div class="eyebrow" data-i18n="aboutTitle">About the Artist</div>
+<p class="statement">Magyar Levente (Jalraxe) is a Hungarian visual artist combining traditional drawing with digital illumination to explore vulnerability, transformation and the fragile relationship between human attention and the natural world.</p>
+<p class="about-copy">His drawings begin with the precision and physical presence of traditional media, then use restrained digital light as a narrative element rather than decoration.</p>
+<p class="about-copy">His ongoing Guardians of Light series turns this visual language toward conservation, portraying critically endangered species as lives still visible—and therefore still possible to protect.</p>
+<div class="recognition">
+<div class="eyebrow" data-i18n="recognitionTitle">Selected Recognition</div>
+<div class="recognition-item"><strong>Young at Heart</strong><span data-i18n="youngAward">2nd Prize · Zsilip national art competition</span></div>
+<div class="recognition-item"><strong>The Last Selfie</strong><span data-i18n="selfieAward">Selected for Exhibition, Top 20 · Zsilip national thematic competition</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="inspirations">
+<div class="section-head">
+<h2 data-i18n="inspirationTitle">Narrative Works</h2>
+<p class="section-intro" data-i18n="inspirationIntro">Independent narrative works shaped by symbolism, social observation and magical realism.</p>
+</div>
+<div class="gallery">
+<article class="art-card">
+<button data-lightbox="images/inspirations/cupido-online.jpg">
+<img loading="lazy" src="images/inspirations/cupido-online.jpg" alt="Cupido Online">
+</button>
+<div class="art-info">
+<h3>Cupido Online</h3>
+<div class="meta">2026 · Mixed media</div>
+</div>
+</article>
+<article class="art-card">
+<button data-lightbox="images/inspirations/young-at-heart.jpg">
+<img loading="lazy" src="images/inspirations/young-at-heart.jpg" alt="Young at Heart">
+</button>
+<div class="art-info">
+<h3>Young at Heart</h3>
+<div class="meta" data-i18n="youngAwardMeta">2025 · 2nd Prize · National competition</div>
+</div>
+</article>
+<article class="art-card">
+<button data-lightbox="images/inspirations/last-selfie.jpg">
+<img loading="lazy" src="images/inspirations/last-selfie.jpg" alt="The Last Selfie">
+</button>
+<div class="art-info">
+<h3>The Last Selfie</h3>
+<div class="meta" data-i18n="selfieAwardMeta">2025 · Colored pencil · National exhibition selection, Top 20</div>
+</div>
+</article>
+<article class="art-card">
+<button data-lightbox="images/inspirations/master-and-muse.jpg">
+<img loading="lazy" src="images/inspirations/master-and-muse.jpg" alt="Master and Muse">
+</button>
+<div class="art-info">
+<h3>Master and Muse</h3>
+<div class="meta">2026 · Colored pencil</div>
+</div>
+</article>
+<article class="art-card">
+<button data-lightbox="images/inspirations/final-chord.jpg">
+<img loading="lazy" src="images/inspirations/final-chord.jpg" alt="Final Chord">
+</button>
+<div class="art-info">
+<h3>Final Chord</h3>
+<div class="meta">2025 · Colored pencil</div>
+</div>
+</article>
+<article class="art-card">
+<button data-lightbox="images/inspirations/shadow-of-tomorrow.jpg">
+<img loading="lazy" src="images/inspirations/shadow-of-tomorrow.jpg" alt="Shadow of Tomorrow">
+</button>
+<div class="art-info">
+<h3>Shadow of Tomorrow</h3>
+<div class="meta">2026 · Mixed media</div>
+</div>
+</article>
+</div>
+</section>
+<section class="project-band" id="luminous">
+<div class="section">
+<div class="section-head">
+<h2 data-i18n="luminousTitle">Luminous Visions</h2>
+<p class="section-intro" data-i18n="luminousIntro">Experimental portraits and figurative studies where light became a visual language—and eventually gave rise to Guardians of Light.</p>
+</div>
+<div class="gallery">
+<article class="art-card">
+<button data-lightbox="images/luminous/light-effect.jpg">
+<img loading="lazy" src="images/luminous/light-effect.jpg" alt="Sunkissed">
+</button>
+<div class="art-info">
+<h3>Sunkissed</h3>
+<div class="meta">Mixed media</div>
+</div>
+</article>
+<article class="art-card">
+<button data-lightbox="images/luminous/experimental-portrait.jpg">
+<img loading="lazy" src="images/luminous/experimental-portrait.jpg" alt="Vigil">
+</button>
+<div class="art-info">
+<h3>Vigil</h3>
+<div class="meta">Graphite & glow</div>
+</div>
+</article>
+<article class="art-card">
+<button data-lightbox="images/luminous/zorya.webp">
+<img loading="lazy" src="images/luminous/zorya.webp" alt="Zorya">
+</button>
+<div class="art-info">
+<h3>Zorya</h3>
+<div class="meta">Pastel & digital luminescence</div>
+</div>
+</article>
+<article class="art-card">
+<button data-lightbox="images/luminous/green-earring.webp">
+<img loading="lazy" src="images/luminous/green-earring.webp" alt="Green Earring">
+</button>
+<div class="art-info">
+<h3>Green Earring</h3>
+<div class="meta">Traditional drawing & light</div>
+</div>
+</article>
+<article class="art-card">
+<button data-lightbox="images/luminous/purple-glow.jpg">
+<img loading="lazy" src="images/luminous/purple-glow.jpg" alt="Witching Hour">
+</button>
+<div class="art-info">
+<h3>Witching Hour</h3>
+<div class="meta">Chalk pastel & digital effects</div>
+</div>
+</article>
+<article class="art-card">
+<button data-lightbox="images/luminous/apex-glow/final.webp">
+<img loading="lazy" src="images/luminous/apex-glow/final.webp" alt="Apex Glow — luminous jaguar study">
+</button>
+<div class="art-info">
+<h3>Apex Glow</h3>
+<div class="meta">Graphite &amp; digital light study</div>
+</div>
+</article>
 </div>
 
-<!-- JAVASCRIPT FOR LIGHTBOX AND SLIDESHOW -->
-<script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const lightboxClose = document.getElementById('lightbox-close');
-    
-    // Minden sima kép kiválasztása, kivéve a sárkány csúszkáit
-    const galleryImages = document.querySelectorAll('.gallery-grid .gallery-item img:not(.draco-slide)');
-    const dracoSlides = document.querySelectorAll('.draco-slide');
+<section class="apex-feature" aria-labelledby="apex-title">
+<div class="process-copy">
+<div class="eyebrow" data-i18n="apexLabel">First animal glow study</div>
+<h3 id="apex-title">Apex Glow</h3>
+<p data-i18n="apexText">Created from my first animal drawing, Apex Glow became my first experiment with applying digital light to an animal portrait—and an early bridge toward Guardians of Light.</p>
+<div class="process-legend" data-i18n="apexCompare">Original graphite / Glow study</div>
+</div>
+<div>
+<div class="compare apex-compare">
+<img src="images/luminous/apex-glow/original.webp" alt="Original graphite jaguar drawing">
+<img class="after" src="images/luminous/apex-glow/final.webp" alt="Apex Glow final luminous jaguar study">
+</div>
+<input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare the original drawing and Apex Glow">
+</div>
+</section>
 
-    // Sima képek lightbox eseménye
-    galleryImages.forEach(img => {
-        img.addEventListener('click', () => {
-            const title = img.parentElement.querySelector('.item-info h3').innerText;
-            lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt;
-            lightboxCaption.innerText = title;
-            lightbox.classList.add('active');
-        });
-    });
-
-    // Sárkány diák lightbox eseménye külön kezelve
-    dracoSlides.forEach(slide => {
-        slide.addEventListener('click', () => {
-            const container = slide.closest('.gallery-item');
-            const title = container.querySelector('.item-info h3').innerText;
-            const phaseNum = Array.from(dracoSlides).indexOf(slide) + 1;
-            
-            lightboxImg.src = slide.src;
-            lightboxImg.alt = slide.alt;
-            lightboxCaption.innerText = `${title} (Phase ${phaseNum}/4)`;
-            lightbox.classList.add('active');
-        });
-    });
-
-    // Sárkány képek léptetése (áttűnés)
-    let currentSlide = 0;
-    if(dracoSlides.length > 0) {
-        setInterval(() => {
-            dracoSlides[currentSlide].style.opacity = 0;
-            currentSlide = (currentSlide + 1) % dracoSlides.length;
-            dracoSlides[currentSlide].style.opacity = 1;
-        }, 2500);
-    }
-
-    // Lightbox bezárások
-    lightboxClose.addEventListener('click', () => {
-        lightbox.classList.remove('active');
-    });
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.classList.remove('active');
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-            lightbox.classList.remove('active');
-        }
-    });
+<section class="drawing-process" aria-labelledby="process-title">
+<div class="process-heading">
+<div>
+<div class="eyebrow" data-i18n="processLabel">Process study</div>
+<h3 id="process-title" data-i18n="processTitle">From Drawing to Light</h3>
+</div>
+<p data-i18n="processIntro">A rare four-stage record of one work evolving from line drawing through graphite modelling and selective illumination to its final colour and atmosphere.</p>
+</div>
+<div class="process-strip">
+<figure><button data-lightbox="images/process/draco/stage-1.webp"><img loading="lazy" src="images/process/draco/stage-1.webp" alt="Dragon process: line drawing"></button><figcaption><span>01</span><strong data-i18n="processStage1">Line drawing</strong></figcaption></figure>
+<figure><button data-lightbox="images/process/draco/stage-2.webp"><img loading="lazy" src="images/process/draco/stage-2.webp" alt="Dragon process: graphite modelling"></button><figcaption><span>02</span><strong data-i18n="processStage2">Graphite modelling</strong></figcaption></figure>
+<figure><button data-lightbox="images/process/draco/stage-3.webp"><img loading="lazy" src="images/process/draco/stage-3.webp" alt="Dragon process: first light layer"></button><figcaption><span>03</span><strong data-i18n="processStage3">First light layer</strong></figcaption></figure>
+<figure><button data-lightbox="images/process/draco/stage-4.webp"><img loading="lazy" src="images/process/draco/stage-4.webp" alt="Dragon process: final colour artwork"></button><figcaption><span>04</span><strong data-i18n="processStage4">Final colour</strong></figcaption></figure>
+</div>
+</section>
+</div>
+</section>
+<section class="section contact" id="contact">
+<h2 data-i18n="contactTitle">Get in Touch</h2>
+<p class="section-intro" style="margin:15px auto" data-i18n="contactText">For exhibitions, conservation collaborations, commissions or general inquiries.</p>
+<a class="cta" href="mailto:levente.magyar@gmail.com" data-i18n="sendEmail">Send an email</a>
+</section>
+</main>
+<footer class="site-footer">© 2026 Magyar Levente (Jalraxe) · <a href="https://www.instagram.com/jalraxe/">Instagram</a> · <a href="https://www.facebook.com/levente.magyar.9699/">Facebook</a>
+</footer>
+<div class="lightbox">
+<button aria-label="Close">×</button>
+<img alt="Expanded artwork">
+</div>
+<div class="guardian-modal" aria-hidden="true">
+<div class="guardian-modal-backdrop" data-guardian-close>
+</div>
+<section class="guardian-dialog" role="dialog" aria-modal="true" aria-labelledby="guardian-modal-title">
+<button class="guardian-close" type="button" data-guardian-close aria-label="Close">×</button>
+<div class="eyebrow" data-i18n="guardianModalLabel">Guardian profile</div>
+<h2 id="guardian-modal-title">
+</h2>
+<div class="guardian-modal-latin">
+</div>
+<div class="guardian-modal-body">
+<div>
+<h3 data-i18n="guardianStoryTitle">The species & the artwork</h3>
+<div class="guardian-story">
+</div>
+</div>
+<aside>
+<h3 data-i18n="guardianConservationTitle">Conservation links</h3>
+<p class="guardian-org-intro" data-i18n="guardianOrgIntro">Organizations and projects working on the species or its habitat:</p>
+<div class="guardian-orgs">
+</div>
+</aside>
+</div>
+</section>
+</div>
+<script src="js/main.js">
 </script>
-
 </body>
 </html>
