@@ -25,8 +25,8 @@ const guardianDetails={
 
 const staticTextHu={
  'Every drawing begins in darkness.':'Minden rajz a sötétségben kezdődik.',
- 'Light is not what finishes the drawing,':'Nem a fény fejezi be a rajzot,',
- 'it is what begins it.':'hanem az indítja el.',
+ 'Light is not what finishes the drawing.':'Nem a fény fejezi be a rajzot,',
+'It is what begins it.':'hanem az indítja el.',
  'Enter the gallery ↓':'Belépés a galériába ↓','Enter the project ↓':'Belépés a fő projektbe ↓','Skip':'Kihagyás','Skip to works':'Ugrás a művekhez',
  'Even the god of love can lose his purpose.':'Még a szerelem istene is elveszítheti a célját.',
  'Young at Heart':'Lélekben fiatal','Age changes the body, not the spirit.':'A kor a testet változtatja meg, nem a lelket.',
