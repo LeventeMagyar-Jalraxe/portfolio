@@ -25,8 +25,8 @@ const guardianDetails={
 
 const staticTextHu={
  'Every drawing begins in darkness.':'Minden rajz a sötétségből indul.',
-'Light is not what finishes the drawing.':'A fény nem lezárja a művet,',
-'It is what begins it.':'hanem életre hívja.',
+ 'Light does not conclude the work.':'A fény nem lezárja a művet,',
+ 'It brings it to life.':'hanem életre hívja.',
  'Enter the gallery ↓':'Belépés a galériába ↓','Enter the project ↓':'Belépés a fő projektbe ↓','Skip':'Kihagyás','Skip to works':'Ugrás a művekhez',
  'Even the god of love can lose his purpose.':'Még a szerelem istene is elveszítheti a célját.',
  'Young at Heart':'Lélekben fiatal','Age changes the body, not the spirit.':'A kor a testet változtatja meg, nem a lelket.',
@@ -65,7 +65,7 @@ const menuButton=document.querySelector('.menu-toggle'),nav=document.querySelect
 function closeMenu(){menuButton?.setAttribute('aria-expanded','false');nav?.classList.remove('open')}
 menuButton?.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));nav?.classList.toggle('open',!open)});
 nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-const intro=document.querySelector('.intro-overlay');if(intro){const seen=sessionStorage.getItem('lh-intro');if(seen)intro.remove();else{document.body.classList.add('no-scroll');const finish=()=>{intro.classList.add('done');document.body.classList.remove('no-scroll');sessionStorage.setItem('lh-intro','1');setTimeout(()=>intro.remove(),700)};setTimeout(finish,3800);intro.querySelector('.intro-skip')?.addEventListener('click',finish)}}
+const intro=document.querySelector('.intro-overlay');if(intro){const seen=sessionStorage.getItem('lh-intro');if(seen)intro.remove();else{document.body.classList.add('no-scroll');let finished=false;const finish=()=>{if(finished)return;finished=true;intro.classList.add('done');document.body.classList.remove('no-scroll');sessionStorage.setItem('lh-intro','1');setTimeout(()=>intro.remove(),950)};setTimeout(finish,9200);intro.querySelector('.intro-skip')?.addEventListener('click',finish)}}
 const lb=document.querySelector('.lightbox');document.querySelectorAll('[data-lightbox]').forEach(el=>el.addEventListener('click',()=>{lb.querySelector('img').src=el.dataset.lightbox||el.src;lb.classList.add('open')}));lb?.addEventListener('click',e=>{if(e.target===lb||e.target.matches('button'))lb.classList.remove('open')});
 document.querySelectorAll('.compare-range').forEach(r=>r.addEventListener('input',()=>{r.previousElementSibling.querySelector('.after').style.clipPath=`inset(0 ${100-r.value}% 0 0)`}));
 

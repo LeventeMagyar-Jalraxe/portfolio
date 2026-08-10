@@ -30,8 +30,8 @@
 }
 @media(max-width:520px){.brand span{display:none}.lang{padding-left:10px}.menu-toggle{margin-left:auto}}
 
-/* Curatorial finishing: faster opening and concise recognition */
-.draw-line{animation-duration:2.2s;animation-delay:.2s}.intro-name,.intro-tag{animation-duration:.55s}.intro-name{animation-delay:2.25s}.intro-tag{animation-delay:2.75s}
+/* Curatorial finishing: complete signature, reveal the credit, then hold */
+.draw-line{animation-duration:6.2s;animation-delay:.45s}.intro-name,.intro-tag{animation-duration:.7s}.intro-name{animation-delay:6.45s}.intro-tag{animation-delay:7.15s}
 .recognition{margin-top:30px;padding-top:24px;border-top:1px solid #2a251c}.recognition .eyebrow{margin-bottom:13px}.recognition-item{display:grid;grid-template-columns:minmax(145px,.55fr) 1.45fr;gap:18px;padding:11px 0;border-bottom:1px solid #1d1b17}.recognition-item strong{font-weight:450;color:#d8d2c7}.recognition-item span{color:#777;font-size:.84rem}
 @media(max-width:600px){.recognition-item{grid-template-columns:1fr;gap:2px}}
 

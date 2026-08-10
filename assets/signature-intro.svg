@@ -19,7 +19,7 @@
     .reveal,.glowline {
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
-      animation: write 5.7s cubic-bezier(.42,0,.18,1) .45s forwards;
+      animation: write 6.2s cubic-bezier(.42,0,.18,1) .45s forwards;
     }
     .glowline {
       fill:none;
@@ -29,12 +29,12 @@
       stroke-linejoin:round;
       opacity:.95;
       filter:url(#softGlow);
-      animation: write 5.7s cubic-bezier(.42,0,.18,1) .45s forwards, fadeStroke .7s ease 5.8s forwards;
+      animation: write 6.2s cubic-bezier(.42,0,.18,1) .45s forwards, fadeStroke .7s ease 7.35s forwards;
     }
     .pen-tip {
       opacity:0;
       filter:url(#tipGlow);
-      animation: tipOn .01s linear .45s forwards, tipOff .35s ease 5.95s forwards;
+      animation: tipOn .01s linear .45s forwards, tipOff .35s ease 6.65s forwards;
     }
     .pen-core { fill:#fff4c4; }
     .pen-halo { fill:#ffcf5a; opacity:.9; }
@@ -53,12 +53,12 @@
   <path class="glowline" pathLength="1000" d="M 1769 1321 L 1738 1315 L 1692 1312 L 1664 1317 L 1635 1328 L 1609 1347 L 1570 1386 L 1543 1427 L 1526 1462 L 1515 1509 L 1514 1538 L 1518 1561 L 1533 1597 L 1548 1618 L 1574 1640 L 1601 1654 L 1630 1658 L 1684 1656 L 1715 1650 L 1824 1606 L 1883 1570 L 1956 1519 L 1982 1494 L 2030 1459 L 2054 1436 L 2117 1390 L 2163 1344 L 2197 1333 L 2276 1225 L 2300 1198 L 2330 1189 L 2367 1155 L 2392 1122 L 2419 1071 L 2425 1040 L 2423 1031 L 2415 1026 L 2389 1031 L 2357 1063 L 2316 1131 L 2304 1164 L 2300 1197 L 2276 1225 L 2198 1332 L 2200 1340 L 2194 1369 L 2180 1404 L 2175 1430 L 2180 1438 L 2205 1431 L 2216 1423 L 2243 1386 L 2289 1337 L 2332 1282 L 2343 1272 L 2369 1264 L 2373 1271 L 2367 1299 L 2333 1368 L 2193 1581 L 2109 1730 L 2058 1798 L 2043 1820 L 2040 1830 L 2027 1843 L 2015 1857 L 2012 1876 L 2005 1891 L 1981 1926 L 1932 2014 L 1921 2039 L 1887 2092 L 1866 2132 L 1836 2146 L 1820 2198 L 1822 2211 L 1835 2146 L 1829 2139 L 1829 2101 L 1834 2041 L 1837 1833 L 1847 1760 L 1860 1752 L 1899 1763 L 1967 1808 L 2015 1832 L 2027 1843 L 2040 1857 L 2056 1861 L 2139 1904 L 2296 1961 L 2454 2003 L 2559 2023 L 2633 2030 L 2729 2028 L 2789 2014 L 2828 1995 L 2854 1959 L 2863 1928 L 2862 1903 L 2853 1879 L 2833 1861 L 2814 1854 L 2786 1852 L 2759 1858 L 2723 1874 L 2711 1883"/>
   <g class="pen-tip">
     <circle class="pen-halo" r="18">
-      <animateMotion dur="5.7s" begin="0.45s" fill="freeze" rotate="auto">
+      <animateMotion dur="6.2s" begin="0.45s" fill="freeze" rotate="auto">
         <mpath xlink:href="#signaturePath" href="#signaturePath"/>
       </animateMotion>
     </circle>
     <circle class="pen-core" r="7">
-      <animateMotion dur="5.7s" begin="0.45s" fill="freeze" rotate="auto">
+      <animateMotion dur="6.2s" begin="0.45s" fill="freeze" rotate="auto">
         <mpath xlink:href="#signaturePath" href="#signaturePath"/>
       </animateMotion>
     </circle>
