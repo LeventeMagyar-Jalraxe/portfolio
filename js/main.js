@@ -4,10 +4,10 @@ const translations={
 };
 
 Object.assign(translations.en,{
- navInspirations:'Works',inspirationTitle:'Narrative Works',luminousTitle:'Luminous Visions',drawingWithLight:'Drawing with Light',guardPrimary:'Primary Project · 6 / 20 completed',guardGoal:'portraits completed',iucnCR:'CR · Critically Endangered',iucnEN:'EN · Endangered',guardianStoryTitle:'Species, threats & the artwork',recognitionTitle:'Selected Recognition',youngAward:'2nd Prize · Zsilip national art competition',selfieAward:'Selected for Exhibition, Top 20 · Zsilip national thematic competition',youngAwardMeta:'2025 · 2nd Prize · National competition',selfieAwardMeta:'2025 · Colored pencil · National exhibition selection, Top 20',apexLabel:'First animal glow study',apexText:'Created from my first animal drawing, Apex Glow became my first experiment with applying digital light to an animal portrait—and an early bridge toward Guardians of Light.',apexCompare:'Original graphite / Glow study',processLabel:'Process study',processTitle:'From Drawing to Light',processIntro:'A rare four-stage record of one work evolving from line drawing through graphite modelling and selective illumination to its final colour and atmosphere.',processStage1:'Line drawing',processStage2:'Graphite modelling',processStage3:'First light layer',processStage4:'Final colour'
+ navInspirations:'Works',inspirationTitle:'Narrative Works',luminousTitle:'Luminous Visions',drawingWithLight:'Drawing with Light',guardPrimary:'Primary Project · 7 / 20 completed',guardGoal:'portraits completed',iucnCR:'CR · Critically Endangered',iucnEN:'EN · Endangered',guardianStoryTitle:'Species, threats & the artwork',recognitionTitle:'Selected Recognition',youngAward:'2nd Prize · Zsilip national art competition',selfieAward:'Selected for Exhibition, Top 20 · Zsilip national thematic competition',youngAwardMeta:'2025 · 2nd Prize · National competition',selfieAwardMeta:'2025 · Colored pencil · National exhibition selection, Top 20',apexLabel:'First animal glow study',apexText:'Created from my first animal drawing, Apex Glow became my first experiment with applying digital light to an animal portrait—and an early bridge toward Guardians of Light.',apexCompare:'Original graphite / Glow study',processLabel:'Process study',processTitle:'From Drawing to Light',processIntro:'A rare four-stage record of one work evolving from line drawing through graphite modelling and selective illumination to its final colour and atmosphere.',processStage1:'Line drawing',processStage2:'Graphite modelling',processStage3:'First light layer',processStage4:'Final colour'
 });
 Object.assign(translations.hu,{
- navInspirations:'Művek',inspirationTitle:'Narratív művek',luminousTitle:'Fénylő látomások',drawingWithLight:'Fénnyel rajzolva',guardPrimary:'Fő projekt · 6 / 20 elkészült',guardGoal:'elkészült portré',iucnCR:'CR · Súlyosan veszélyeztetett',iucnEN:'EN · Veszélyeztetett',guardianStoryTitle:'A faj, a veszélyek és az alkotás',recognitionTitle:'Válogatott eredmények',youngAward:'2. helyezés · Zsilip országos képzőművészeti pályázat',selfieAward:'Kiállításra válogatva, legjobb 20 · Zsilip országos tematikus pályázat',youngAwardMeta:'2025 · 2. helyezés · Országos pályázat',selfieAwardMeta:'2025 · Színes ceruza · Országos kiállítási válogatás, legjobb 20',apexLabel:'Az első állati glow-kísérlet',apexText:'Az első állatrajzomból született Apex Glow volt az első kísérletem, amelyben digitális fényt alkalmaztam egy állatportrén — és korai hidat teremtett A Fény Őrzői felé.',apexCompare:'Eredeti grafit / Glow-kísérlet',processLabel:'Munkafolyamat',processTitle:'A rajztól a fényig',processIntro:'Egy mű kivételes, négyfázisú dokumentációja: a vonalrajztól a grafittónusokon és a szelektív megvilágításon át a végleges szín- és atmoszféravilágig.',processStage1:'Vonalrajz',processStage2:'Grafittónusok',processStage3:'Az első fényréteg',processStage4:'Végleges színvilág'
+ navInspirations:'Művek',inspirationTitle:'Narratív művek',luminousTitle:'Fénylő látomások',drawingWithLight:'Fénnyel rajzolva',guardPrimary:'Fő projekt · 7 / 20 elkészült',guardGoal:'elkészült portré',iucnCR:'CR · Súlyosan veszélyeztetett',iucnEN:'EN · Veszélyeztetett',guardianStoryTitle:'A faj, a veszélyek és az alkotás',recognitionTitle:'Válogatott eredmények',youngAward:'2. helyezés · Zsilip országos képzőművészeti pályázat',selfieAward:'Kiállításra válogatva, legjobb 20 · Zsilip országos tematikus pályázat',youngAwardMeta:'2025 · 2. helyezés · Országos pályázat',selfieAwardMeta:'2025 · Színes ceruza · Országos kiállítási válogatás, legjobb 20',apexLabel:'Az első állati glow-kísérlet',apexText:'Az első állatrajzomból született Apex Glow volt az első kísérletem, amelyben digitális fényt alkalmaztam egy állatportrén — és korai hidat teremtett A Fény Őrzői felé.',apexCompare:'Eredeti grafit / Glow-kísérlet',processLabel:'Munkafolyamat',processTitle:'A rajztól a fényig',processIntro:'Egy mű kivételes, négyfázisú dokumentációja: a vonalrajztól a grafittónusokon és a szelektív megvilágításon át a végleges szín- és atmoszféravilágig.',processStage1:'Vonalrajz',processStage2:'Grafittónusok',processStage3:'Az első fényréteg',processStage4:'Végleges színvilág'
 });
 
 // Keep the primary project directly after the opening statement.
@@ -23,6 +23,57 @@ const guardianDetails={
  axolotl:{scientific:'Ambystoma mexicanum',en:{title:'Axolotl',story:['The axolotl is one of nature’s strangest creatures: an amphibian that never fully completes metamorphosis and spends its entire life in a juvenile aquatic form. Its smiling face and feathery external gills recall the Aztec god Xolotl, associated with fire and transformation, who was said to have taken its shape.','It is also a scientific marvel. The axolotl can regenerate not only limbs but parts of complex organs, including the heart and brain. Yet while laboratories around the world study this extraordinary ability, the animal has been pushed close to extinction in its own home.','The ancient canal system of Xochimilco, south of Mexico City, has been severely damaged by pollution, urbanisation and introduced species. UNAM’s Chinampa-Refugio programme works with local communities to restore cleaner, traditional aquatic refuges so the axolotl’s future does not continue only behind aquarium glass.','The portrait rests on a stark contrast: there are wounds nature can heal, but there are losses that even the greatest power of regeneration cannot reverse.'],orgs:[['UNAM — Ecological Restoration Laboratory','Habitat restoration and axolotl conservation work in Xochimilco','https://www.gaceta.unam.mx/restaurar-xochimilco-fundamental-para-conservar-el-axolote/']]},hu:{title:'Axolotl',story:['Az axolotl a természet egyik legkülönösebb teremtménye: egy kétéltű, amely sosem fejezi be teljesen az átalakulását, és egész életét fiatal, vízi alakban éli le. Mosolygó arca és tollszerű külső kopoltyúi az azték mitológia Xolotl istenét idézik, aki a történetek szerint maga is felvette ezt az alakot.','Az axolotl a tudomány egyik csodája is. Nemcsak a végtagjait, hanem összetett szervei — köztük a szíve és az agya — egyes részeit is képes regenerálni. Miközben azonban a világ laboratóriumai ezt a rendkívüli képességet kutatják, az állat a saját otthonában a kihalás szélére sodródott.','A Mexikóváros déli részén fekvő Xochimilco ősi csatornarendszerét súlyosan károsította a vízszennyezés, az urbanizáció és a betelepített fajok terjedése. Az UNAM Chinampa-Refugio programja a helyi közösségekkel együttműködve állít helyre tisztább, hagyományos vízi menedékeket, hogy az axolotl jövője ne csak az akváriumok üvegfala mögött folytatódjon.','A portré egy kemény ellentétre épül: vannak sebek, amelyeket a természet képes begyógyítani, de vannak veszteségek, amelyeket már a legerősebb regeneráció sem hozhat vissza.'],orgs:[['UNAM — Ökológiai Restaurációs Laboratórium','Élőhely-helyreállítás és axolotl-védelem Xochimilcóban','https://www.gaceta.unam.mx/restaurar-xochimilco-fundamental-para-conservar-el-axolote/']]}}
 };
 
+guardianDetails.mink={
+  "scientific": "Mustela lutreola",
+  "hu": {
+    "title": "Európai nyérc",
+    "story": [
+      "✨ A Fény Őrzői sorozatom 7. darabja: az európai nyérc (Mustela lutreola).",
+      "Sötétbarna bunda, az alsó és felső ajkat díszítő hószín folt, éber tekintet. Az európai nyérc kontinensünk rejtőzködő, kistermetű ragadozója, amelynek élete szorosan összefonódik a patakokkal, folyópartokkal és a sűrű parti növényzettel. Kevesen találkozhatunk vele — pedig Európa természeti örökségének része.",
+      "Mára ez a főként alkonyatkor és éjszaka aktív vadász kritikusan veszélyeztetetté vált. A vizes élőhelyek pusztulása és átalakítása, a korábbi prémvadászat, valamint az ember által Európába betelepített amerikai nyérc terjedése és a vele való versengés is hozzájárult ahhoz, hogy egykori elterjedési területének túlnyomó részéről eltűnjön.",
+      "Mégis vannak, akik ezt a törékeny fényt őrzik.",
+      "Az észt Foundation Lutreola és a Tallinni Állatkert szakemberei évtizedek óta dolgoznak a faj fennmaradásáért. Összehangolt természetvédelmi tenyészprogramjuk és visszatelepítési munkájuk egyik fontos eredménye a Hiiumaa szigetén létrehozott, szabadon szaporodó állomány. Ez még nem jelenti a faj megmenekülését, de megmutatja, hogy a kitartó védelem kézzelfogható eredményt hozhat.",
+      "A Fény Őrzőivel ezekre a fajokra és az értük küzdő emberekre szeretném ráirányítani a figyelmet. Hogy a találkozás ne érjen véget a képnél — és hogy maradjon valaki, aki visszanéz ránk a folyópartról. ✨"
+    ],
+    "orgs": [
+      [
+        "Foundation Lutreola",
+        "Fajmegőrzés, természetvédelmi tenyésztés és visszatelepítés Észtországban",
+        "https://lutreola.eu/"
+      ],
+      [
+        "Tallinni Állatkert",
+        "Az európai nyérc természetvédelmi tenyészprogramja",
+        "https://tallinnzoo.ee/en/"
+      ]
+    ]
+  },
+  "en": {
+    "title": "European Mink",
+    "story": [
+      "✨ The seventh portrait in my Guardians of Light series: the European mink (Mustela lutreola).",
+      "Dark brown fur, snow-white markings on its upper and lower lips, and an alert gaze. The European mink is a small, elusive predator whose life is closely tied to streams, riverbanks, and dense waterside vegetation. Few of us will ever encounter one — yet it is part of Europe’s natural heritage.",
+      "Today, this hunter, active mainly at dusk and at night, is critically endangered. The loss and alteration of wetland habitats, historical trapping for fur, and the spread of the human-introduced American mink, which competes with it, have all contributed to its disappearance from most of its former range.",
+      "Yet there are people working to keep this fragile light alive.",
+      "For decades, specialists at Estonia’s Foundation Lutreola and Tallinn Zoo have worked to safeguard the species. One important achievement of their coordinated conservation breeding and reintroduction efforts is the establishment of a wild, breeding population on the island of Hiiumaa. This does not mean the species is out of danger, but it shows that sustained conservation work can bring tangible results.",
+      "Through Guardians of Light, I hope to draw attention to these species and the people fighting for their survival. So that the encounter does not end with the image — and so that someone is still there to look back at us from the riverbank. ✨"
+    ],
+    "orgs": [
+      [
+        "Foundation Lutreola",
+        "Species conservation, conservation breeding and reintroduction in Estonia",
+        "https://lutreola.eu/"
+      ],
+      [
+        "Tallinn Zoo",
+        "European mink conservation breeding programme",
+        "https://tallinnzoo.ee/en/"
+      ]
+    ]
+  }
+};
+Object.assign(translations.en,{gMinkTitle:'European Mink',gMinkShort:'An elusive riverside predator with a future worth protecting.'});
+Object.assign(translations.hu,{gMinkTitle:'Európai nyérc',gMinkShort:'A folyópartok rejtőzködő ragadozója, akinek a jövőjéért még tehetünk.'});
 const staticTextHu={
  'Every drawing begins in darkness.':'Minden rajz a sötétségből indul.',
  'Light does not conclude the work.':'A fény nem lezárja a művet,',
